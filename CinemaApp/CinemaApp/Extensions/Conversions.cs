@@ -1,14 +1,12 @@
 ﻿using CinemaApp.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CinemaApp.Extensions
 {
+    // Klasa zawierająca metody statyczne służące do konwersji
     public class Conversions
     {
+
+        // Konwersja string -> int
         public static int TryParseToInt(string value, string msg)
         {
             try
@@ -20,6 +18,8 @@ namespace CinemaApp.Extensions
                 throw new CannotConvertException(msg);
             }
         }
+
+        // Konwersja string -> DateTime
         public static DateTime TryParseToDateTime(string value, string msg)
         {
             try
@@ -32,6 +32,8 @@ namespace CinemaApp.Extensions
                 throw new CannotConvertException(msg);
             }
         }
+
+        // Konwersja string -> double
         public static double TryParseToDouble(string value, string msg)
         {
             value = value.Replace(".", ",");

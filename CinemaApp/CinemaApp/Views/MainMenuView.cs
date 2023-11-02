@@ -1,13 +1,8 @@
-﻿using Microsoft.VisualBasic.FileIO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaApp.Interfaces.IViews;
 
 namespace CinemaApp.Views
 {
-    public class MainMenuView : MainView
+    public class MainMenuView: MainView, IMainMenuView
     {
         protected readonly string[] menuOptions;
         private readonly string[] title = 
@@ -27,6 +22,7 @@ namespace CinemaApp.Views
                 "Opcje",
                 "Wyjdź"
             };
+            Console.SetWindowSize(140, 40);
         }
         protected void DrawTitle(int WindowWidth, int WindowHeight)
         {
@@ -110,7 +106,7 @@ namespace CinemaApp.Views
         }
         public int RenderMainMenu()
         {
-            Console.SetWindowSize(130, 37);
+            //Console.SetWindowSize(140, 40);
             //Console.OutputEncoding = Encoding.Unicode;
             int WindowWidth = Console.WindowWidth;
             int WindowHeight = Console.WindowHeight;
@@ -124,7 +120,8 @@ namespace CinemaApp.Views
             Console.CursorVisible = false;
             
             bool isOptionSelected = false;
-            string pointer = BLACK_FOREGROUND+ WHITE_BACKGROUND + ">";
+            //string pointer = BLACK_FOREGROUND+ WHITE_BACKGROUND + ">";
+            string pointer = ">";
             int selectOption = 1;
             ConsoleKeyInfo key;
 
@@ -135,7 +132,7 @@ namespace CinemaApp.Views
                     WindowWidth = Console.WindowWidth;
                     WindowHeight = Console.WindowHeight;
                     // Tutaj throw exception jeśli rozmiar jest zły w while aby wyrzucać non stop wyjątek jeśli rozmiar jest zły
-                    while(WindowWidth<130 || WindowHeight < 37)
+                    while(WindowWidth<130 || WindowHeight < 40)
                     {
                         ShowError();
                         WindowWidth = Console.WindowWidth;
@@ -147,11 +144,21 @@ namespace CinemaApp.Views
                     MakeInfo(WindowWidth, WindowHeight, message);
                     Console.CursorVisible = false;
                 }
-
+                Console.ResetColor();
                 for(int i = 0; i < menuOptions.Length; i++)
                 {
                     Console.SetCursorPosition(WindowWidth / 2 - (menuOptions[i].Length/2), WindowHeight / 2 - (menuOptions.Length/2) + i*2);
-                    Console.WriteLine($"{(selectOption == i+1 ? pointer : " ")} {menuOptions[i]}" + WHITE_FOREGROUND + BLACK_BACKGROUND);         
+                    if(selectOption == i + 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.WriteLine($"{pointer} {menuOptions[i]}");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"  {menuOptions[i]}");
+                    }
                 }
 
                 key = Console.ReadKey();

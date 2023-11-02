@@ -1,18 +1,13 @@
-﻿using CinemaApp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using CinemaApp.Interfaces.IViews;
+using CinemaApp.Model;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CinemaApp.Views
 {
-    public class AdminView : MainView
+    public class AdminView : MainView, IAdminView
     {
         private readonly string[] adminMenuOptions;
         private readonly string[] adminMoviesMenuOptions;
-        private readonly string[] infos;
         private readonly string[] inputDataForAddMovie;
         private readonly string[] inputDataForModifyMovie;
         private readonly string[] infoForAddMovie;
@@ -20,6 +15,32 @@ namespace CinemaApp.Views
         private readonly string[] inputDataForRemoveMovie;
         private readonly string[] infoForModifyMovie; 
         private readonly string[] adminStatisticsOptions;
+        private readonly string[] statisticArt =
+        {
+          "   ██                                                                     ▒▒▒▒▒    ",
+          " ██████     ░░                  ░░                  ░░                  ░░    ▒▒▒▒ ",     
+          "██ ██ ██    ░░                  ░░                  ░░                  ░░▒▒▒▒▒▒▒▒▒",
+          "██ ██ ██    ░░                  ░░                  ░░                ▒▒▒▒▒▒▒▒▒▒▒▒ ",
+          "   ██       ░░                  ░░                  ░░            ▒▒▒▒▒▒▒▒   ▒▒▒▒  ",
+          "   ██       ░░                  ░░                  ░░        ▒▒▒▒▒▒▒▒  ░░  ▒▒▒    ",
+          "   ██       ░░                  ░░                  ░░      ▒▒▒▒▒▒      ░░ ▒▒▒     ",
+          "   ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒░░░░░░░░░░░▒▒░░░░   ",
+          "   ██       ░░        ▒▒▒▒      ░░                  ░░▒▒▒▒▒▒            ░░         ",
+          "   ██       ░░       ▒▒▒▒▒▒     ░░                  ▒▒▒▒▒               ░░         ",
+          "   ██       ░░       ▒▒▒▒▒▒▒▒   ░░               ▒▒▒▒░                  ░░         ",
+          "   ██       ░░     ▒▒▒▒    ▒▒▒▒ ░░              ▒▒▒▒▒░                  ░░         ",
+          "   ██       ░░   ▒▒▒▒        ▒▒▒▒░             ▒▒▒▒ ░░                  ░░         ",
+          "   ██       ░░ ▒▒▒▒           ▒▒▒▒           ▒▒▒▒   ░░                  ░░         ",
+          "   ██░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ",                                       
+          "   ██     ▒▒▒▒▒▒                ░▒▒▒▒     ▒▒▒▒      ░░                  ░░         ",                                
+          "   ██    ▒▒▒▒░                  ░░ ▒▒▒▒▒▒▒▒▒▒       ░░                  ░░         ",                                     
+          "   ██  ▒▒▒▒ ░░                  ░░   ▒▒▒▒▒▒         ░░                  ░░         ",                               
+          "   ██▒▒     ░░                  ░░                  ░░                  ░░ ███     ",               
+          "   ██       ░░                  ░░                  ░░                  ░░    ███  ",                 
+          " ██████████████████████████████████████████████████████████████████████████████████",
+          "   ██                                                                         ███  ",
+          "                                                                            ███    "
+        };
         private readonly string[] moneyArt =
         {
                "          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ",
@@ -62,18 +83,36 @@ namespace CinemaApp.Views
                "▓▓                                      ▓▓",
                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"
         };
+        private readonly string[] mainMoneyArt =
+        {
+           "              ██████████                               ████                ",
+           "               ██    ██                            ████  ░░████            ",
+           "             ███      ███                        ██    ▒▒░░▒▒░░██          ",
+           "         █████          █████                    ██▒▒▒▒░░░░░░░░██          ",
+           "       █████    ▓▓  ▓▓    █████                  ██████░░░░██████          ",
+           "     ███     ▓▓▓▓▓▓▓▓▓▓▓     ███                 ██▓▓░░████▒▒░░██          ",
+           "     ███  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ███                ██████▓▓░░██████          ",
+           "   ███    ▓▓▓   ▓▓  ▓▓  ▓▓▓     ███            ▓▓▓▓▓▓  ████▓▓░░██          ",
+           "   ███    ▓▓▓   ▓▓  ▓▓          ███        ▓▓▓▓  ▒▒▓▓▓▓▓▓░░██████          ",
+           "   ███    ▓▓▓   ▓▓  ▓▓          ███      ▓▓    ░░▒▒░░░░▓▓██▓▓  ██▓▓▓▓      ",
+           " ███       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ███    ▓▓░░░░▒▒▒▒░░▒▒▓▓▒▒██▓▓▓▓  ░░▓▓▓▓  ",
+           " ███          ▓▓▓▓▓▓▓▓▓▓▓▓▓       ███    ▓▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓██▓▓    ▒▒▒▒░░▒▒▓▓",
+           " ███            ▓▓  ▓▓  ▓▓▓       ███    ▓▓▒▒░░▓▓▓▓▒▒  ▓▓░░▓▓▒▒░░▒▒░░░░░░▓▓",
+           " ███      ▓▓    ▓▓  ▓▓  ▓▓▓       ███    ▓▓▓▓▓▓▒▒░░▓▓▓▓▓▓██▓▓▓▓▓▓▒▒░░▓▓▓▓▓▓",
+           "   ███     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ███    ▓▓▒▒  ▓▓▓▓▒▒  ▓▓  ▓▓▒▒  ▓▓▓▓▒▒  ▓▓",
+           "     ███     ▓▓▓▓▓▓▓▓▓▓       ███          ▓▓▓▓▒▒  ▓▓▓▓    ▓▓▓▓▓▓▒▒  ▓▓▓▓▓▓",
+           "       ████     ▓▓  ▓▓     ████                ▓▓▓▓        ▓▓░░  ▓▓▓▓░░  ▓▓",
+           "         ██████        ██████                                ▓▓▓▓▒▒  ▓▓▓▓  ",
+           "             ████████████                                        ▓▓▓▓      "
+        };
         public AdminView() 
         {
-            infos = new string[] {
-                "[?] Poruszaj się za pomocą strzałek. Aby wybrać opcję wciśnij ENTER.",
-                "[!] Wcisnij dowolny przycisk aby odświeżyć konsolę."
-            };
             adminMenuOptions = new string[]
             {
-                "Zarządzaj filmami",
                 "Pobierz listę rezerwacji",
                 "Przewiń listę do dołu v",
-                "Przewiń listę do góry ^",
+                "Przewiń listę do góry ^",      
+                "Zarządzaj filmami",
                 "Pokaż statystyki",
                 "Wróć do menu"
             };
@@ -99,10 +138,11 @@ namespace CinemaApp.Views
             };
             infoForAddMovie = new string[]
             {
-                "[?] Wprowadź dane dotyczące filmu. Przejdź do kolejnej linii wciskając ENTER.",
-                "[?] Data powinna być podana w formacie: DD/MM/YYYY HH:MM",
-                "[?] Cena powinna być podana w formacie: XX.YY",
-                "[?] Czas trwania powinien być podany w formacie: H:MM"
+                "[?] Wprowadź dane filmu. Przejdź do kolejnej linii wciskając ENTER. Wyjdź wciskając ESC.",
+                "[?] Data powinna być podana w formacie: DD/MM/YYYY HH:MM lub DD.MM.YYYY HH:MM",
+                "[?] Cena powinna być podana w formacie: XX.YY lub XX lub XX,YY",
+                "[?] Czas trwania powinien być podany w formacie: H:MM",
+                "[?] Numer sali powinien być liczbą całkowitą od 1 do 4."
             };
             inputDataForAddMovie = new string[]
             {
@@ -119,11 +159,13 @@ namespace CinemaApp.Views
             infoForRemoveMovie = new string[]
             {
                 "[?] Podaj ID filmu, który chcesz usunąc. Zatwierdź klawiszem ENTER.",
+                "[?] Aby wyjść z wprowadzania danych wciśnij ESC.",
                 "[?] ID filmu powinno być liczbą całkowitą"
             };
             infoForModifyMovie = new string[]
             {
                 "[?] Podaj ID filmu, który chcesz zmodyfikować. Zatwierdź klawiszem ENTER.",
+                "[?] Aby wyjść z wprowadzania danych wciśnij ESC.",
                 "[?] Następnie podaj nową datę lub numer sali lub cenę.",
                 "[?] Jeśli chcesz zmienić tylko wybrane wartości - pozostałe zostaw puste"
             };
@@ -134,11 +176,21 @@ namespace CinemaApp.Views
                 "Numer sali: "
             };
         }
-        private void DrawASCIIArt(int WindowWidth, int WindowHeight, string[] art)
+        private void DrawASCIIArt(int WindowWidth, int WindowHeight, string[] art, int row_offset)
+        {
+            int offest_row = (GetOutputPartHeight() - art.Length) / 2;
+            int offset = (GetOutputPartWidth() - (art[0].Length)) / 2;
+            for (int i = 0; i < art.Length; i++)
+            {
+                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, i + offest_row+row_offset);//row_offset);
+                Console.WriteLine(art[i]);
+            }
+        }
+        private void DrawASCIIArt(int WindowWidth, int WindowHeight, int offset, int table_width, string[] art, int row_offset)
         {
             for (int i = 0; i < art.Length; i++)
             {
-                SetCursorInDataOutputPart(WindowWidth, WindowHeight, 41, i + 4);
+                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset+table_width+5, i + 2 + row_offset);
                 Console.WriteLine(art[i]);
             }
         }
@@ -153,11 +205,29 @@ namespace CinemaApp.Views
             int WindowWidth = Console.WindowWidth;
             int WindowHeight = Console.WindowHeight;
             ClearViewOutputDataPart(WindowWidth, WindowHeight);
-            string message = "Całkowity dochód: ";
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, 2);
-            Console.Write(message);
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, message.Length+2, 2);
-            Console.Write(income);
+
+            ClearViewInfoPart(WindowWidth, WindowHeight);
+            string[] info =
+            {
+                "[?] Powyżej zaprezentowano całkowity dochód wygenerowany przez kino.",
+                "[?] Całkowity dochód jest sumą cen wszystkich sprzedanych biletów."
+            };
+            SetInfo(info, WindowWidth, WindowHeight);
+
+            string message = "Całkowity dochód:";
+            string topTable = $"┌{new string('─', message.Length + 2)}┬{new string('─', income.ToString().Length + 3)}┐";
+
+            int offset = (GetOutputPartWidth() - (topTable.Length)) / 2;
+            int offest_row = ((GetOutputPartHeight() - mainMoneyArt.Length - 3) / 2) + 2;
+
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offest_row);
+            Console.Write(topTable);
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offest_row+1);
+            Console.Write($"│ {message} │ {income}$ │");
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offest_row+2);
+            Console.Write($"└{new string('─', message.Length + 2)}┴{new string('─', income.ToString().Length+3)}┘");
+
+            DrawASCIIArt(WindowWidth, WindowHeight, mainMoneyArt, 4);
         }
         
         public void ShowMostPopularMovies(Dictionary<string, int> movies)
@@ -178,24 +248,47 @@ namespace CinemaApp.Views
             string title = "[Tytuł]";
             string reserved_seats = "[Miejsca]";
 
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, 2);
-            Console.Write("┌" + new string('─', longestTitle + 2) + "┬" + new string('─', reserved_seats.Length + 1) + "┐");
+            string topTable = "┌" + new string('─', longestTitle + 2) + "┬" + new string('─', reserved_seats.Length + 1) + "┐";
 
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, 3);
+            int offset = (GetOutputPartWidth() - (topTable.Length + 5 + topArt[0].Length)) / 2;
+            
+            int offset_row;
+
+            if (movies.Count>=10)
+            {
+                offset_row = ((GetOutputPartHeight() - (2 * 10 - 1)) / 2);
+            }
+            else if (2*movies.Count-1>topArt.Length)
+            {
+                offset_row = ((GetOutputPartHeight() - (2 * movies.Count - 1)) / 2);
+            }
+            else
+            {
+                offset_row = ((GetOutputPartHeight() - topArt.Length) / 2);
+            }
+            //int a = offset_row;
+            //Console.ReadKey();
+
+            // default offsetrow =2 
+
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row);
+            Console.Write(topTable);
+
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+1);
             Console.Write("│");
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, (longestTitle / 2) - (title.Length / 2) + 2, 3);
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, (longestTitle / 2) - (title.Length / 2) + offset, offset_row + 1);
             Console.Write($" {title.PadRight(longestTitle-5)}│ {reserved_seats}│");
 
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, 4);
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+2);
             Console.Write("├" + new string('─', longestTitle + 2) + "┼" + new string('─', reserved_seats.Length + 1) + "┤");
 
-            int row = 5;
+            int row = offset_row+3; // 5
             int iter = 0;
             foreach (var item in movies)
             {
-                SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, row);
+                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, row);
                 Console.WriteLine($"│ {item.Key.PadRight(longestTitle)} │ {item.Value.ToString().PadLeft(reserved_seats.Length /2 +1)}    │");
-                SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, row + 1);
+                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, row + 1);
                 Console.Write("├" + new string('─', longestTitle + 2) + "┼" + new string('─', reserved_seats.Length + 1) + "┤");
                 row += 2;
                 iter++;
@@ -204,10 +297,10 @@ namespace CinemaApp.Views
                     break;
                 }
             }
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, row - 1);
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, row - 1);
             Console.Write("└" + new string('─', longestTitle + 2) + "┴" + new string('─', reserved_seats.Length + 1) + "┘");
 
-            DrawASCIIArt(WindowWidth, WindowHeight, topArt);
+            DrawASCIIArt(WindowWidth, WindowHeight, offset, topTable.Length, topArt, offset_row);
         }
         public void ShowMoviesIncome(Dictionary<string, double> income)
         {
@@ -228,24 +321,44 @@ namespace CinemaApp.Views
             string title = "[Tytuł]";
             string movie_income = "[Dochód]";
 
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, 2);
-            Console.Write("┌" + new string('─', longestTitle + 2) + "┬" + new string('─', movie_income.Length + 1) + "┐");
+            string topTable = "┌" + new string('─', longestTitle + 2) + "┬" + new string('─', movie_income.Length + 1) + "┐";
+            int offset = (GetOutputPartWidth() - (topTable.Length + 5 + moneyArt[0].Length)) / 2;
 
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, 3);
+            int offset_row;
+
+            if (income.Count >= 10)
+            {
+                offset_row = ((GetOutputPartHeight() - (2 * 10 - 1)) / 2);
+            }
+            else if (2 * income.Count - 1 > topArt.Length)
+            {
+                offset_row = ((GetOutputPartHeight() - (2 * income.Count - 1)) / 2);
+            }
+            else
+            {
+                offset_row = ((GetOutputPartHeight() - moneyArt.Length) / 2);
+            }
+
+            // default offsetrow =2 
+
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row);
+            Console.Write(topTable);
+
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+1);
             Console.Write("│");
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, (longestTitle / 2 ) - (title.Length/2)+ 2, 3);
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, (longestTitle / 2 ) - (title.Length/2)+ offset, offset_row+1);
             Console.Write($" {title.PadRight(longestTitle-5)}│ {movie_income}│");
 
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, 4);
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+2);
             Console.Write("├" + new string('─', longestTitle + 2) + "┼" + new string('─', movie_income.Length + 1) + "┤");
 
-            int row = 5;
+            int row = offset_row+3;
             int iter = 0;
             foreach (var item in income)
             {
-                SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, row);
+                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, row);
                 Console.WriteLine($"│ {item.Key.PadRight(longestTitle)} │ {item.Value.ToString().PadLeft(movie_income.Length-2)}  │");
-                SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, row+1);
+                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, row+1);
                 Console.Write("├" + new string('─', longestTitle + 2)+ "┼" + new string('─', movie_income.Length+1) + "┤");
                 row+=2;
                 iter++;
@@ -254,10 +367,10 @@ namespace CinemaApp.Views
                     break;
                 }
             }
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, 2, row - 1);
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, row - 1);
             Console.Write("└" + new string('─', longestTitle + 2) + "┴" + new string('─', movie_income.Length+ 1) + "┘");
 
-            DrawASCIIArt(WindowWidth, WindowHeight, moneyArt);
+            DrawASCIIArt(WindowWidth, WindowHeight,offset, topTable.Length, moneyArt, offset_row);
         }
         public string?[] ModifyMovie()
         {
@@ -417,6 +530,10 @@ namespace CinemaApp.Views
             ClearViewOutputDataPart(WindowWidth, WindowHeight);
 
         }*/
+        public void DrawStatiscicArt()
+        {
+            DrawASCIIArt(Console.WindowWidth, Console.WindowHeight, statisticArt, 2);
+        }
         public int RenderStatisticsAdminView()
         {
             int WindowWidth = Console.WindowWidth;
@@ -424,11 +541,12 @@ namespace CinemaApp.Views
             //Console.WriteLine(WindowWidth + " " + WindowHeight);
             //ClearViewInfoPart(WindowWidth, WindowHeight);
             ClearViewOptionsPart(WindowWidth, WindowHeight);
-           // ClearViewOutputDataPart(WindowWidth, WindowHeight);
+            
+            // ClearViewOutputDataPart(WindowWidth, WindowHeight);
             //ClearViewInputPart(WindowWidth, WindowHeight);
 
-           // SetInfo(infos, WindowWidth, WindowHeight);
-           // ShowMoviesList(WindowWidth, WindowHeight, movies);
+            // SetInfo(infos, WindowWidth, WindowHeight);
+            // ShowMoviesList(WindowWidth, WindowHeight, movies);
 
             Console.CursorVisible = false;
 

@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CinemaApp.Model
+﻿namespace CinemaApp.Model
 {
     public class Seat
     {
-        private int number;
-        private int Row;
-        private bool isAvailable;
-        public Seat(int number, int Row) {
+        private int number; // Numer miejsca
+        private bool isAvailable;   // Czy zajęte
+        public Seat(int number) {
             this.number = number;
-            this.Row = Row; 
             isAvailable = true;
         }
+
+
+        // Gettery & Settery
         public bool IsAvailable
         {
             get { return isAvailable; } 
@@ -25,6 +20,9 @@ namespace CinemaApp.Model
         {
             get { return number; }
         }
+
+
+        // Nadpisana metoda ToString()
         public override string ToString()
         {
             return $"{number}";

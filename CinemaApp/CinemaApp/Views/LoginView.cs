@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Text.Json.Serialization.Metadata;
-using System.Threading.Tasks;
+﻿using CinemaApp.Interfaces.IViews;
 
 namespace CinemaApp.Views
 {
-    public class LoginView : MainMenuView
+    public class LoginView : MainMenuView, ILoginView
     {
         // Trzeba umożliwić użytkownikowi powrót 
         public LoginView() { }
@@ -19,6 +13,51 @@ namespace CinemaApp.Views
             Console.WriteLine("Login lub hasło są niepoprawne. Spróbuj ponownie.");
             Thread.Sleep(2000);
             Console.ResetColor();
+        }
+        // To powinno być w loginView
+        public string[] ShowMissingPasswordFileError(string message)
+        {
+            string[] new_login_password = new string[2];
+            string confirm_password = ".";
+            while (new_login_password[1] != confirm_password)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("[!] " + message);
+                Console.WriteLine();
+                Console.ResetColor();
+
+                Console.Write("Login: ");
+                new_login_password[0] = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.Write("Hasło: ");
+                new_login_password[1] = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.Write("Potwierdź hasło: ");
+                confirm_password = Console.ReadLine();
+                Console.WriteLine();
+
+                if (confirm_password == new_login_password[1])
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("[V] Login i hasło zostały zmienione i zapisane w pliku.");
+                    Console.ResetColor();
+                    // Thread.Sleep(1000);
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("[!] Podane hasła są różne. Spróbuj ponownie.");
+                    Console.ResetColor();
+                    Thread.Sleep(1500);
+                }
+            }
+
+            Console.ResetColor();
+
+            return new_login_password;
         }
 
         public string?[] RenderLoginView()
@@ -96,7 +135,10 @@ namespace CinemaApp.Views
                 SetPointer(WindowWidth / 2 - 7, WindowHeight / 2 + 3);
                 Console.SetCursorPosition(WindowWidth / 2 - 5, WindowHeight / 2 + 3);
 
-                Console.Write(BLACK_FOREGROUND+WHITE_BACKGROUND+"Zaloguj się"+WHITE_FOREGROUND+BLACK_BACKGROUND);
+                Console.BackgroundColor= ConsoleColor.White;
+                Console.ForegroundColor= ConsoleColor.Black;
+                Console.Write("Zaloguj się");
+                Console.ResetColor();
 
                 key = Console.ReadKey();
                 Console.SetCursorPosition(WindowWidth / 2 + 6, WindowHeight / 2 + 3);

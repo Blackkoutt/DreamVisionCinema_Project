@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CinemaApp.Model
+﻿namespace CinemaApp.Model
 {
     public class Movie
     {
+        // Każdy film posiada id, tytuł, datę seansu (DD.MM.YYYY HH:MM), cenę, czas trwania i salę w której jest pokazywany
         private int id;
         private string title;
         private DateTime date;
@@ -24,6 +18,8 @@ namespace CinemaApp.Model
             this.duration = duration;
             this.room = room;
         }
+
+        // Gettery & Settery
         public int Id
         {
             get { return id; }

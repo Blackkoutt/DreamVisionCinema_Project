@@ -1,18 +1,13 @@
 ﻿using CinemaApp.Enums;
+using CinemaApp.Interfaces.IViews;
 using CinemaApp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CinemaApp.Views
 {
-    public class UserView : MainView
+    public class UserView : MainView, IUserView
     {
         private readonly string[] userMenuOptions;
         private readonly string[] userMoviesOptions;
-        private readonly string[] infos;
         private readonly string[] userReservationsOptions;
 
         private readonly string[] inputDataForRemoveAndMakeReservation_ID;
@@ -21,6 +16,49 @@ namespace CinemaApp.Views
         private readonly string[] infoForMakeReservation_Id;
         private readonly string[] infoForMakeReservation_Seats;
         private readonly string[] inputDataForMakeReservation_Seats;
+
+        private readonly string[] PrinterAnimaton1 =
+        {
+               "       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       ",
+               "████████████████████████████████",
+               "██                            ██",
+               "██   ██ ██                    ██",
+               "██                            ██",
+               "████████████████████████████████"
+        };
+        private readonly string[] PrinterAnimaton2 =
+        {
+               "       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       ",
+               "       ▓▓  ══════════  ▓▓       ",
+               "████████████████████████████████",
+               "██                            ██",
+               "██   ██ ██                    ██",
+               "██                            ██",
+               "████████████████████████████████"
+        };
+        private readonly string[] PrinterAnimaton3 =
+        {
+               "       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       ",
+               "       ▓▓  ══════════  ▓▓       ",
+               "       ▓▓  ══════════  ▓▓       ",
+               "████████████████████████████████",
+               "██                            ██",
+               "██   ██ ██                    ██",
+               "██                            ██",
+               "████████████████████████████████"
+        };
+        private readonly string[] PrinterAnimaton4 =
+        {
+               "       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       ",
+               "       ▓▓  ══════════  ▓▓       ",
+               "       ▓▓  ══════════  ▓▓       ",
+               "       ▓▓  ══════════  ▓▓       ",
+               "████████████████████████████████",
+               "██                            ██",
+               "██   ██ ██                    ██",
+               "██                            ██",
+               "████████████████████████████████"
+        };
 
 
         public UserView()
@@ -36,10 +74,6 @@ namespace CinemaApp.Views
                 "Przeglądaj filmy / Dokonaj rezerwacji",
                 "Przeglądaj dokonane rezerwacje",
                 "Wróć"
-            };
-            infos = new string[] {
-                "[?] Poruszaj się za pomocą strzałek. Aby wybrać opcję wciśnij ENTER.",
-                "[!] Wcisnij dowolny przycisk aby odświeżyć konsolę."
             };
             userMoviesOptions = new string[]
             {
@@ -63,23 +97,89 @@ namespace CinemaApp.Views
             infoForRemoveReservation = new string[]
             {
                 "[?] Podaj ID rezerwacji, którą chcesz usunąc. Zatwierdź klawiszem ENTER.",
+                "[?] Aby wyjść z wprowadzania danych wciśnij ESC.",
                 "[?] ID rezerwacji powinno być liczbą całkowitą"
             };
 
             infoForMakeReservation_Id = new string[]
             {
                 "[?] Podaj ID filmu, na który chcesz dokonać rezerwacji. Zatwierdź klawiszem ENTER.",
+                "[?] Aby wyjść z wprowadzania danych wciśnij ESC.",
                 "[?] ID filmu powinno być liczbą całkowitą"
             };
             infoForMakeReservation_Seats = new string[]
             {
                 "[?] Podaj numery miejsc które chcesz zarezerwować. Zatwierdź klawiszem ENTER.",
+                "[?] Aby wyjść z wprowadzania danych wciśnij ESC.",
                 "[?] Numery miejsc powinny być liczbami całkowitymi odzielonymi spacją np: 1 2 3 21",
                 "[?] Kolorem czerwonym oznaczono zajęte miejsca, a kolorem zielonym wolne miejsca",
             };
         }
 
-        
+        public void PrinterAnimation()
+        {
+            string[] info =
+            {
+                "Trwa drukowanie biletu",
+                "Trwa drukowanie biletu.",
+                "Trwa drukowanie biletu..",
+                "Trwa drukowanie biletu...",
+            };
+            for(int j=0;j<3;j++)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
+                    switch (i)
+                    {
+                        case 0:
+                            {
+                                //SetCursorInInfoPart(Console.WindowWidth, Console.WindowHeight, 2, )
+                                DrawPrinter(PrinterAnimaton1, info[0]);
+                                
+                                break;
+                            }
+                        case 1:
+                            {
+                                DrawPrinter(PrinterAnimaton2, info[1]);
+                                break;
+                            }
+                        case 2:
+                            {
+                                DrawPrinter(PrinterAnimaton3, info[2]);
+                                break;
+                            }
+                        case 3:
+                            {
+                                DrawPrinter(PrinterAnimaton4, info[3]);
+                                break;
+                            }
+                    }
+                    Thread.Sleep(300);
+
+                }
+            }      
+        }
+        private void DrawPrinter(string[] art, string info)
+        {
+            int max_Length = PrinterAnimaton4.Length;
+            for (int i = art.Length-1; i >= 0; i--)
+            {
+                SetCursorInInfoPart(Console.WindowWidth, Console.WindowHeight, 2, i+(max_Length-art.Length-1));
+                Console.Write(art[i]);
+            }
+            SetCursorInInfoPart(Console.WindowWidth, Console.WindowHeight, 4 + art[art.Length - 1].Length, max_Length - 2);
+            Console.Write(info);
+        }
+        public void ShowTicket(string ticket, string ticket_file_name)
+        {
+            Console.Clear();
+            Console.WriteLine(ticket);
+            Console.WriteLine();
+            Console.WriteLine($"Bilet został zapisany w pliku {ticket_file_name} w katalogu CinemaApp/bin/Debug/net7.0");
+            Console.WriteLine("Wciśnij dowolny przycisk aby kontynuować...");
+            
+        }
         public int RenderMoviesUserView(List<Movie> movies)
         {
             return RenderMoviesView(infos, movies, userMoviesOptions);
@@ -105,16 +205,41 @@ namespace CinemaApp.Views
             // Tutaj teraz rysowanie w output miejsc zajetych i nie zajętych
             Seat[] seats = movie.Room.Seats;
 
-            int row=2;
-            int current_position = 1;
+            int SeatsInOneRow = 15;
+
+
+            //int OutputWidth = GetOutputPartWidth();
+            int row_offset = (GetOutputPartHeight() - (((int)Rooms.NUMBER_OF_SEATS / SeatsInOneRow) * 3 + 1))/2;
+            //int a = 1;
+            // Default row_offset = 2
+
+            int offset  = (GetOutputPartWidth() - (SeatsInOneRow*4 + SeatsInOneRow-1))/2;
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, row_offset);
+            Console.Write(new string('▓', SeatsInOneRow * 4 + SeatsInOneRow - 1));
+            Console.ResetColor();
+
+            int row = row_offset + 2; // default 4
+            //int current_position = 1;
+            int current_position = offset;
             int length = 0;
             for(int i=0;i<seats.Length;i++)
             {
                 //SetCursorInDataOutputPart(WindowWidth, WindowHeight, current_position, row);
-                if (i!=0 && i % 17 == 0)
+                if (i!=0 && i % SeatsInOneRow == 0)
                 {
-                    row+=4;
-                    current_position = 1;
+                    row+=3;
+                    //current_position = 1;
+                    if(seats.Length - i < SeatsInOneRow)
+                    {
+                        current_position = offset + (((SeatsInOneRow - (seats.Length - i)) / 2) * 4)+3;
+                    }
+                    else
+                    {
+                        current_position = offset;
+                    }
+                    
                 }
                 if (seats[i].IsAvailable)
                 {
@@ -162,35 +287,46 @@ namespace CinemaApp.Views
         {
             return RenderMainAdminUserView(infos, userMenuOptions);        
         }
-        public void SetInfoAboutDeletedReservations(List<string> deleted_reservations)
+        public void SetInfoAboutDeletedOrModificatedReservations(List<string> deleted_modificated_reservations)
         {
-
-            
-            for(int i = 0; i < deleted_reservations.Count; i++)
+            ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
+            /*for(int i = 0; i < deleted_modificated_reservations.Count; i++)
             {
-                if (i + 1 == deleted_reservations.Count)
+                SetCursorInDataOutputPart(Console.WindowWidth, Console.WindowHeight, 2, i + 2);
+                Console.Write(deleted_modificated_reservations[i]);
+            }*/
+            int row = 0;
+            for(int i = 0; i < deleted_modificated_reservations.Count; i++)
+            {
+                if(i!=0 && deleted_modificated_reservations[i - 1][1] == 'V')
                 {
-                    break;
+                    row++;
                 }
-                Console.ForegroundColor = ConsoleColor.Red;
-                SetCursorInDataOutputPart(Console.WindowWidth, Console.WindowHeight, 2, 2*i+2);
-                Console.Write("[!] " +deleted_reservations[i]);
-                Console.ResetColor();
-
-                Console.ForegroundColor = ConsoleColor.Green;
-                SetCursorInDataOutputPart(Console.WindowWidth, Console.WindowHeight, 2, 2*i+3);
-                Console.Write("[V] " + deleted_reservations[i+1]);
-                Console.ResetColor();
+                if (deleted_modificated_reservations[i][1] == '!')
+                {
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                if(deleted_modificated_reservations[i][1] == 'V')
+                {
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                SetCursorInDataOutputPart(Console.WindowWidth, Console.WindowHeight, 2, row+i+2 );
+                Console.Write(deleted_modificated_reservations[i]);
+                
             }
-            //Console.ResetColor();
+            Console.ResetColor();
+
             Thread displayThread = new Thread(() =>
             {
-                Thread.Sleep(6000);
-
-                ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
+                Thread.Sleep(8000);
+                //Console.ReadKey();
+                //ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
             });
 
             displayThread.Start();
+            displayThread.Join();
         }
     }
 }

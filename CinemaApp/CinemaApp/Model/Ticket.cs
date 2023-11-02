@@ -1,17 +1,12 @@
 ﻿using CinemaApp.Exceptions;
-using CinemaApp.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CinemaApp.Model
 {
     public class Ticket
     {
-        private int id;
-        private int price;
+        private int id; // Id biletu
+        private int price;  // Cena biletu
+        // Szablon biletu
         private string[] ticketTemplate =
         {
             @"              ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
@@ -46,6 +41,9 @@ namespace CinemaApp.Model
         {
             this.id = id;   
         }
+
+
+        // Gettery & Settery
         public int Id
         {
             get { return id; }
@@ -56,22 +54,32 @@ namespace CinemaApp.Model
             get { return price; }
             set { price = value; }
         }
+
+
+        // Metoda obliczająca cenę biletu
         public double CalculatePrice(double price, int seatsCount)
         {
             return price * seatsCount;
         }
-        // Wywoływana podczas modyfikacji biletu i przy tworzeniu biletu
+
+
+        // Metoda zapisująca bilet do pliku tekstowego
         public void SaveTicketToFile(Movie movie, string seats)
         {
             string title = movie.Title.Replace(" ", "_");
-            string fileName = id + "_" + title + ".txt"; 
-            StreamWriter sw = new StreamWriter(fileName);
+            string directoryPath = "Tickets";
+            string fileName = id + "_" + title + ".txt";
+            string filePath = Path.Combine(directoryPath, fileName);
+
+            StreamWriter sw = new StreamWriter(filePath);
+
             double price = Math.Round(CalculatePrice(movie.Price, seats.Count(x => x == ',') + 1), 2);
             string finalPrice = "$"+ price.ToString();
             string duration = movie.Duration + "h";
             string date = movie.Date.ToString("dd/MM/yyyy HH:mm");
             string room = movie.Room.Number.ToString();
 
+            // Formatowanie szablonu biletu (wstawienie odpowiednich danych)
             string formattedTicket = string.Format(
                 string.Join(Environment.NewLine, ticketTemplate),
                 id,
@@ -82,42 +90,48 @@ namespace CinemaApp.Model
                 finalPrice,
                 movie.Title
             );
-            sw.WriteLine( formattedTicket );
+            sw.WriteLine( formattedTicket );    // Zapis biletu do pliku
             sw.Close();
         }
-        // Show Ticket - uzupełnienie Ticketu danymi zwrócenie do View
         
-        // Destroy Ticket - zniszczenie biletu po usunięciu danej rezeracji
+
+        // Metoda usuwająca plik tekstowy z biletem
         public void DestroyTicket(string title)
         {
             title = title.Replace(" ", "_");
-            string fileName = id + "_" + title+".txt";
+            string directoryPath = "Tickets";
+            string fileName = id + "_" + title + ".txt";
+            string filePath = Path.Combine(directoryPath, fileName);
+
             try
             {
-                File.Delete(fileName);
+                File.Delete(filePath);  // Usuń plik
             }
             catch
             {
-                // Tutaj może być jeszcze problem z tym że program nie może usunąc pliku
                 throw new CannotDestroyTicketException($"Nie udało się usunąć pliku z biletem o nazwie {fileName}");
             }
         }
 
-        // Tests
-        public void RenderTemplate()
-        {
-            string title = "Kosmici w mojej szkole sdhhfgdfgsdgfhfghshgfhkdfhjjj";
-            string date = "12/10/2023 10:00";
-            string duration = "1:30";
-            string room = "Room 4";
-            string seats = "1, 2, 3, 2, 3, 2, 3, 2";
-            string price = "$30.00";
-            string ticketId = "1234";
 
-            // Wstaw zmienne do odpowiednich miejsc w szablonie
+        // Metoda wstawiająca dane do szablonu i zwracająca gotowy szablon biletu
+        public string[] RenderTemplate(Reservation res)
+        {
+            // Formatowanie danych
+            string title = res.Movie.Title;
+            string date = res.Movie.Date.ToString("dd/MM/yyyy HH:mm");
+            string duration = res.Movie.Duration + "h";
+            string room = res.Movie.Room.Number.ToString();
+            string seats = string.Join(",", res.Seats);
+            double price = Math.Round(CalculatePrice(res.Movie.Price, seats.Count(x => x == ',') + 1), 2);
+            string finalPrice = "$" + price.ToString();
+
+            string fileName = "Tickets/"+id + "_" + title + ".txt";
+
+            // Wstawienie danych do odpowiednich miejsc w szablonie
             string formattedTicket = string.Format(
                 string.Join(Environment.NewLine, ticketTemplate),
-                ticketId,
+                id,
                 date,
                 duration,
                 room,
@@ -125,21 +139,11 @@ namespace CinemaApp.Model
                 price,
                 title
             );
-            //StreamWriter sw = new StreamWriter("testtemplate.txt");
-            //sw.WriteLine( formattedTicket );
-            //sw.Close();
-            Console.WriteLine(formattedTicket);
+
+            string[] temp = new string[2];
+            temp[0] = formattedTicket;
+            temp[1] = fileName;
+            return temp;    // Zwrócenie uzupełnionego szablonu biletu
         }
-        // Templatka ticketu
-        
-
-        // Obliczenie ceny ticketu
-
-        // Zapis ticketu do pliku
-
-
-        // Modyfikacja ticketu w pliku
-
-        // Usunięcie pliku z ticketem po usunięciu filmu na który była rezerwacja
     }
 }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CinemaApp.Enums
+﻿namespace CinemaApp.Enums
 {
+    // Enum Rooms przechowuje stałe wartości
     public enum Rooms
     {
-        COUNT=4,
-        NUMBER_OF_SEATS=100
+        COUNT=4,    // Liczba sal jest stałą równą 4
+        NUMBER_OF_SEATS=100 // Liczba miejsc w każdej sali jest stałą równą 100
     }
 }
