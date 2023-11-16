@@ -1,20 +1,25 @@
 ﻿using CinemaApp.Interfaces.IViews;
+using System.Text;
 
 namespace CinemaApp.Views
 {
     public class LoginView : MainMenuView, ILoginView
     {
-        // Trzeba umożliwić użytkownikowi powrót 
         public LoginView() { }
+
+
+        // Metoda wyświetlająca komunikat błędu logowania
         public void PrintError()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Login lub hasło są niepoprawne. Spróbuj ponownie.");
-            Thread.Sleep(2000);
+            Thread.Sleep(1100);
             Console.ResetColor();
         }
-        // To powinno być w loginView
+
+
+        // Metoda wyświetlająca błąd braku pliku z hasłami i pobierająca od użytkownika nowy login i hasło
         public string[] ShowMissingPasswordFileError(string message)
         {
             string[] new_login_password = new string[2];
@@ -44,14 +49,13 @@ namespace CinemaApp.Views
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("[V] Login i hasło zostały zmienione i zapisane w pliku.");
                     Console.ResetColor();
-                    // Thread.Sleep(1000);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("[!] Podane hasła są różne. Spróbuj ponownie.");
                     Console.ResetColor();
-                    Thread.Sleep(1500);
+                    Thread.Sleep(1100);
                 }
             }
 
@@ -60,19 +64,18 @@ namespace CinemaApp.Views
             return new_login_password;
         }
 
+
+        // Metoda renderująca widok logowania
         public string?[] RenderLoginView()
         {
-            //Console.SetWindowSize(120, 35);
-            // Tutaj może setWindowSize
             int WindowWidth = Console.WindowWidth;
             int WindowHeight = Console.WindowHeight;
 
-            string message = "[?] Wpisz login a następnie hasło. Zmień pole po wypełnieniu wciskając ENTER.";
+            string message = "[?] Wpisz login i hasło. Zmień pole wciskając ENTER. Wróć wciskając ESC.";
             Console.Clear();
             DrawTitle(WindowWidth, WindowHeight);
             MakeMenuFrame(WindowWidth, WindowHeight);
-            MakeInfo(WindowWidth, WindowHeight, message); // to trzeba nadpisać raczej
-            // Make info
+            MakeInfo(WindowWidth, WindowHeight, message);
 
             bool isLoginAndPasswordEntered = false;
             FillLoginFrame(WindowWidth, WindowHeight);
@@ -85,7 +88,6 @@ namespace CinemaApp.Views
                 {
                     WindowWidth = Console.WindowWidth;
                     WindowHeight = Console.WindowHeight;
-                    // Tutaj throw exception jeśli rozmiar jest zły w while aby wyrzucać non stop wyjątek jeśli rozmiar jest zły
                     while (WindowWidth < 130 || WindowHeight < 35)
                     {
                         ShowError();
@@ -98,37 +100,20 @@ namespace CinemaApp.Views
                     FillLoginFrame(WindowWidth, WindowHeight);
                     MakeInfo(WindowWidth, WindowHeight, message);
                 }
-               /* for(int i = 0; i < login_password.Length; i++)
-                {
-                    StringBuilder inputBuilder = new StringBuilder();
-                    while (true)
-                    {
-                        ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: false);
-
-                        if (keyInfo.Key == ConsoleKey.Escape)
-                        {
-                            return null;
-                            //break;
-                        }
-                        else if (keyInfo.Key == ConsoleKey.Enter)
-                        {
-                            // Użytkownik nacisnął Enter, więc wprowadzenie danych zostaje zakończone
-                            break;
-                        }
-                        else
-                        {
-                            inputBuilder.Append(keyInfo.KeyChar);
-                        }
-                    }
-                }*/
                 SetPointer(WindowWidth / 2 - 16, WindowHeight / 2 - 1);
-                Console.SetCursorPosition(WindowWidth / 2 - 7, WindowHeight / 2 - 1);
-                login_password[0] = Console.ReadLine();
+                login_password[0] = InputBuilder(WindowWidth / 2 - 7, WindowHeight / 2 - 1);
+                if (login_password[0] == null)
+                {
+                    return null;
+                }
                 RemovePointer(WindowWidth / 2 - 16, WindowHeight / 2 - 1);
 
                 SetPointer(WindowWidth / 2 - 16, WindowHeight / 2 + 1);
-                Console.SetCursorPosition(WindowWidth / 2 - 7, WindowHeight / 2 + 1);
-                login_password[1] = Console.ReadLine();
+                login_password[1] = InputBuilder(WindowWidth / 2 - 7, WindowHeight / 2 + 1);
+                if (login_password[1] == null)
+                {
+                    return null;
+                }
                 RemovePointer(WindowWidth / 2 - 16, WindowHeight / 2 + 1);
 
                 Console.CursorVisible = false;
@@ -141,6 +126,10 @@ namespace CinemaApp.Views
                 Console.ResetColor();
 
                 key = Console.ReadKey();
+                if (key.Key == ConsoleKey.Escape)
+                {
+                    return null;
+                }
                 Console.SetCursorPosition(WindowWidth / 2 + 6, WindowHeight / 2 + 3);
                 Console.Write(" ");
                 while (key.Key != ConsoleKey.Enter)
@@ -152,8 +141,62 @@ namespace CinemaApp.Views
                 }
                 break;   
             }
-            return login_password;  // Zwrócenie wyniku do kontrolera
+            return login_password;
         }
+
+
+        // Metoda służąca do wprowadzania danych w forumularzu logowania
+        private string? InputBuilder(int x, int y)
+        {
+            Console.SetCursorPosition(x,y);
+            int offset = x;
+            StringBuilder inputBuilder = new StringBuilder();
+            bool isEnterPressed = false;
+            while (!isEnterPressed)
+            {
+                ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: false);
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.Escape:
+                        {
+                            return null;
+                        }
+                    case ConsoleKey.Enter:
+                        {
+                            isEnterPressed = true;
+                            break;
+                        }
+                    case ConsoleKey.Backspace:
+                        {
+                            if (inputBuilder.Length == 0)
+                            {
+                                Console.SetCursorPosition(x, y);
+                            }
+                            else
+                            {
+                                inputBuilder.Remove(inputBuilder.Length - 1, 1);
+                                Console.Write(" ");
+                                Console.SetCursorPosition(offset - 1, y);
+                                offset--;
+                            }
+                            break;
+                        }
+                    default:
+                        {
+                            if (!char.IsControl(keyInfo.KeyChar))
+                            {
+                                inputBuilder.Append(keyInfo.KeyChar);
+                                offset++;
+                            }
+                            break;
+                        }
+                }
+            }
+            return inputBuilder.ToString();
+        }
+
+
+        // Metoda służąca do wyświetlenia formularza logowania
         private void FillLoginFrame(int WindowWidth, int WindowHeight)
         {
             Console.SetCursorPosition(WindowWidth / 2 -14 , WindowHeight / 2 -1);

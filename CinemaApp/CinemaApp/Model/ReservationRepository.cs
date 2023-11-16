@@ -113,6 +113,26 @@ namespace CinemaApp.Model
 
             return info;    // Zwróć odczytane dane
         }
+        
+        // Tworzy brakujący plik tymczasowy zmodyfikowanych filmów
+        public void CreateTempModificationFile()
+        {
+            string directoryPath = "Temp";
+            string fileName = "modificated_movies.txt";
+            string filePath = Path.Combine(directoryPath, fileName);
+            StreamWriter sw = new StreamWriter(filePath);
+            sw.Close();
+        }
+
+        // Tworzy brakujący plik tymczasowy usuniętych filmów
+        public void CreateTempDeleteFile()
+        {
+            string directoryPath = "Temp";
+            string fileName = "deleted_movies.txt";
+            string filePath = Path.Combine(directoryPath, fileName);
+            StreamWriter sw = new StreamWriter(filePath);
+            sw.Close();
+        }
 
 
         // Metoda sprawdzająca czy którykolwiek z filmów na który istniała rezerwacja został usunięty (usunięta została też rezerwacja)

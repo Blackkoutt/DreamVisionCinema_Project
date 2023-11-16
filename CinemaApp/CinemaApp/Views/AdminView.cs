@@ -176,16 +176,22 @@ namespace CinemaApp.Views
                 "Numer sali: "
             };
         }
+
+
+        // Metoda wyświetlająca ASCII art
         private void DrawASCIIArt(int WindowWidth, int WindowHeight, string[] art, int row_offset)
         {
             int offest_row = (GetOutputPartHeight() - art.Length) / 2;
             int offset = (GetOutputPartWidth() - (art[0].Length)) / 2;
             for (int i = 0; i < art.Length; i++)
             {
-                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, i + offest_row+row_offset);//row_offset);
+                SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, i + offest_row+row_offset);
                 Console.WriteLine(art[i]);
             }
         }
+        
+
+        // Przeciążona metoda wyświetlająca ASCII art (bardziej szczegółowa)
         private void DrawASCIIArt(int WindowWidth, int WindowHeight, int offset, int table_width, string[] art, int row_offset)
         {
             for (int i = 0; i < art.Length; i++)
@@ -195,11 +201,15 @@ namespace CinemaApp.Views
             }
         }
 
+
+        // Metoda pobierająca do administratora id filmu podlegającemu usunięciu
         public string? RemoveMovie()
         {
             return EnterDataForFilterSortAndRemove(infoForRemoveMovie, inputDataForRemoveMovie); 
         }
         
+
+        // Metoda pokazująca całkowity dochód kina
         public void ShowTotalIncome(double income)
         {
             int WindowWidth = Console.WindowWidth;
@@ -230,6 +240,8 @@ namespace CinemaApp.Views
             DrawASCIIArt(WindowWidth, WindowHeight, mainMoneyArt, 4);
         }
         
+
+        // Metoda pokazująca 10 najpopularniejszych filmów
         public void ShowMostPopularMovies(Dictionary<string, int> movies)
         {
             int longestTitle = movies.Max(item => item.Key.Length);
@@ -247,6 +259,19 @@ namespace CinemaApp.Views
 
             string title = "[Tytuł]";
             string reserved_seats = "[Miejsca]";
+
+            int title_offset = 1;
+            string pad = " ";
+            if (longestTitle < title.Length)
+            {
+                longestTitle = title.Length;
+
+            }
+            else
+            {
+                title_offset = (longestTitle / 2) - (title.Length / 2);
+                pad = "  ";
+            }
 
             string topTable = "┌" + new string('─', longestTitle + 2) + "┬" + new string('─', reserved_seats.Length + 1) + "┐";
 
@@ -266,23 +291,20 @@ namespace CinemaApp.Views
             {
                 offset_row = ((GetOutputPartHeight() - topArt.Length) / 2);
             }
-            //int a = offset_row;
-            //Console.ReadKey();
-
-            // default offsetrow =2 
 
             SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row);
             Console.Write(topTable);
 
             SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+1);
             Console.Write("│");
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, (longestTitle / 2) - (title.Length / 2) + offset, offset_row + 1);
-            Console.Write($" {title.PadRight(longestTitle-5)}│ {reserved_seats}│");
+
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, title_offset + offset, offset_row + 1);
+            Console.Write($" {title.PadRight(longestTitle / 2 + 3)}{pad}│ {reserved_seats}│");
 
             SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+2);
             Console.Write("├" + new string('─', longestTitle + 2) + "┼" + new string('─', reserved_seats.Length + 1) + "┤");
 
-            int row = offset_row+3; // 5
+            int row = offset_row+3;
             int iter = 0;
             foreach (var item in movies)
             {
@@ -302,6 +324,9 @@ namespace CinemaApp.Views
 
             DrawASCIIArt(WindowWidth, WindowHeight, offset, topTable.Length, topArt, offset_row);
         }
+
+
+        // Metoda pokazująca 10 najbardziej dochodowych filmów
         public void ShowMoviesIncome(Dictionary<string, double> income)
         {
             int longestTitle = income.Max(item => item.Key.Length);
@@ -321,6 +346,19 @@ namespace CinemaApp.Views
             string title = "[Tytuł]";
             string movie_income = "[Dochód]";
 
+            int title_offset = 1;
+            string pad = " ";
+            if (longestTitle < title.Length)
+            {
+                longestTitle = title.Length;
+
+            }
+            else
+            {
+                title_offset = (longestTitle / 2) - (title.Length / 2);
+                pad = "  ";
+            }
+
             string topTable = "┌" + new string('─', longestTitle + 2) + "┬" + new string('─', movie_income.Length + 1) + "┐";
             int offset = (GetOutputPartWidth() - (topTable.Length + 5 + moneyArt[0].Length)) / 2;
 
@@ -339,15 +377,15 @@ namespace CinemaApp.Views
                 offset_row = ((GetOutputPartHeight() - moneyArt.Length) / 2);
             }
 
-            // default offsetrow =2 
-
             SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row);
             Console.Write(topTable);
 
             SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+1);
             Console.Write("│");
-            SetCursorInDataOutputPart(WindowWidth, WindowHeight, (longestTitle / 2 ) - (title.Length/2)+ offset, offset_row+1);
-            Console.Write($" {title.PadRight(longestTitle-5)}│ {movie_income}│");
+           
+            SetCursorInDataOutputPart(WindowWidth, WindowHeight, title_offset + offset, offset_row + 1);
+            Console.Write($" {title.PadRight(longestTitle / 2 + 3)}{pad}│ {movie_income}│");
+
 
             SetCursorInDataOutputPart(WindowWidth, WindowHeight, offset, offset_row+2);
             Console.Write("├" + new string('─', longestTitle + 2) + "┼" + new string('─', movie_income.Length + 1) + "┤");
@@ -372,6 +410,10 @@ namespace CinemaApp.Views
 
             DrawASCIIArt(WindowWidth, WindowHeight,offset, topTable.Length, moneyArt, offset_row);
         }
+
+
+
+        // Metoda pobierająca od administratora id filmu oraz dane podlegające modyfkiacji
         public string?[] ModifyMovie()
         {
             int WindowWidth = Console.WindowWidth;
@@ -439,6 +481,9 @@ namespace CinemaApp.Views
             }
             return newMovieData;
         }
+
+
+        // Metoda pobierająca od administratora dane dotyczące nowo dodawanego filmu
         public string?[] AddMovie()
         {
             int WindowWidth = Console.WindowWidth;
@@ -450,103 +495,76 @@ namespace CinemaApp.Views
             
             string[] movieData = new string[inputDataForAddMovie.Length];
 
-           // bool isDataEntered = false;
-           // while (!isDataEntered)
-           // {
-           /*     if (Console.WindowWidth != WindowWidth || Console.WindowHeight != WindowHeight)
+            string pointer = "> ";
+            for(int i = 0; i < movieData.Length; i++)
+            {
+                int offset = inputDataForAddMovie[i].Length + 3;
+                SetCursorInInputPart(WindowWidth, WindowHeight, 1 , i+2);
+                Console.Write(pointer);
+                SetCursorInInputPart(WindowWidth, WindowHeight, offset, i + 2);
+                StringBuilder inputBuilder = new StringBuilder();
+                bool isEnterPressed = false;
+                while (!isEnterPressed)
                 {
-                    WindowWidth = Console.WindowWidth;
-                    WindowHeight = Console.WindowHeight;
-                    // Tutaj throw exception jeśli rozmiar jest zły w while aby wyrzucać non stop wyjątek jeśli rozmiar jest zły
-                    while (WindowWidth < 105 || WindowHeight < 30)
+                    ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: false);
+                    switch (keyInfo.Key)
                     {
-                        ShowError();
-                        WindowWidth = Console.WindowWidth;
-                        WindowHeight = Console.WindowHeight;
-                    }
-                    //Tutaj może trzeba rysować okno od nowa
-                }*/
-                string pointer = "> ";
-                for(int i = 0; i < movieData.Length; i++)
-                {
-                    int offset = inputDataForAddMovie[i].Length + 3;
-                    SetCursorInInputPart(WindowWidth, WindowHeight, 1 , i+2);
-                    Console.Write(pointer);
-                    SetCursorInInputPart(WindowWidth, WindowHeight, offset, i + 2);
-                    StringBuilder inputBuilder = new StringBuilder();
-                    bool isEnterPressed = false;
-                    while (!isEnterPressed)
-                    {
-                        ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: false);
-                        switch (keyInfo.Key)
+                        case ConsoleKey.Escape:
                         {
-                            case ConsoleKey.Escape:
+                            return null;
+                        }              
+                        case ConsoleKey.Enter:
+                        {
+                            isEnterPressed = true;
+                            break;
+                        }       
+                        case ConsoleKey.Backspace:
+                        {
+                            if (inputBuilder.Length == 0)
                             {
-                                return null;
-                            }              
-                            case ConsoleKey.Enter:
+                                SetCursorInInputPart(WindowWidth, WindowHeight, inputDataForAddMovie[i].Length + 3, i + 2);
+                            }
+                            else
                             {
-                                isEnterPressed = true;
-                                break;
-                            }       
-                            case ConsoleKey.Backspace:
+                                inputBuilder.Remove(inputBuilder.Length - 1, 1);
+                                Console.Write(" ");
+                                SetCursorInInputPart(WindowWidth, WindowHeight, offset - 1, i + 2);
+                                offset--;
+                            }
+                            break;
+                        }    
+                        default:
+                        {
+                            if (!char.IsControl(keyInfo.KeyChar))
                             {
-                                if (inputBuilder.Length == 0)
-                                {
-                                    SetCursorInInputPart(WindowWidth, WindowHeight, inputDataForAddMovie[i].Length + 3, i + 2);
-                                }
-                                else
-                                {
-                                    // Usuń ostatni znak
-                                    inputBuilder.Remove(inputBuilder.Length - 1, 1);
-                                    Console.Write(" ");
-                                    SetCursorInInputPart(WindowWidth, WindowHeight, offset - 1, i + 2);
-                                    offset--;
-                                }
-                                break;
-                            }    
-                            default:
-                            {
-                                if (!char.IsControl(keyInfo.KeyChar))
-                                {
-                                    inputBuilder.Append(keyInfo.KeyChar);
-                                    offset++;
-                                }
-                                break;
-                            }           
-                        }
+                                inputBuilder.Append(keyInfo.KeyChar);
+                                offset++;
+                            }
+                            break;
+                        }           
                     }
-                    movieData[i] = inputBuilder.ToString();
-                    SetCursorInInputPart(WindowWidth, WindowHeight, 1, i+2);
-                    Console.Write(' ');
                 }
+                movieData[i] = inputBuilder.ToString();
+                SetCursorInInputPart(WindowWidth, WindowHeight, 1, i+2);
+                Console.Write(' ');
+            }
             return movieData;
         }
 
-        /*public void ShowFilteredList(List<Movies>)
-        {
-            int WindowWidth = Console.WindowWidth;
-            int WindowHeight = Console.WindowHeight;
-            ClearViewOutputDataPart(WindowWidth, WindowHeight);
-
-        }*/
+        // Metoda wyśwwietlająca ASCII art w sekcji OUTPUT w widoku statystyk
         public void DrawStatiscicArt()
         {
             DrawASCIIArt(Console.WindowWidth, Console.WindowHeight, statisticArt, 2);
         }
+
+
+        // Metoda renderująca widok statystyk
         public int RenderStatisticsAdminView()
         {
             int WindowWidth = Console.WindowWidth;
             int WindowHeight = Console.WindowHeight;
-            //Console.WriteLine(WindowWidth + " " + WindowHeight);
-            //ClearViewInfoPart(WindowWidth, WindowHeight);
-            ClearViewOptionsPart(WindowWidth, WindowHeight);
-            
-            // ClearViewOutputDataPart(WindowWidth, WindowHeight);
-            //ClearViewInputPart(WindowWidth, WindowHeight);
 
-            // SetInfo(infos, WindowWidth, WindowHeight);
-            // ShowMoviesList(WindowWidth, WindowHeight, movies);
+            ClearViewOptionsPart(WindowWidth, WindowHeight);
 
             Console.CursorVisible = false;
 
@@ -559,7 +577,6 @@ namespace CinemaApp.Views
                 {
                     WindowWidth = Console.WindowWidth;
                     WindowHeight = Console.WindowHeight;
-                    // Tutaj throw exception jeśli rozmiar jest zły w while aby wyrzucać non stop wyjątek jeśli rozmiar jest zły
                     while (WindowWidth < 130 || WindowHeight < 37)
                     {
                         ShowError();
@@ -568,21 +585,24 @@ namespace CinemaApp.Views
                     }
                     Console.Clear();
                     RenderMainFrame(WindowWidth, WindowHeight);
-                    //ShowMoviesList(WindowWidth, WindowHeight, movies);
                     SetInfo(infos, WindowWidth, WindowHeight);
-                    // Tutaj ponownie uzupełnienie pól
                     Console.CursorVisible = false;
                 }
                 MakeChoice(adminStatisticsOptions, ref isOptionSelected, ref selectOption, WindowWidth, WindowHeight);
             }
             return selectOption;
         }
+
+        
+
+        // Metoda renderująca widok filmów
         public int RenderMoviesAdminView(List<Movie> movies)
         {
             return RenderMoviesView(infos, movies, adminMoviesMenuOptions);          
         }
         
         
+        // Metoda renderująca główny widok administratora
         public int RenderMainAdminView()
         {
             return RenderMainAdminUserView(infos, adminMenuOptions);

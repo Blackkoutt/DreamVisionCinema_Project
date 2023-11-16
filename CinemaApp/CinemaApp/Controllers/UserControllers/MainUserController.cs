@@ -20,21 +20,31 @@ namespace CinemaApp.Controllers.UserControllers
 
         public void Run()
         {
-            // To do optymalizacji - dodać w inna metode która zwraca 
+            // Sprawdzenie czy istnieją odwołane lub zmodyfikowane rezerwacje
+
             List<string> info_about_deleted_movies = new List<string>();
             List<string> info_about_modificated_movies = new List<string>();
             try
             {
                 info_about_deleted_movies = reservationRepository.CheckDeletedReservations();
+            }
+            catch (CannotReadFileException)
+            {
+                reservationRepository.CreateTempDeleteFile();
+            }
+            catch (Exception ex)
+            {
+                userView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
+            try
+            {
+                
                 info_about_modificated_movies = reservationRepository.CheckModificatedMoviesWithReservation();
             }
-            catch (CannotReadFileException CRFE)
+            catch (CannotReadFileException)
             {
-                userView.ClearConsole();
-                userView.RenderMainFrame(Console.WindowWidth, Console.WindowHeight);
-                userView.ShowSuccessOrException("[!] " + CRFE.Message);
-                //break;
-                return;
+                reservationRepository.CreateTempModificationFile();
             }
             catch (Exception ex)
             {
@@ -42,17 +52,10 @@ namespace CinemaApp.Controllers.UserControllers
                 Environment.Exit(1);
             }
 
-
-
             int valueUserMenu = 0;
             userView.ClearConsole();
 
-            //int a = info_about_deleted_movies.Count;
             userView.RenderMainFrame(Console.WindowWidth, Console.WindowHeight);
-
-
-
-            //userView.RenderMainUserView();
 
             if (info_about_deleted_movies.Any())
             {
@@ -65,8 +68,6 @@ namespace CinemaApp.Controllers.UserControllers
             userView.ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
             userView.PrintInputArt();
 
-            //FilteredList = false;
-
             while (valueUserMenu != 3)
             {
 
@@ -74,19 +75,20 @@ namespace CinemaApp.Controllers.UserControllers
 
                 switch (valueUserMenu)
                 {
-                    case 1: // Przeglądaj filmy / Dokonaj rezerwacji
+                    // Przejście do widoku przeglądania filmów / dokonania rezerwacji
+                    case 1: 
                         {
 
                             UserMoviesController userMoviesController = new UserMoviesController(movieRepository, reservationRepository, userView);
                             userMoviesController.Run();
-                            //UserMoviesController.Run();
                             break;
                         }
-                    case 2: // Przeglądaj rezerwacje
+
+                    // Przejście do widoku przeglądania rezerwacji
+                    case 2: 
                         {
                             UserReservationsController userReservationsController = new UserReservationsController(reservationRepository, userView);
                             userReservationsController.Run();
-                            //UserReservationsController.Run();
                             break;
                         }
                 }

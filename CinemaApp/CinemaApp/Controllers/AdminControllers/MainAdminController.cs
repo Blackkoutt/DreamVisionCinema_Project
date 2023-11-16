@@ -21,17 +21,16 @@ namespace CinemaApp.Controllers.AdminControllers
             this.reservationRepository = reservationRepository;
             adminView = new AdminView();
             loginView = new LoginView();
-            //adminStatisticsController = new AdminStatisticsController();
             adminReservationsController = new AdminReservationsController(reservationRepository, adminView);
         }
 
         public void Run()
         {
-            LoginAsAdministrator();
+            if (!LoginAsAdministrator())
+            {
+                return;
+            }
             int valueAdminMenu = 0;
-
-            //bool FilteredList = false;
-
 
             adminView.ClearConsole();
 
@@ -42,42 +41,48 @@ namespace CinemaApp.Controllers.AdminControllers
                 valueAdminMenu = adminView.RenderMainAdminView();
                 switch (valueAdminMenu)
                 {
-                    case 1: // Lista rezerwacji
+                    // Wyświetlenie listy rezerwacji
+                    case 1:
                         {
                             adminReservationsController.GetReservationList();
-                            //AdminReservationsController.GetReservations()
                             break;
                         }
-                    case 2: // Scroll Down
+
+                    // Przewinięcie listy rezerwacji do dołu
+                    case 2:
                         {
                             adminReservationsController.ScrollDown();
-                            //AdminReservaationsController.ScrollDownResList();
                             break;
                         }
+
+                    // Przewinięcie listy rezeracji do góry
                     case 3: // Scroll Up
                         {
                             adminReservationsController.ScrollUp();
-                            //AdminReservaationsController.ScrollUpResList();
                             break;
                         }
-                    case 4: // Zarządzanie filmami
+
+                    // Przejście do widoku zarządzania filmami
+                    case 4:
                         {
                             AdminMoviesController adminMoviesController = new AdminMoviesController(movieRepository, reservationRepository, adminView);
                             adminMoviesController.Run();
-                            // AdminMoviesController.Run()
                             break;
                         }
-                    case 5: // Statystyki
+
+                    // Przejście do widoku statystyk 
+                    case 5:
                         {
                             AdminStatisticsController statisticsController = new AdminStatisticsController(reservationRepository, adminView);
                             statisticsController.Run();
-                            //AdminStatisticController.Run()
                             break;
                         }
                 }
             }
         }
-        private void LoginAsAdministrator()
+
+        // Metoda odpowiadająca za logowanie na konto administratora
+        private bool LoginAsAdministrator()
         {
             bool isLoginSuccesful = false;
             string[] login_password;
@@ -86,6 +91,10 @@ namespace CinemaApp.Controllers.AdminControllers
             {
                 exceptionThrown = false;
                 login_password = loginView.RenderLoginView();
+                if (login_password == null)
+                {
+                    return false;
+                }
                 try
                 {
                     isLoginSuccesful = Login.SignIn(login_password[0], login_password[1]);
@@ -108,6 +117,7 @@ namespace CinemaApp.Controllers.AdminControllers
                     loginView.PrintError();
                 }
             }
+            return true;
         }
     }
 }

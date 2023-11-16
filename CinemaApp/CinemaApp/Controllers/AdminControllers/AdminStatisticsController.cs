@@ -19,28 +19,36 @@ namespace CinemaApp.Controllers.AdminControllers
         public void Run()
         {
             int valueStatisticsAdminOptions = 0;
+            adminView.ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
             adminView.DrawStatiscicArt();
             while (valueStatisticsAdminOptions != 4)
             {
                 valueStatisticsAdminOptions = adminView.RenderStatisticsAdminView();
                 switch (valueStatisticsAdminOptions)
                 {
-                    case 1: // Total Income
+                    // Całkowity dochód kina
+                    case 1: 
                         {
                             GetTotalIncome();
                             break;
                         }
-                    case 2: // Top 10 movies income
+
+                    // Top 10 najbardziej dochodowych filmów
+                    case 2:
                         {
                             GetTop10MostProfitableMovies();
                             break;
                         }
-                    case 3: // Top 10 popular movies
+
+                    // Top 10 najpopularniejszych filmów
+                    case 3:
                         {
                             GetTop10MostPopularMovies();
                             break;
                         }
-                    case 4: // Go back
+
+                    // Powrót do poprzedniego widoku
+                    case 4:
                         {
                             GoBack();
                             break;
@@ -48,12 +56,18 @@ namespace CinemaApp.Controllers.AdminControllers
                 }
             }
         }
+
+
+        // Metoda pobierająca i wyświetlająca całkowity dochód kina
         private void GetTotalIncome()
         {
             double income = reservationRepository.GetTotalIncome();
             adminView.ShowTotalIncome(income);
             infoChanged = true;
         }
+
+
+        // Metoda pobierająca i wyświetlająca TOP 10 najbardziej dochodowych filmów
         private void GetTop10MostProfitableMovies()
         {
             Dictionary<string, double> movies_income = new Dictionary<string, double>();
@@ -75,6 +89,9 @@ namespace CinemaApp.Controllers.AdminControllers
             }
             infoChanged = true;
         }
+
+
+        // Metoda pobierająca i wyświetlająca TOP 10 najpopuularniejszych filmów
         private void GetTop10MostPopularMovies()
         {
             Dictionary<string, int> popular_movies = new Dictionary<string, int>();
@@ -96,6 +113,9 @@ namespace CinemaApp.Controllers.AdminControllers
             }
             infoChanged = true;
         }
+
+
+        // Powrót do poprzedniego widoku
         private void GoBack()
         {
             adminView.ClearViewOptionsPart(Console.WindowWidth, Console.WindowHeight);

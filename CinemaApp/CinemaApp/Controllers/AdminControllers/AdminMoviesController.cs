@@ -8,7 +8,6 @@ namespace CinemaApp.Controllers.AdminControllers
 {
     public class AdminMoviesController
     {
-        // To bedzie raz utworzone i wstrzykiwane przez konstruktor jako interfejs
         private IAdminView adminView;
         private IMovieRepository movieRepository;
         private IReservationRepository reservationRepository;
@@ -19,17 +18,16 @@ namespace CinemaApp.Controllers.AdminControllers
 
         public AdminMoviesController(IMovieRepository movieRepository, IReservationRepository reservationRepository, IAdminView adminView)
         {
-            //adminView = new AdminView();
             this.adminView = adminView;
             this.movieRepository = movieRepository;
             this.reservationRepository = reservationRepository;
 
             movies = new List<Movie>();
             filteredMovies = new List<Movie>();
-            //movieRepository = new MovieRepository();
-            //reservationRepository = new ReservationRepository(movieRepository);
             FilteredList = false;
         }
+
+        // Metoda do wyświetlania informacji o powodzeniu i błędów
         private void ExceptionOrSuccessHandler(string message)
         {
             adminView.ShowSuccessOrException(message);
@@ -47,8 +45,6 @@ namespace CinemaApp.Controllers.AdminControllers
             catch (MovieListIsEmptyException MLIEE)
             {
                 adminView.ShowSuccessOrException("[!] " + MLIEE.Message);
-                //break;
-                return;
             }
             catch (Exception ex)
             {
@@ -56,11 +52,9 @@ namespace CinemaApp.Controllers.AdminControllers
                 Environment.Exit(1);
             }
 
-            //bool FilteredList = false;
             int valueAdminMovies = 0;
             while (valueAdminMovies != 10)
             {
-                //List<Movie> movies = movieRepository.GetAllMovies();
                 if (FilteredList)
                 {
                     valueAdminMovies = adminView.RenderMoviesAdminView(filteredMovies);
@@ -71,52 +65,71 @@ namespace CinemaApp.Controllers.AdminControllers
                 }
                 switch (valueAdminMovies)
                 {
-                    case 1: // Scroll Down
+                    // Scroll Down
+                    case 1: 
                         {
                             ScrollDown();
                             break;
                         }
-                    case 2: // Scroll Up
+
+                    // Scroll Up
+                    case 2: 
                         {
                             ScrollUp();
                             break;
                         }
-                    case 3: // Add Movie
+
+                    // Dodanie filmu
+                    case 3: 
                         {
                             AddMovie();
                             break;
                         }
-                    case 4: // Delete Movie
+
+                    // Usunięcie filmu
+                    case 4: 
                         {
                             RemoveMovie();
                             break;
                         }
-                    case 5: // Modify Movie
+
+                    // Modyfikacja filmu
+                    case 5: 
                         {
                             ModifyMovie();
                             break;
                         }
-                    case 6: // Filter Movie List
+
+                    // Filtrowanie listy filmów
+                    case 6: 
                         {
                             FilterList();
                             break;
                         }
-                    case 7: // Sort ASC
+
+                    // Sortowanie rosnąco
+                    case 7: 
                         {
                             SortASC();
                             break;
                         }
-                    case 8: // Sort DESC
+
+                    // Sortowanie malejąco
+                    case 8: 
                         {
                             SortDESC();
                             break;
                         }
-                    case 9: // Unfilter List
+
+                    // Usunięcie filtrów
+                    case 9: 
                         {
                             UnfilterList();
                             break;
                         }
-                    case 10: // Back
+
+                    // Powrót do poprzedniego menu
+                    case 10: 
                         {
                             GoBack();
                             break;
@@ -124,6 +137,9 @@ namespace CinemaApp.Controllers.AdminControllers
                 }
             }
         }
+
+
+        // Przewijanie listy do dołu
         private void ScrollDown()
         {
             if (FilteredList)
@@ -135,6 +151,9 @@ namespace CinemaApp.Controllers.AdminControllers
                 adminView.ScrollDown(movies);
             }
         }
+
+
+        // Przewijanie listy do góry
         private void ScrollUp()
         {
             if (FilteredList)
@@ -146,6 +165,9 @@ namespace CinemaApp.Controllers.AdminControllers
                 adminView.ScrollUp(movies);
             }
         }
+
+
+        // Dodawanie filmu (pobranie wartości z widoku i uruchomienie metody dodającej film do listy z pobranymi parametrami)
         private void AddMovie()
         {
             string?[] movieData = adminView.AddMovie();
@@ -203,7 +225,6 @@ namespace CinemaApp.Controllers.AdminControllers
             catch (MovieListIsEmptyException MLIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -212,6 +233,10 @@ namespace CinemaApp.Controllers.AdminControllers
                 Environment.Exit(1);
             }
         }
+
+
+
+        // Usunięcie filmu (pobranie id filmu z widoku i uruchomienie metody usuwającej film o podanym id)
         private void RemoveMovie()
         {
             string? id = adminView.RemoveMovie();
@@ -221,7 +246,6 @@ namespace CinemaApp.Controllers.AdminControllers
                 adminView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.PrintInputArt();
-                //break;
                 return;
             }
             try
@@ -231,19 +255,16 @@ namespace CinemaApp.Controllers.AdminControllers
             catch (CannotConvertException CCE)
             {
                 ExceptionOrSuccessHandler("[!] " + CCE.Message);
-                //break;
                 return;
             }
             catch (NoMovieWithGivenIdException NMWGIE)
             {
                 ExceptionOrSuccessHandler("[!] " + NMWGIE.Message);
-                //break;
                 return;
             }
             catch (CannotDestroyTicketException CDTE)
             {
                 ExceptionOrSuccessHandler("[!] " + CDTE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -254,9 +275,6 @@ namespace CinemaApp.Controllers.AdminControllers
 
             ExceptionOrSuccessHandler("[V] Pomyślnie usunięto film z listy!");
 
-            // Tutaj jeszcze na nowo pobranie listy filmów tak aby ją zaktualizować
-            // I zerowanie indexu i licznika
-            // I na nowo wyświetelnie listy filmów
             try
             {
                 movies = movieRepository.GetAllMovies();
@@ -265,8 +283,8 @@ namespace CinemaApp.Controllers.AdminControllers
             }
             catch (MovieListIsEmptyException MLIEE)
             {
+                adminView.ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
                 ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -275,6 +293,10 @@ namespace CinemaApp.Controllers.AdminControllers
                 Environment.Exit(1);
             }
         }
+
+
+
+        // Modyfikacja filmu (pobranie wprowadzonych atrybutów filmu z widoku i uruchomienie metody modyfikującej film z podanymi parametrami)
         private void ModifyMovie()
         {
             string?[] newMovieData = adminView.ModifyMovie();
@@ -283,7 +305,6 @@ namespace CinemaApp.Controllers.AdminControllers
                 adminView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.PrintInputArt();
-                //break;
                 return;
             }
             string id = newMovieData[0];
@@ -293,13 +314,11 @@ namespace CinemaApp.Controllers.AdminControllers
             if (id == "")
             {
                 ExceptionOrSuccessHandler("[!] Należy podać ID filmu.");
-                //break;
                 return;
             }
             if (price == "" && data == "" && room_number == "")
             {
                 ExceptionOrSuccessHandler("[!] Należy podać nową cenę lub datę lub numer sali, aby zmodyfikować film.");
-                //break;
                 return;
             }
             if (price != "")
@@ -311,19 +330,16 @@ namespace CinemaApp.Controllers.AdminControllers
                 catch (CannotConvertException CCE)
                 {
                     ExceptionOrSuccessHandler("[!] " + CCE.Message);
-                    //break;
                     return;
                 }
                 catch (IncorrectParametrException IPE)
                 {
                     ExceptionOrSuccessHandler("[!] " + IPE.Message);
-                    //break;
                     return;
                 }
                 catch (NoMovieWithGivenIdException NMWGIE)
                 {
                     ExceptionOrSuccessHandler("[!] " + NMWGIE.Message);
-                    //break;
                     return;
                 }
                 catch (Exception ex)
@@ -341,31 +357,26 @@ namespace CinemaApp.Controllers.AdminControllers
                 catch (CannotConvertException CCE)
                 {
                     ExceptionOrSuccessHandler("[!] " + CCE.Message);
-                    //break;
                     return;
                 }
                 catch (NoMovieWithGivenIdException NMWGIE)
                 {
                     ExceptionOrSuccessHandler("[!] " + NMWGIE.Message);
-                    //break;
                     return;
                 }
                 catch (MoviesCollisionException MCE)
                 {
                     ExceptionOrSuccessHandler("[!] " + MCE.Message);
-                    //break;
                     return;
                 }
                 catch (NoRoomWithGivenNumberException NRWGNE)
                 {
                     ExceptionOrSuccessHandler("[!] " + NRWGNE.Message);
-                    //break;
                     return;
                 }
                 catch (CannotDestroyTicketException CDTE)
                 {
                     ExceptionOrSuccessHandler("[!] " + CDTE.Message);
-                    //break;
                     return;
                 }
                 catch (Exception ex)
@@ -375,9 +386,7 @@ namespace CinemaApp.Controllers.AdminControllers
                 }
             }
             ExceptionOrSuccessHandler("[V] Pomyślnie zmodyfikowano film!");
-            // Tutaj jeszcze na nowo pobranie listy filmów tak aby ją zaktualizować
-            // I zerowanie indexu i licznika
-            // I na nowo wyświetelnie listy filmów
+
             try
             {
                 movies = movieRepository.GetAllMovies();
@@ -387,7 +396,6 @@ namespace CinemaApp.Controllers.AdminControllers
             catch (MovieListIsEmptyException MLIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -396,6 +404,10 @@ namespace CinemaApp.Controllers.AdminControllers
                 Environment.Exit(1);
             }
         }
+
+
+
+        // Filtrowanie listy (pobranie wprowadzonej frazy z widoku i uruchomienie metody filtrującej listę)
         private void FilterList()
         {
             string search = adminView.FilterList();
@@ -404,26 +416,20 @@ namespace CinemaApp.Controllers.AdminControllers
                 adminView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.PrintInputArt();
-                //break;
                 return;
             }
             if (string.IsNullOrWhiteSpace(search))
             {
                 ExceptionOrSuccessHandler("[!] Fraza wyszukiwania nie może być pustym ciągiem znaków.");
-                //break;
                 return;
             }
-            //List<Movie> filtered_list = new List<Movie>();
             try
             {
                 filteredMovies = movieRepository.FilterList(search);
-                // Show movies z filtered Movies i indexem 0
-                // do tego ustawienie od nowa licznika tak jak niżej
             }
             catch (CannotFindMatchingMovieException CFMME)
             {
                 ExceptionOrSuccessHandler("[!] " + CFMME.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -434,10 +440,26 @@ namespace CinemaApp.Controllers.AdminControllers
             ExceptionOrSuccessHandler("[V] Lista została przefiltrowana!");
 
             FilteredList = true;
-            // Tutaj tak samo z 0 indexem i zerownanie licznika
             adminView.SetHowManyMoviesWereDisplayed();
-            adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            try
+            {
+                adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            }
+            catch(MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                adminView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
+
         }
+
+
+        // Sortowanie rosnąco listy (pobranie wprowadzonego atrybutu z widoku i uruchomienie metody sortującej listę na podstawie danego parametru)
         private void SortASC()
         {
             string attribute = adminView.SortList();
@@ -446,31 +468,25 @@ namespace CinemaApp.Controllers.AdminControllers
                 adminView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.PrintInputArt();
-                //break;
                 return;
             }
             if (string.IsNullOrWhiteSpace(attribute))
             {
                 ExceptionOrSuccessHandler("[!] Atrybut sortowania nie może być pustym ciągiem znaków.");
-                //break;
                 return;
             }
             try
             {
                 filteredMovies = movieRepository.SortAscending(attribute);
-                // Show movies z filtered Movies i indexem 0
-                // do tego ustawienie od nowa licznika tak jak niżej
             }
             catch (BadAttributeException BAE)
             {
                 ExceptionOrSuccessHandler("[!] " + BAE.Message);
-                //break;
                 return;
             }
             catch (ListIsEmptyException LIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + LIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -482,10 +498,26 @@ namespace CinemaApp.Controllers.AdminControllers
             ExceptionOrSuccessHandler("[V] Lista została posortowana!");
 
             FilteredList = true;
-            // do tego ustawienie od nowa licznika tak jak niżej
+
             adminView.SetHowManyMoviesWereDisplayed();
-            adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            try
+            {
+                adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                adminView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+        // Sortowanie malejąco listy (pobranie wprowadzonego atrybutu z widoku i uruchomienie metody sortującej listę na podstawie danego parametru)
         private void SortDESC()
         {
             string attribute = adminView.SortList();
@@ -494,31 +526,25 @@ namespace CinemaApp.Controllers.AdminControllers
                 adminView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 adminView.PrintInputArt();
-                //break;
                 return;
             }
             if (string.IsNullOrWhiteSpace(attribute))
             {
                 ExceptionOrSuccessHandler("[!] Atrybut sortowania nie może być pustym ciągiem znaków.");
-                //break;
                 return;
             }
             try
             {
                 filteredMovies = movieRepository.SortDescending(attribute);
-                // Show movies z filtered Movies i indexem 0
-                // do tego ustawienie od nowa licznika tak jak niżej
             }
             catch (BadAttributeException BAE)
             {
                 ExceptionOrSuccessHandler("[!] " + BAE.Message);
-                //break;
                 return;
             }
             catch (ListIsEmptyException LIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + LIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -531,15 +557,46 @@ namespace CinemaApp.Controllers.AdminControllers
             FilteredList = true;
 
             adminView.SetHowManyMoviesWereDisplayed();
-            adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            try
+            {
+                adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                adminView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+        // Usunięcie filtrów 
         private void UnfilterList()
         {
             FilteredList = false;
-            // Tutaj wyświetlenie listy filmów normalnie i też wyzerowanie licznika
             adminView.SetHowManyMoviesWereDisplayed();
-            adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+            try
+            {
+                adminView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                adminView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+        // Powrót do poprzedniego widoku
         private void GoBack()
         {
             adminView.ClearViewOptionsPart(Console.WindowWidth, Console.WindowHeight);

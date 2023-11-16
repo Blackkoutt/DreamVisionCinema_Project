@@ -116,6 +116,9 @@ namespace CinemaApp.Views
             };
         }
 
+
+
+        // Metoda służąca do wyświetlenia animacji ASCII drukarki
         public void PrinterAnimation()
         {
             string[] info =
@@ -134,7 +137,6 @@ namespace CinemaApp.Views
                     {
                         case 0:
                             {
-                                //SetCursorInInfoPart(Console.WindowWidth, Console.WindowHeight, 2, )
                                 DrawPrinter(PrinterAnimaton1, info[0]);
                                 
                                 break;
@@ -160,6 +162,9 @@ namespace CinemaApp.Views
                 }
             }      
         }
+
+
+        // Metoda służąca do wyświetlenia klatek animacji drukraki
         private void DrawPrinter(string[] art, string info)
         {
             int max_Length = PrinterAnimaton4.Length;
@@ -171,6 +176,9 @@ namespace CinemaApp.Views
             SetCursorInInfoPart(Console.WindowWidth, Console.WindowHeight, 4 + art[art.Length - 1].Length, max_Length - 2);
             Console.Write(info);
         }
+
+
+        // Metoda służąca do wyświetlenia sformatowanego biletu w oknie konsoli
         public void ShowTicket(string ticket, string ticket_file_name)
         {
             Console.Clear();
@@ -180,19 +188,30 @@ namespace CinemaApp.Views
             Console.WriteLine("Wciśnij dowolny przycisk aby kontynuować...");
             
         }
+
+
+        // Metoda służąca do wyrenderowania widoku filmów
         public int RenderMoviesUserView(List<Movie> movies)
         {
             return RenderMoviesView(infos, movies, userMoviesOptions);
         }
+
+
+        // Metoda służąca do usunięcia rezerwacji (pobrania id od użytkownika)
         public string RemoveReservation()
         {
             return EnterDataForFilterSortAndRemove(infoForRemoveReservation, inputDataForRemoveAndMakeReservation_ID);
         }
 
+
+        // Metoda służąca do pobrania id filmu od użytkownika
         public string GetFilmId()
         {
             return EnterDataForFilterSortAndRemove(infoForMakeReservation_Id, inputDataForRemoveAndMakeReservation_ID);
         }
+
+
+        // Metoda służąca do dokonania rezerwacji (wizualizacja sali kinowej i pobranie numerów miejsc od użytkownika)
         public string MakeReservation(Movie movie)
         {
             Console.ResetColor();
@@ -202,16 +221,11 @@ namespace CinemaApp.Views
             ClearViewInputPart(WindowWidth, WindowHeight);
             ClearViewOutputDataPart(WindowWidth, WindowHeight);
 
-            // Tutaj teraz rysowanie w output miejsc zajetych i nie zajętych
             Seat[] seats = movie.Room.Seats;
 
             int SeatsInOneRow = 15;
 
-
-            //int OutputWidth = GetOutputPartWidth();
             int row_offset = (GetOutputPartHeight() - (((int)Rooms.NUMBER_OF_SEATS / SeatsInOneRow) * 3 + 1))/2;
-            //int a = 1;
-            // Default row_offset = 2
 
             int offset  = (GetOutputPartWidth() - (SeatsInOneRow*4 + SeatsInOneRow-1))/2;
 
@@ -220,17 +234,14 @@ namespace CinemaApp.Views
             Console.Write(new string('▓', SeatsInOneRow * 4 + SeatsInOneRow - 1));
             Console.ResetColor();
 
-            int row = row_offset + 2; // default 4
-            //int current_position = 1;
+            int row = row_offset + 2;
             int current_position = offset;
             int length = 0;
             for(int i=0;i<seats.Length;i++)
             {
-                //SetCursorInDataOutputPart(WindowWidth, WindowHeight, current_position, row);
                 if (i!=0 && i % SeatsInOneRow == 0)
                 {
                     row+=3;
-                    //current_position = 1;
                     if(seats.Length - i < SeatsInOneRow)
                     {
                         current_position = offset + (((SeatsInOneRow - (seats.Length - i)) / 2) * 4)+3;
@@ -273,28 +284,31 @@ namespace CinemaApp.Views
                 current_position += length + 3;
             }
 
-            // Potem wywołanie EnterDataForilterAndRemove zeby pobrac numery siedzeń
-            // Zwrócenie numerów siedzeń 
             Console.ResetColor();
             return EnterDataForFilterSortAndRemove(infoForMakeReservation_Seats, inputDataForMakeReservation_Seats);
         }
 
+
+
+        // Metoda renderująca widok rezerwacji
         public int RenderReservationsUserView(List<Reservation> res)
         {
             return RenderReservationsView(infos, res, userReservationsOptions);
         }
+
+
+        // Metoda renderująca główny widok użytkownika
         public int RenderMainUserView()
         {
             return RenderMainAdminUserView(infos, userMenuOptions);        
         }
+
+
+        // Metoda pokazująca informacje o odwołanych rezerwacjach lub zmodyfikowanych dacie, godzinie lub sali filmu na który była rezerwacja
         public void SetInfoAboutDeletedOrModificatedReservations(List<string> deleted_modificated_reservations)
         {
             ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
-            /*for(int i = 0; i < deleted_modificated_reservations.Count; i++)
-            {
-                SetCursorInDataOutputPart(Console.WindowWidth, Console.WindowHeight, 2, i + 2);
-                Console.Write(deleted_modificated_reservations[i]);
-            }*/
+
             int row = 0;
             for(int i = 0; i < deleted_modificated_reservations.Count; i++)
             {
@@ -320,9 +334,7 @@ namespace CinemaApp.Views
 
             Thread displayThread = new Thread(() =>
             {
-                Thread.Sleep(8000);
-                //Console.ReadKey();
-                //ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
+                Thread.Sleep(6000);
             });
 
             displayThread.Start();

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YaL0nfHOd0LxOL9084gqYr9T7WarY0kNKfiOvdkp+oqk6f3QtVtIvU2ftgI3MoiDorjetM7Vy2wRdiZu7SHITg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\Projekt 1 KCK\\CinemaApp\\GUI\\GUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mateusz\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -3,6 +3,7 @@ using CinemaApp.Interfaces;
 using CinemaApp.Interfaces.IRepositories;
 using CinemaApp.Interfaces.IViews;
 using CinemaApp.Model;
+using CinemaApp.Views;
 
 namespace CinemaApp.Controllers.UserControllers
 {
@@ -24,6 +25,8 @@ namespace CinemaApp.Controllers.UserControllers
             filteredMovies = new List<Movie>();
             FilteredList = false;
         }
+
+        // Metoda wyświetlająca sukces lub błąd wykonywanej operacji
         private void ExceptionOrSuccessHandler(string message)
         {
             userView.ShowSuccessOrException(message);
@@ -41,8 +44,6 @@ namespace CinemaApp.Controllers.UserControllers
             catch (MovieListIsEmptyException MLIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
-
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -54,7 +55,6 @@ namespace CinemaApp.Controllers.UserControllers
             int valueUserMovies = 0;
             while (valueUserMovies != 8)
             {
-                //List<Movie> movies = movieRepository.GetAllMovies();
                 if (FilteredList)
                 {
                     valueUserMovies = userView.RenderMoviesUserView(filteredMovies);
@@ -65,41 +65,56 @@ namespace CinemaApp.Controllers.UserControllers
                 }
                 switch (valueUserMovies)
                 {
-                    case 1: // Scroll Down
+                    // Przewijanie listy filmów do dołu
+                    case 1:
                         {
                             ScrollDown();
                             break;
                         }
+
+                    // Przewijanie listy filmów do góry
                     case 2:
                         {
                             ScrollUp();
                             break;
                         }
+
+                    // Przejście do widoku dokonywania rezerwacji
                     case 3:
                         {
                             MakeReservation();
                             break;
                         }
+
+                    // Filtrowanie listy filmów
                     case 4:
                         {
                             FilterList();
                             break;
                         }
+
+                    // Sortowanie rosnąco listy filmów
                     case 5:
                         {
                             SortASC();
                             break;
                         }
+
+                    // Sortowanie malejąco listy filmów
                     case 6:
                         {
                             SortDESC();
                             break;
                         }
+
+                    // Usunięcie filtrów
                     case 7:
                         {
                             UnfilterList();
                             break;
                         }
+
+                    // Powrót do poprzedniego widoku
                     case 8:
                         {
                             GoBack();
@@ -108,6 +123,9 @@ namespace CinemaApp.Controllers.UserControllers
                 }
             }
         }
+
+        
+        // Metoda przewijająca listę filmów do dołu
         private void ScrollDown()
         {
             if (FilteredList)
@@ -119,6 +137,9 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ScrollDown(movies);
             }
         }
+
+
+        // Metoda przewijająca listę filmów do góry
         private void ScrollUp()
         {
             if (FilteredList)
@@ -130,6 +151,9 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ScrollUp(movies);
             }
         }
+
+
+        // Metoda dokonująca rezerwacji (pobranie od użytkownika id oraz miejsc i wywołanie metody dokonującej rezerwcacji a także wyświetlenie biletu)
         private void MakeReservation()
         {
             string id = userView.GetFilmId();
@@ -139,7 +163,6 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 userView.PrintInputArt();
                 return;
-                //break;
             }
             Movie? movie = null;
             try
@@ -149,13 +172,11 @@ namespace CinemaApp.Controllers.UserControllers
             catch (CannotConvertException CCE)
             {
                 ExceptionOrSuccessHandler("[!] " + CCE.Message);
-                //break;
                 return;
             }
             catch (NoMovieWithGivenIdException NMWGIE)
             {
                 ExceptionOrSuccessHandler("[!] " + NMWGIE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -164,7 +185,6 @@ namespace CinemaApp.Controllers.UserControllers
                 Environment.Exit(1);
             }
 
-
             string seats = userView.MakeReservation(movie);
             if (seats == null || seats == "")
             {
@@ -172,8 +192,20 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 userView.PrintInputArt();
                 userView.SetHowManyMoviesWereDisplayed();
-                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
-                //break;
+                try
+                {
+                    userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+                }
+                catch (MovieListIsEmptyException MLIEE)
+                {
+                    ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    userView.PrintUnknownErrorInfo(ex.Message);
+                    Environment.Exit(1);
+                }
                 return;
             }
 
@@ -185,29 +217,51 @@ namespace CinemaApp.Controllers.UserControllers
             catch (CannotConvertException CCE)
             {
                 ExceptionOrSuccessHandler("[!] " + CCE.Message);
-                //break;
                 return;
             }
             catch (NoMovieWithGivenIdException NMWGIE)
             {
                 ExceptionOrSuccessHandler("[!] " + NMWGIE.Message);
-                //break;
                 return;
             }
             catch (NoSeatWithGivenNumberException NSWGNE)
             {
                 ExceptionOrSuccessHandler("[!] " + NSWGNE.Message);
                 userView.SetHowManyMoviesWereDisplayed();
-                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
-                //break;
+                try
+                {
+                    userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+                }
+                catch (MovieListIsEmptyException MLIEE)
+                {
+                    ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    userView.PrintUnknownErrorInfo(ex.Message);
+                    Environment.Exit(1);
+                }
                 return;
             }
             catch (SeatIsNotAvailableException SINAE)
             {
                 ExceptionOrSuccessHandler("[!] " + SINAE.Message);
                 userView.SetHowManyMoviesWereDisplayed();
-                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
-                //break;
+                try
+                {
+                    userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+                }
+                catch (MovieListIsEmptyException MLIEE)
+                {
+                    ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    userView.PrintUnknownErrorInfo(ex.Message);
+                    Environment.Exit(1);
+                }
                 return;
             }
             catch (Exception ex)
@@ -215,11 +269,8 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.PrintUnknownErrorInfo(ex.Message);
                 Environment.Exit(1);
             }
-            //ExceptionOrSuccessHandler("[V] Pomyślnie dokonano rezerwacji!");
-            //ExceptionOrSuccessHandler("[V] Pomyślnie dokonano rezerwacji!");
             string success_message = "[V] Pomyślnie dokonano rezerwacji!";
             userView.ShowSuccessOrException(success_message);
-
 
             userView.PrinterAnimation();
 
@@ -231,17 +282,24 @@ namespace CinemaApp.Controllers.UserControllers
             userView.RenderMainFrame(Console.WindowWidth, Console.WindowHeight);
             userView.PrintInputArt();
             userView.SetHowManyMoviesWereDisplayed();
-            userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
-
-            // Drukowanie biletu
-
-            // Pokazanie biletu
-
-
-
-            //userView.SetHowManyMoviesWereDisplayed();
-            //userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+            try
+            {
+                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                userView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+        // Metoda filtrująca listę filmów (pobranie frazy od użytkownika i uruchomienie metody wyszukującej filmy zawierające dana frazę)
         private void FilterList()
         {
             string search = userView.FilterList();
@@ -250,26 +308,20 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 userView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 userView.PrintInputArt();
-                //break;
                 return;
             }
             if (string.IsNullOrWhiteSpace(search))
             {
                 ExceptionOrSuccessHandler("[!] Fraza wyszukiwania nie może być pustym ciągiem znaków.");
-                //break;
                 return;
             }
-            //List<Movie> filtered_list = new List<Movie>();
             try
             {
                 filteredMovies = movieRepository.FilterList(search);
-                // Show movies z filtered Movies i indexem 0
-                // do tego ustawienie od nowa licznika tak jak niżej
             }
             catch (CannotFindMatchingMovieException CFMME)
             {
                 ExceptionOrSuccessHandler("[!] " + CFMME.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -281,10 +333,27 @@ namespace CinemaApp.Controllers.UserControllers
             ExceptionOrSuccessHandler("[V] Lista została przefiltrowana!");
 
             FilteredList = true;
-            // Tutaj tak samo z 0 indexem i zerownanie licznika
             userView.SetHowManyMoviesWereDisplayed();
-            userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+
+            try
+            {
+                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                userView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+
+        // Metoda sortująca rosnąco listę filmów (pobranie atrybutu od użytkownika i uruchomienie metody sortującej listę według podanego parametru)
         private void SortASC()
         {
             string attribute = userView.SortList();
@@ -293,31 +362,25 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 userView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 userView.PrintInputArt();
-                //break;
                 return;
             }
             if (string.IsNullOrWhiteSpace(attribute))
             {
                 ExceptionOrSuccessHandler("[!] Atrybut sortowania nie może być pustym ciągiem znaków.");
-                //break;
                 return;
             }
             try
             {
                 filteredMovies = movieRepository.SortAscending(attribute);
-                // Show movies z filtered Movies i indexem 0
-                // do tego ustawienie od nowa licznika tak jak niżej
             }
             catch (BadAttributeException BAE)
             {
                 ExceptionOrSuccessHandler("[!] " + BAE.Message);
-                //break;
                 return;
             }
             catch (ListIsEmptyException LIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + LIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -331,8 +394,25 @@ namespace CinemaApp.Controllers.UserControllers
             FilteredList = true;
 
             userView.SetHowManyMoviesWereDisplayed();
-            userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            try
+            {
+                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                userView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+
+        // Metoda sortująca malejąco listę filmów (pobranie atrybutu od użytkownika i uruchomienie metody sortującej listę według podanego parametru)
         private void SortDESC()
         {
             string attribute = userView.SortList();
@@ -341,31 +421,25 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ClearViewInfoPart(Console.WindowWidth, Console.WindowHeight);
                 userView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 userView.PrintInputArt();
-                //break;
                 return;
             }
             if (string.IsNullOrWhiteSpace(attribute))
             {
                 ExceptionOrSuccessHandler("[!] Atrybut sortowania nie może być pustym ciągiem znaków.");
-                //break;
                 return;
             }
             try
             {
                 filteredMovies = movieRepository.SortDescending(attribute);
-                // Show movies z filtered Movies i indexem 0
-                // do tego ustawienie od nowa licznika tak jak niżej
             }
             catch (BadAttributeException BAE)
             {
                 ExceptionOrSuccessHandler("[!] " + BAE.Message);
-                //break;
                 return;
             }
             catch (ListIsEmptyException LIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + LIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -379,16 +453,47 @@ namespace CinemaApp.Controllers.UserControllers
             FilteredList = true;
 
             userView.SetHowManyMoviesWereDisplayed();
-            userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
-
+            try
+            {
+                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, filteredMovies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                userView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+        // Metoda usuwająca filtry 
         private void UnfilterList()
         {
             FilteredList = false;
-            // Tutaj wyświetlenie listy filmów normalnie i też wyzerowanie licznika
+
             userView.SetHowManyMoviesWereDisplayed();
-            userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+            try
+            {
+                userView.ShowMoviesList(Console.WindowWidth, Console.WindowHeight, movies, 0);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                ExceptionOrSuccessHandler("[!] " + MLIEE.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                userView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
         }
+
+
+        // Powrót do poprzedniego widoku
         private void GoBack()
         {
             userView.ClearViewOptionsPart(Console.WindowWidth, Console.WindowHeight);

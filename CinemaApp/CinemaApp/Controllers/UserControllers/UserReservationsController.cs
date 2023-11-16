@@ -16,6 +16,8 @@ namespace CinemaApp.Controllers.UserControllers
             this.userView = userView;
             res = new List<Reservation>();
         }
+
+        // Metoda wyświetlająca sukces lub błąd wykonywanej operacji
         private void ExceptionOrSuccessHandler(string message)
         {
             userView.ShowSuccessOrException(message);
@@ -24,7 +26,6 @@ namespace CinemaApp.Controllers.UserControllers
         public void Run()
         {
             userView.ClearViewOptionsPart(Console.WindowWidth, Console.WindowHeight);
-            // List<Reservation> res = new List<Reservation>();
             try
             {
                 res = reservationRepository.GetReservationsList();
@@ -34,7 +35,6 @@ namespace CinemaApp.Controllers.UserControllers
             catch (ReservationListIsEmptyException RLIEE)
             {
                 ExceptionOrSuccessHandler("[!] " + RLIEE.Message);
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -42,30 +42,37 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.PrintUnknownErrorInfo(ex.Message);
                 Environment.Exit(1);
             }
-            // userView.ClearConsole();
+
             int valueUserReservations = 0;
             while (valueUserReservations != 4)
             {
                 valueUserReservations = userView.RenderReservationsUserView(res);
-                //List<Movie> movies = movieRepository.GetAllMovies();
 
                 switch (valueUserReservations)
                 {
+
+                    // Przewijanie listy rezerwacji do dołu
                     case 1:
                         {
                             ScrollDown();
                             break;
                         }
+
+                    // Przewijanie listy rezerwacji do góry
                     case 2:
                         {
                             ScrollUp();
                             break;
                         }
+
+                    // Anulowawnie rezerwacji
                     case 3:
                         {
                             CancelReservation();
                             break;
                         }
+
+                    // Powrót do poprzedniego widoku
                     case 4:
                         {
                             GoBack();
@@ -74,14 +81,22 @@ namespace CinemaApp.Controllers.UserControllers
                 }
             }
         }
+
+        // Metoda przewijająca listę rezerwacji do dołu
         private void ScrollDown()
         {
             userView.ScrollDown(res);
         }
+
+
+        // Metoda przewijająca listę rezerwacji do góry
         private void ScrollUp()
         {
             userView.ScrollUp(res);
         }
+
+
+        // Metoda usuwająca rezerwację (pobranie wprowadzonego przez użytkownika id z widoku i wywołanie funkcji usuwającej rezerwację o danym id)
         private void CancelReservation()
         {
             string id = userView.RemoveReservation();
@@ -91,7 +106,6 @@ namespace CinemaApp.Controllers.UserControllers
                 userView.ClearViewInputPart(Console.WindowWidth, Console.WindowHeight);
                 userView.PrintInputArt();
                 return;
-                //break;
             }
             try
             {
@@ -101,19 +115,16 @@ namespace CinemaApp.Controllers.UserControllers
             {
                 ExceptionOrSuccessHandler("[!] " + CCE.Message);
                 return;
-                //break;
             }
             catch (NoReservationWithGivenIdException NRWGIE)
             {
                 ExceptionOrSuccessHandler("[!] " + NRWGIE.Message);
                 return;
-                //break;
             }
             catch (CannotDestroyTicketException CDTE)
             {
                 ExceptionOrSuccessHandler("[!] " + CDTE.Message);
                 return;
-                //break;
             }
             catch (Exception ex)
             {
@@ -123,8 +134,26 @@ namespace CinemaApp.Controllers.UserControllers
             ExceptionOrSuccessHandler("[V] Pomyślnie anulowano rezerwację.");
 
             userView.SetHowManyResWereDisplayed();
-            userView.ShowReservationList(res, 0);
+            try
+            {
+                userView.ShowReservationList(res, 0);
+            }
+            catch (ReservationListIsEmptyException RLIEE)
+            {
+                userView.ClearViewOutputDataPart(Console.WindowWidth, Console.WindowHeight);
+                ExceptionOrSuccessHandler("[!] " + RLIEE.Message);               
+                return;
+            }
+            catch (Exception ex)
+            {
+                userView.PrintUnknownErrorInfo(ex.Message);
+                Environment.Exit(1);
+            }
+
         }
+
+
+        // Powrót do poprzedniego widoku
         private void GoBack()
         {
             userView.ClearViewOptionsPart(Console.WindowWidth, Console.WindowHeight);

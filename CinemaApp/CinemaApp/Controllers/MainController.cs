@@ -1,5 +1,6 @@
 ﻿using CinemaApp.Controllers.AdminControllers;
 using CinemaApp.Controllers.UserControllers;
+using CinemaApp.Exceptions;
 using CinemaApp.Interfaces;
 using CinemaApp.Interfaces.IRepositories;
 using CinemaApp.Interfaces.IViews;
@@ -16,38 +17,64 @@ namespace CinemaApp.Controllers
             IMainMenuView mainMenuView = new MainMenuView();
 
             IMovieRepository movieRepository = new MovieRepository();
-            movieRepository.ReadMoviesFromFile(); //THrows Exceptions
+
+            // Odczyt filmów z pliku
+            try
+            {
+                movieRepository.ReadMoviesFromFile();
+            }
+            catch(CannotReadFileException)
+            {
+                movieRepository.SaveMoviesToFile();
+            }
 
             IReservationRepository reservationRepository = new ReservationRepository(movieRepository);
-            reservationRepository.ReadReservationsFromFile(); //THrows Exceptions
+
+            // Odczyt rezerwacji z pliku
+            try
+            {
+                reservationRepository.ReadReservationsFromFile();
+            }
+            catch (CannotReadFileException)
+            {
+                reservationRepository.SaveReservationsToFile();
+            }
+            
 
             while (true)
             {
                 int valueMainMenu = mainMenuView.RenderMainMenu();
                 switch (valueMainMenu)
                 {
-                    case 1: // Panel administratora
+                    // Panel administratora
+                    case 1: 
                         {
                             MainAdminController adminController = new MainAdminController(movieRepository, reservationRepository);
                             adminController.Run();
                             break;
                         }
-                    case 2: // Panel użytkownika
+
+                    // Panel użytkownika
+                    case 2: 
                         {
                             MainUserController userController = new MainUserController(movieRepository, reservationRepository);
                             userController.Run();
                             break;
                         }
-                    case 3: // Ustawienia
+
+                    // Ustawienia
+                    case 3: 
                         {
                             break;
                         }
-                    case 4: // Wyjście z programu
+
+                    // Wyjście z programu
+                    case 4: 
                         {
-                            // Tutaj jeszcze zapisanie wszytskich danych do pliku
+                            // Zapisanie filmów i rezerwacji do plików
                             movieRepository.SaveMoviesToFile();
                             reservationRepository.SaveReservationsToFile();
-                            Environment.Exit(0);
+                            Environment.Exit(0);    // Wyjście z programu 
                             break;
                         }
                 }

@@ -7,12 +7,13 @@ namespace CinemaApp.Views
         protected readonly string[] menuOptions;
         private readonly string[] title = 
         {
-            @"  _____                        __     _ _     _                ____ _                            
+            @"   _____                        __     _ _     _                ____ _                            
                |  _ \ _ __ ___  __ _ _ __ __\ \   / (_)___(_) ___  _ __    / ___(_)_ __   ___ _ __ ___   __ _ 
                | | | | '__/ _ \/ _` | '_ ` _ \ \ / /| / __| |/ _ \| '_ \  | |   | | '_ \ / _ \ '_ ` _ \ / _` |
                | |_| | | |  __/ (_| | | | | | \ V / | \__ \ | (_) | | | | | |___| | | | |  __/ | | | | | (_| |
                |____/|_|  \___|\__,_|_| |_| |_|\_/  |_|___/_|\___/|_| |_|  \____|_|_| |_|\___|_| |_| |_|\__,_|"
         };
+        private static bool consoleSizeSet = false;
         public MainMenuView()
         {
             menuOptions = new string[]
@@ -22,8 +23,16 @@ namespace CinemaApp.Views
                 "Opcje",
                 "Wyjdź"
             };
-            Console.SetWindowSize(140, 40);
+            if (!consoleSizeSet)
+            {
+                Console.SetWindowSize(140, 40);
+                consoleSizeSet = true;
+            }
+            
         }
+
+
+        // Metoda rysująca nazwę kina
         protected void DrawTitle(int WindowWidth, int WindowHeight)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -37,6 +46,7 @@ namespace CinemaApp.Views
             Console.ResetColor();
         }
         
+        // Metoda rysująca ramkę menu
         protected void MakeMenuFrame(int WindowWidth, int WindowHeight)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -64,10 +74,16 @@ namespace CinemaApp.Views
             Console.Write("╝");
             Console.ResetColor();
         }
+
+
+        // Metoda wyznaczająca najdłuższą opcję menu
         private int LongestMenuOption()
         {
             return menuOptions.Max(s => s.Length);
         }
+
+
+        // Metoda wypisująca informacje co może zrobić użytkownik
         protected void MakeInfo(int WindowWidth, int WindowHeight, string message)
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -104,10 +120,11 @@ namespace CinemaApp.Views
 
             Console.ResetColor();
         }
+
+
+        // Metoda renderująca główne menu aplikacji
         public int RenderMainMenu()
         {
-            //Console.SetWindowSize(140, 40);
-            //Console.OutputEncoding = Encoding.Unicode;
             int WindowWidth = Console.WindowWidth;
             int WindowHeight = Console.WindowHeight;
 
@@ -120,7 +137,6 @@ namespace CinemaApp.Views
             Console.CursorVisible = false;
             
             bool isOptionSelected = false;
-            //string pointer = BLACK_FOREGROUND+ WHITE_BACKGROUND + ">";
             string pointer = ">";
             int selectOption = 1;
             ConsoleKeyInfo key;
@@ -131,7 +147,7 @@ namespace CinemaApp.Views
                 {
                     WindowWidth = Console.WindowWidth;
                     WindowHeight = Console.WindowHeight;
-                    // Tutaj throw exception jeśli rozmiar jest zły w while aby wyrzucać non stop wyjątek jeśli rozmiar jest zły
+
                     while(WindowWidth<130 || WindowHeight < 40)
                     {
                         ShowError();

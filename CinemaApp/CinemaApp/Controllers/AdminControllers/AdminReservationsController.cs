@@ -17,7 +17,7 @@ namespace CinemaApp.Controllers.AdminControllers
             res = new List<Reservation>();
         }
 
-        // Czy trzeba za każdym razem pobierać listę rezerwacji ???
+        // Metoda pobierająca i wyświetlająca listę rezerwacji
         public void GetReservationList()
         {
             try
@@ -29,8 +29,6 @@ namespace CinemaApp.Controllers.AdminControllers
             catch (ReservationListIsEmptyException RLIEE)
             {
                 adminView.ShowSuccessOrException("[!] " + RLIEE.Message);
-
-                //break;
                 return;
             }
             catch (Exception ex)
@@ -39,10 +37,15 @@ namespace CinemaApp.Controllers.AdminControllers
                 Environment.Exit(1);
             }
         }
+
+        // Metoda przewijająca listę rezerwacji do dołu
         public void ScrollDown()
         {
             adminView.ScrollDown(res);
         }
+
+
+        // Metoda przewijająca listę rezerwacji do góry
         public void ScrollUp()
         {
             adminView.ScrollUp(res);

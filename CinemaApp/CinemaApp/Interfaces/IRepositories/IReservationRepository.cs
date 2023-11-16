@@ -17,5 +17,7 @@ namespace CinemaApp.Interfaces
         List<Reservation> GetReservationsList();
         void ReadReservationsFromFile();
         void SaveReservationsToFile();
+        void CreateTempDeleteFile();
+        void CreateTempModificationFile();
     }
 }
