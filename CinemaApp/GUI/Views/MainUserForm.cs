@@ -1,16 +1,54 @@
 namespace GUI;
 using FontAwesome.Sharp;
+using GUI.Interfaces;
 using System.Runtime.InteropServices;
 using UserForms;
 
-public partial class MainUserForm : Form
+public partial class MainUserForm : Form, IMainUserForm
 {
     private IconButton currentButton;
     private Panel leftBorderButton;
     private Form currentChildForm;
+
+    public event EventHandler ShowReservationsView;
+    public event EventHandler ShowMoviesView;
+    public event EventHandler LoadDefault;
+
+    public PictureBox MainBigLogo
+    {
+        get { return this.bigLogo; }
+    }
+    public Panel PanelContainer
+    {
+        get { return this.panelDesktop; }
+    }
+    public Label lblTitle
+    {
+        get { return this.lblTitleChildForm; }
+    }
+    public PictureBox MainLogo
+    {
+        get { return this.logoPictureBox; }
+    }
+    public IconPictureBox topIcon
+    {
+        get { return this.iconCurrentChildForm; }
+    }
+    public Panel ButtonBorderLeft
+    {
+        get { return this.leftBorderButton; }
+    }
     public MainUserForm()
     {
         InitializeComponent();
+        this.FormBorderStyle = FormBorderStyle.Sizable;
+
+        showReservationsButton.Click += delegate { ShowReservationsView?.Invoke(this, EventArgs.Empty); };
+
+        buyTicketButton.Click += delegate { ShowMoviesView?.Invoke(this, EventArgs.Empty); };
+
+        logoPictureBox.Click += delegate { LoadDefault?.Invoke(this, EventArgs.Empty); };
+
         leftBorderButton = new Panel();
         leftBorderButton.Size = new Size(7, 60);
         panelUserMenu.Controls.Add(leftBorderButton);
@@ -67,7 +105,7 @@ public partial class MainUserForm : Form
             iconCurrentChildForm.IconColor = color;
         }
     }
-    private void DisableButton()
+    public void DisableButton()
     {
         if (currentButton != null)
         {
@@ -89,7 +127,7 @@ public partial class MainUserForm : Form
     private void showReservationsButton_Click(object sender, EventArgs e)
     {
         ActivateButton(sender, RGBColors.color2);
-        OpenChildForm(new ReservationListView());
+        //OpenChildForm(new ReservationListView());
     }
 
     private void backButton_Click(object sender, EventArgs e)

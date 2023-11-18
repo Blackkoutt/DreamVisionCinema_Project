@@ -13,6 +13,16 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App"
         ]
+      },
+      "CinemaApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CinemaApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaApp.dll": {}
+        }
       }
     }
   },
@@ -31,10 +41,16 @@
         "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
         "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
       ]
+    },
+    "CinemaApp/1.0.0": {
+      "type": "project",
+      "path": "../CinemaApp/CinemaApp.csproj",
+      "msbuildProject": "../CinemaApp/CinemaApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "CinemaApp >= 1.0.0",
       "FontAwesome.Sharp >= 6.3.0"
     ]
   },
@@ -69,7 +85,11 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Mateusz\\Desktop\\KCK repo save\\KCK\\CinemaApp\\CinemaApp\\CinemaApp.csproj": {
+              "projectPath": "C:\\Users\\Mateusz\\Desktop\\KCK repo save\\KCK\\CinemaApp\\CinemaApp\\CinemaApp.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

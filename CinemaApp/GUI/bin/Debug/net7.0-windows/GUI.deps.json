@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "GUI/1.0.0": {
         "dependencies": {
+          "CinemaApp": "1.0.0",
           "FontAwesome.Sharp": "6.3.0"
         },
         "runtime": {
@@ -20,6 +21,11 @@
             "assemblyVersion": "6.3.0.0",
             "fileVersion": "6.3.0.0"
           }
+        }
+      },
+      "CinemaApp/1.0.0": {
+        "runtime": {
+          "CinemaApp.dll": {}
         }
       }
     }
@@ -36,6 +42,11 @@
       "sha512": "sha512-3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
       "path": "fontawesome.sharp/6.3.0",
       "hashPath": "fontawesome.sharp.6.3.0.nupkg.sha512"
+    },
+    "CinemaApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

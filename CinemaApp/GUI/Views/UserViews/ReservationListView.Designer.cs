@@ -28,77 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            reservationListView = new ListView();
-            reservationID = new ColumnHeader();
-            movieTitle = new ColumnHeader();
-            movieDate = new ColumnHeader();
-            movieRoom = new ColumnHeader();
-            reservationPrice = new ColumnHeader();
-            reservationSeats = new ColumnHeader();
+            dataGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
-            // reservationListView
+            // dataGridView
             // 
-            reservationListView.BackColor = Color.FromArgb(30, 32, 60);
-            reservationListView.Columns.AddRange(new ColumnHeader[] { reservationID, movieTitle, movieDate, movieRoom, reservationPrice, reservationSeats });
-            reservationListView.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            reservationListView.GridLines = true;
-            reservationListView.Location = new Point(76, 76);
-            reservationListView.Name = "reservationListView";
-            reservationListView.Size = new Size(631, 274);
-            reservationListView.TabIndex = 0;
-            reservationListView.UseCompatibleStateImageBehavior = false;
-            reservationListView.View = View.Details;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.BackgroundColor = Color.FromArgb(34, 33, 74);
+            dataGridView.BorderStyle = BorderStyle.None;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Location = new Point(12, 11);
+            dataGridView.MultiSelect = false;
+            dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.RowTemplate.Height = 29;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.Size = new Size(833, 404);
+            dataGridView.TabIndex = 1;
             // 
-            // reservationID
+            // ReservationListView
             // 
-            reservationID.Text = "ID";
-            reservationID.Width = 40;
-            // 
-            // movieTitle
-            // 
-            movieTitle.Text = "Tytuł filmu";
-            movieTitle.Width = 150;
-            // 
-            // movieDate
-            // 
-            movieDate.Text = "Data";
-            movieDate.Width = 100;
-            // 
-            // movieRoom
-            // 
-            movieRoom.Text = "Sala";
-            // 
-            // reservationPrice
-            // 
-            reservationPrice.Text = "Cena";
-            reservationPrice.Width = 80;
-            // 
-            // reservationSeats
-            // 
-            reservationSeats.Text = "Miejsca";
-            reservationSeats.Width = 150;
-            // 
-            // ReservationListForm
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(800, 450);
-            Controls.Add(reservationListView);
-            Name = "ReservationListForm";
+            BackColor = Color.FromArgb(34, 35, 68);
+            ClientSize = new Size(1100, 483);
+            Controls.Add(dataGridView);
+            Name = "ReservationListView";
             Text = "Lista rezerwacji";
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListView reservationListView;
-        private ColumnHeader reservationID;
-        private ColumnHeader movieTitle;
-        private ColumnHeader movieDate;
-        private ColumnHeader movieRoom;
-        private ColumnHeader reservationPrice;
-        private ColumnHeader reservationSeats;
+        private DataGridView dataGridView;
     }
 }

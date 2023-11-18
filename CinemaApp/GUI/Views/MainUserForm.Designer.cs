@@ -42,14 +42,14 @@ partial class MainUserForm
         iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
         panelShadow = new Panel();
         panelDesktop = new Panel();
-        pictureBox1 = new PictureBox();
+        bigLogo = new PictureBox();
         panelUserMenu.SuspendLayout();
         panelLogo.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
         titleBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
         panelDesktop.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)bigLogo).BeginInit();
         SuspendLayout();
         // 
         // panelUserMenu
@@ -62,7 +62,7 @@ partial class MainUserForm
         panelUserMenu.Dock = DockStyle.Left;
         panelUserMenu.Location = new Point(0, 0);
         panelUserMenu.Name = "panelUserMenu";
-        panelUserMenu.Size = new Size(250, 556);
+        panelUserMenu.Size = new Size(250, 553);
         panelUserMenu.TabIndex = 0;
         // 
         // backButton
@@ -169,7 +169,7 @@ partial class MainUserForm
         titleBar.Dock = DockStyle.Top;
         titleBar.Location = new Point(250, 0);
         titleBar.Name = "titleBar";
-        titleBar.Size = new Size(857, 75);
+        titleBar.Size = new Size(932, 75);
         titleBar.TabIndex = 1;
         titleBar.MouseDown += titleBar_MouseDown;
         // 
@@ -186,7 +186,7 @@ partial class MainUserForm
         minimiseButton.IconColor = Color.Gainsboro;
         minimiseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
         minimiseButton.IconSize = 25;
-        minimiseButton.Location = new Point(764, 12);
+        minimiseButton.Location = new Point(839, 12);
         minimiseButton.Name = "minimiseButton";
         minimiseButton.Size = new Size(20, 20);
         minimiseButton.TabIndex = 4;
@@ -206,7 +206,7 @@ partial class MainUserForm
         maximiseButton.IconColor = Color.Gainsboro;
         maximiseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
         maximiseButton.IconSize = 25;
-        maximiseButton.Location = new Point(799, 12);
+        maximiseButton.Location = new Point(874, 12);
         maximiseButton.Name = "maximiseButton";
         maximiseButton.Size = new Size(20, 20);
         maximiseButton.TabIndex = 3;
@@ -226,7 +226,7 @@ partial class MainUserForm
         closeButton.IconColor = Color.Gainsboro;
         closeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
         closeButton.IconSize = 25;
-        closeButton.Location = new Point(825, 12);
+        closeButton.Location = new Point(900, 12);
         closeButton.Name = "closeButton";
         closeButton.Size = new Size(20, 20);
         closeButton.TabIndex = 2;
@@ -264,41 +264,41 @@ partial class MainUserForm
         panelShadow.Dock = DockStyle.Top;
         panelShadow.Location = new Point(250, 75);
         panelShadow.Name = "panelShadow";
-        panelShadow.Size = new Size(857, 9);
+        panelShadow.Size = new Size(932, 9);
         panelShadow.TabIndex = 2;
         // 
         // panelDesktop
         // 
         panelDesktop.BackColor = Color.FromArgb(34, 33, 74);
-        panelDesktop.Controls.Add(pictureBox1);
+        panelDesktop.Controls.Add(bigLogo);
         panelDesktop.Dock = DockStyle.Fill;
         panelDesktop.Location = new Point(250, 84);
         panelDesktop.Name = "panelDesktop";
-        panelDesktop.Size = new Size(857, 472);
+        panelDesktop.Size = new Size(932, 469);
         panelDesktop.TabIndex = 3;
         // 
-        // pictureBox1
+        // bigLogo
         // 
-        pictureBox1.Anchor = AnchorStyles.None;
-        pictureBox1.Cursor = Cursors.Hand;
-        pictureBox1.Image = Properties.Resources.logo;
-        pictureBox1.Location = new Point(110, 69);
-        pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new Size(646, 320);
-        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-        pictureBox1.TabIndex = 1;
-        pictureBox1.TabStop = false;
+        bigLogo.Anchor = AnchorStyles.None;
+        bigLogo.Image = Properties.Resources.logo;
+        bigLogo.Location = new Point(148, 67);
+        bigLogo.Name = "bigLogo";
+        bigLogo.Size = new Size(646, 320);
+        bigLogo.SizeMode = PictureBoxSizeMode.Zoom;
+        bigLogo.TabIndex = 1;
+        bigLogo.TabStop = false;
         // 
-        // Form1
+        // MainUserForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1107, 556);
+        ClientSize = new Size(1182, 553);
         Controls.Add(panelDesktop);
         Controls.Add(panelShadow);
         Controls.Add(titleBar);
         Controls.Add(panelUserMenu);
-        Name = "Form1";
+        MinimumSize = new Size(1125, 450);
+        Name = "MainUserForm";
         Text = "Form1";
         panelUserMenu.ResumeLayout(false);
         panelLogo.ResumeLayout(false);
@@ -307,7 +307,7 @@ partial class MainUserForm
         titleBar.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
         panelDesktop.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)bigLogo).EndInit();
         ResumeLayout(false);
     }
 
@@ -324,7 +324,7 @@ partial class MainUserForm
     private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
     private Panel panelShadow;
     private Panel panelDesktop;
-    private PictureBox pictureBox1;
+    private PictureBox bigLogo;
     private FontAwesome.Sharp.IconButton closeButton;
     private FontAwesome.Sharp.IconButton minimiseButton;
     private FontAwesome.Sharp.IconButton maximiseButton;
