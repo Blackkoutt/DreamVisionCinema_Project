@@ -418,7 +418,7 @@ namespace CinemaApp.Model
 
 
         // Metoda zwracająca ostatnią rezerwację z listy
-        private Reservation GetLastReservation()
+        public Reservation GetLastReservation()
         {
             // Jeśli lista jest pusta wyrzuć wyjątek
             if (!reservations.Any())

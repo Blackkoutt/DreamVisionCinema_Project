@@ -9,16 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FontAwesome.Sharp;
+using GUI.Views.UserViews;
 
 namespace GUI.Presenters.UserPresenters
 {
     public class MainUserPresenter
     {
         private IMainUserForm _mainUserForm;
-        IReservationListView reservationListView;
-        public MainUserPresenter(IMainUserForm mainUserForm)
+        private IReservationListView reservationListView;
+        private IMoviesListView moviesListView;
+        private IMovieRepository movieRepository;
+        private IReservationRepository reservationRepository;
+
+        public MainUserPresenter(IMainUserForm mainUserForm, IMovieRepository movieRepository, IReservationRepository reservationRepository)
         {
+            this.movieRepository = movieRepository;
+            this.reservationRepository = reservationRepository;
             _mainUserForm = mainUserForm;
+            this._mainUserForm.ShowMoviesView += ShowMoviesView;
             this._mainUserForm.ShowReservationsView += ShowReservationsView;
             this._mainUserForm.ShowMoviesView += ShowMoviesView;
             this._mainUserForm.LoadDefault += LoadDefault;
@@ -30,6 +38,11 @@ namespace GUI.Presenters.UserPresenters
             {
                 reservationListView.Close();
                 reservationListView = null;
+            }
+            if (moviesListView != null)
+            {
+                moviesListView.Close();
+                moviesListView = null;
             }
             // też dla filmu
 
@@ -54,29 +67,50 @@ namespace GUI.Presenters.UserPresenters
                 reservationListView.Close();
                 reservationListView = null;
             }
+            if (moviesListView == null)
+            {
+                // to możliwe ze trzeba stad wywalic
+                /*IMovieRepository movieRepository = new MovieRepository();
+                movieRepository.ReadMoviesFromFile(); // throws exceptions*/
+
+                moviesListView = new MoviesListView();
+                new UserMoviePresenter(moviesListView, movieRepository, reservationRepository);
+                _mainUserForm.PanelContainer.Controls.Clear();
+                _mainUserForm.PanelContainer.Controls.Add((Form)moviesListView);
+                _mainUserForm.PanelContainer.Tag = (Form)moviesListView;
+
+                _mainUserForm.lblTitle.Text = ((Form)moviesListView).Text;
+            }
+            
+           
         }
 
         private void ShowReservationsView(object? sender, EventArgs e)
         {
+                // zamkniecie filmu
+                if (moviesListView != null)
+                {
+                    moviesListView.Close();
+                    moviesListView = null;
+                }
+                if (reservationListView == null)
+                {
+                    // to możliwe ze trzeba stad wywalic
+                    /*IMovieRepository movieRepository = new MovieRepository();
+                    movieRepository.ReadMoviesFromFile(); // throws exceptions
+                    IReservationRepository reservationRepository = new ReservationRepository(movieRepository);*/
 
-            // zamkniecie filmu
-            if (reservationListView == null)
-            {
-                // to możliwe ze trzeba stad wywalic
-                IMovieRepository movieRepository = new MovieRepository();
-                movieRepository.ReadMoviesFromFile(); // throws exceptions
-                IReservationRepository reservationRepository = new ReservationRepository(movieRepository);
 
 
+                    reservationListView = new ReservationListView();
+                    new UserReservationPresenter(reservationListView, reservationRepository);
+                    _mainUserForm.PanelContainer.Controls.Clear();
+                    _mainUserForm.PanelContainer.Controls.Add((Form)reservationListView);
+                    _mainUserForm.PanelContainer.Tag = (Form)reservationListView;
 
-                reservationListView = new ReservationListView();
-                new UserReservationPresenter(reservationListView, reservationRepository);
-                _mainUserForm.PanelContainer.Controls.Clear();
-                _mainUserForm.PanelContainer.Controls.Add((Form)reservationListView);
-                _mainUserForm.PanelContainer.Tag = (Form)reservationListView;
-
-                _mainUserForm.lblTitle.Text = ((Form)reservationListView).Text;
-            }
+                    _mainUserForm.lblTitle.Text = ((Form)reservationListView).Text;
+                }
+            
         }
     }
 }

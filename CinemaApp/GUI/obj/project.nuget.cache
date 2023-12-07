@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7RJoSrMkL6aJt7ENaCGzXSimPnn30rWcKzxX5WVEeJ5OunfE1tg+LougbSKszW8k4Vd15T5RlyL+F1uW48OQrQ==",
+  "dgSpecHash": "ENxcoR7a9e6FQeGRDyh/knxwKsLsfV2KvYOxRD5H0Edg2BirCAiizfzSvOhk6vz6KH9Fvb5WBQsYiWEm36ccOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\KCK repo save\\KCK\\CinemaApp\\GUI\\GUI.csproj",
+  "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\Repositories\\KCK repo save\\KCK\\CinemaApp\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mateusz\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
   ],

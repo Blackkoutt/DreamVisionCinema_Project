@@ -20,6 +20,7 @@ namespace GUI.UserForms
             this.TopLevel = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
+            deleteReservationButton.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
             //this.BringToFront();
             //childForm.Show();
         }

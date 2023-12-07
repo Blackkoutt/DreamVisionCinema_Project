@@ -47,6 +47,8 @@ public partial class MainUserForm : Form, IMainUserForm
 
         buyTicketButton.Click += delegate { ShowMoviesView?.Invoke(this, EventArgs.Empty); };
 
+        //buyTicketButton.Click += delegate { ShowMoviesView?.Invoke(this, EventArgs.Empty); };
+
         logoPictureBox.Click += delegate { LoadDefault?.Invoke(this, EventArgs.Empty); };
 
         leftBorderButton = new Panel();
@@ -58,28 +60,13 @@ public partial class MainUserForm : Form, IMainUserForm
         this.DoubleBuffered = true;
         this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
     }
-    private void OpenChildForm(Form childForm)
-    {
-        if (currentChildForm != null)
-        {
-            currentChildForm.Close();
-        }
-        currentChildForm = childForm;
-        childForm.TopLevel = false;
-        childForm.FormBorderStyle = FormBorderStyle.None;
-        childForm.Dock = DockStyle.Fill;
-        panelDesktop.Controls.Add(childForm);
-        panelDesktop.Tag = childForm;
-        childForm.BringToFront();
-        childForm.Show();
-        lblTitleChildForm.Text = childForm.Text;
-    }
 
     private struct RGBColors
     {
         public static Color color1 = Color.FromArgb(172, 126, 241);
         public static Color color2 = Color.FromArgb(249, 118, 176);
         public static Color color3 = Color.FromArgb(253, 138, 114);
+        
     }
 
     private void ActivateButton(object sender, Color color)

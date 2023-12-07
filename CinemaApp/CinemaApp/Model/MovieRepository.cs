@@ -22,6 +22,8 @@ namespace CinemaApp.Model
         public void ReadMoviesFromFile()
         {
             // Odczyt filmów z pliku tekstowego
+            int b = movies.Count;
+            int a = 1;
             string directoryPath = "Database";
             string fileName = "movies.txt";
             string filePath = Path.Combine(directoryPath, fileName);

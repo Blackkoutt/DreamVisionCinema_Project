@@ -8,6 +8,7 @@ namespace CinemaApp.Interfaces
         string[] GetTicket();
         List<string> CheckModificatedMoviesWithReservation();
         List<string> CheckDeletedReservations();
+        public Reservation GetLastReservation();
         void DeleteReservation(string id);
         void ModifyMovieDateOrRoomWithReservation(string id, string new_date, string new_room_number);
         void RemoveMovieWithReservation(string id);

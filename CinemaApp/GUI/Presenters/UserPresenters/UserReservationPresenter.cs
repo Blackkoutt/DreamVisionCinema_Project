@@ -23,17 +23,27 @@ namespace GUI.Presenters.UserPresenters
 
             this.reservationBindingSource = new BindingSource();
             this._reservationlistView.SetReservationListBindingSource(reservationBindingSource);
+           
+            this._reservationlistView.DeleteEvent += DeleteCurrentReservation;
             // Load data
             LoadReservationList();
             _reservationlistView.BringToFront();
             _reservationlistView.Show();
         }
 
+        private void DeleteCurrentReservation(object? sender, EventArgs e)
+        {
+            string currentMovieIdString = reservationBindingSource.Current.ToString().Split(",")[0].Split("=")[1].Trim();
+            _reservationRepository.DeleteReservation(currentMovieIdString); // throws Exceptions
+
+            // Jakaś informacja o usunięciu rezerwajcji
+        }
+
         private void LoadReservationList()
         {
             
             // Throws exceptions
-           _reservationRepository.ReadReservationsFromFile();
+           //_reservationRepository.ReadReservationsFromFile();
            reservationsList = _reservationRepository.GetReservationsList();
             //reservationBindingSource.DataSource = reservationsList;
             reservationBindingSource.DataSource = reservationsList.Select

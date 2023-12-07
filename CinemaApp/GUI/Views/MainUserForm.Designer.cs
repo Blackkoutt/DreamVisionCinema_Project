@@ -62,7 +62,7 @@ partial class MainUserForm
         panelUserMenu.Dock = DockStyle.Left;
         panelUserMenu.Location = new Point(0, 0);
         panelUserMenu.Name = "panelUserMenu";
-        panelUserMenu.Size = new Size(250, 553);
+        panelUserMenu.Size = new Size(250, 700);
         panelUserMenu.TabIndex = 0;
         // 
         // backButton
@@ -169,7 +169,7 @@ partial class MainUserForm
         titleBar.Dock = DockStyle.Top;
         titleBar.Location = new Point(250, 0);
         titleBar.Name = "titleBar";
-        titleBar.Size = new Size(932, 75);
+        titleBar.Size = new Size(1169, 75);
         titleBar.TabIndex = 1;
         titleBar.MouseDown += titleBar_MouseDown;
         // 
@@ -186,7 +186,7 @@ partial class MainUserForm
         minimiseButton.IconColor = Color.Gainsboro;
         minimiseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
         minimiseButton.IconSize = 25;
-        minimiseButton.Location = new Point(839, 12);
+        minimiseButton.Location = new Point(1076, 12);
         minimiseButton.Name = "minimiseButton";
         minimiseButton.Size = new Size(20, 20);
         minimiseButton.TabIndex = 4;
@@ -206,7 +206,7 @@ partial class MainUserForm
         maximiseButton.IconColor = Color.Gainsboro;
         maximiseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
         maximiseButton.IconSize = 25;
-        maximiseButton.Location = new Point(874, 12);
+        maximiseButton.Location = new Point(1111, 12);
         maximiseButton.Name = "maximiseButton";
         maximiseButton.Size = new Size(20, 20);
         maximiseButton.TabIndex = 3;
@@ -226,7 +226,7 @@ partial class MainUserForm
         closeButton.IconColor = Color.Gainsboro;
         closeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
         closeButton.IconSize = 25;
-        closeButton.Location = new Point(900, 12);
+        closeButton.Location = new Point(1137, 12);
         closeButton.Name = "closeButton";
         closeButton.Size = new Size(20, 20);
         closeButton.TabIndex = 2;
@@ -264,7 +264,7 @@ partial class MainUserForm
         panelShadow.Dock = DockStyle.Top;
         panelShadow.Location = new Point(250, 75);
         panelShadow.Name = "panelShadow";
-        panelShadow.Size = new Size(932, 9);
+        panelShadow.Size = new Size(1169, 9);
         panelShadow.TabIndex = 2;
         // 
         // panelDesktop
@@ -274,14 +274,14 @@ partial class MainUserForm
         panelDesktop.Dock = DockStyle.Fill;
         panelDesktop.Location = new Point(250, 84);
         panelDesktop.Name = "panelDesktop";
-        panelDesktop.Size = new Size(932, 469);
+        panelDesktop.Size = new Size(1169, 616);
         panelDesktop.TabIndex = 3;
         // 
         // bigLogo
         // 
         bigLogo.Anchor = AnchorStyles.None;
         bigLogo.Image = Properties.Resources.logo;
-        bigLogo.Location = new Point(148, 67);
+        bigLogo.Location = new Point(266, 141);
         bigLogo.Name = "bigLogo";
         bigLogo.Size = new Size(646, 320);
         bigLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -292,12 +292,12 @@ partial class MainUserForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1182, 553);
+        ClientSize = new Size(1419, 700);
         Controls.Add(panelDesktop);
         Controls.Add(panelShadow);
         Controls.Add(titleBar);
         Controls.Add(panelUserMenu);
-        MinimumSize = new Size(1125, 450);
+        MinimumSize = new Size(1437, 747);
         Name = "MainUserForm";
         Text = "Form1";
         panelUserMenu.ResumeLayout(false);
