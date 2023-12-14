@@ -31,6 +31,7 @@ static class Program
         new MainAdminPresenter(movieRepository, reservationRepository, mainAdminForm);
         Application.Run((Form)mainAdminForm);
 
+
         /*Form adminForm = new MainAdminForm();
         Application.Run(adminForm);*/
 
@@ -38,6 +39,6 @@ static class Program
 
         /*IMainUserForm mainUserForm = new MainUserForm();
         new MainUserPresenter(mainUserForm, movieRepository, reservationRepository);
-        Application.Run((Form)mainUserForm);*/
+        Application.Run((Form)mainUserForm*/
     }
 }

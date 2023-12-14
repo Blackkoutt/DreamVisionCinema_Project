@@ -32,13 +32,14 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
+            InfoTextBox = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.BackgroundColor = Color.FromArgb(34, 33, 74);
             dataGridView1.BorderStyle = BorderStyle.None;
@@ -62,7 +63,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(134, 82);
+            dataGridView1.Location = new Point(189, 128);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -75,15 +76,30 @@
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(857, 569);
+            dataGridView1.Size = new Size(861, 626);
             dataGridView1.TabIndex = 2;
+            // 
+            // InfoTextBox
+            // 
+            InfoTextBox.BackColor = Color.FromArgb(34, 35, 68);
+            InfoTextBox.BorderStyle = BorderStyle.None;
+            InfoTextBox.Font = new Font("Montserrat", 13.15F, FontStyle.Regular, GraphicsUnit.Point);
+            InfoTextBox.ForeColor = SystemColors.Window;
+            InfoTextBox.Location = new Point(189, 54);
+            InfoTextBox.Name = "InfoTextBox";
+            InfoTextBox.ReadOnly = true;
+            InfoTextBox.ScrollBars = RichTextBoxScrollBars.None;
+            InfoTextBox.Size = new Size(725, 44);
+            InfoTextBox.TabIndex = 4;
+            InfoTextBox.Text = "Lista przedstawia wszystkie rezerwacje dokonane przez klientów.";
             // 
             // AdminReservationListView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 35, 68);
-            ClientSize = new Size(1124, 732);
+            ClientSize = new Size(1238, 801);
+            Controls.Add(InfoTextBox);
             Controls.Add(dataGridView1);
             Name = "AdminReservationListView";
             Text = "AdminReservationListView";
@@ -94,5 +110,6 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private RichTextBox InfoTextBox;
     }
 }

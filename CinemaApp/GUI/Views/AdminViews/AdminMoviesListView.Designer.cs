@@ -28,242 +28,267 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
-            comboBox1 = new ComboBox();
+            sortCriteria = new ComboBox();
             label1 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
+            ascButton = new FontAwesome.Sharp.IconButton();
+            dscButton = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
-            textBox1 = new TextBox();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            iconButton6 = new FontAwesome.Sharp.IconButton();
+            searchValue = new TextBox();
+            searchButton = new FontAwesome.Sharp.IconButton();
+            addButton = new FontAwesome.Sharp.IconButton();
+            deleteButton = new FontAwesome.Sharp.IconButton();
+            modifyButton = new FontAwesome.Sharp.IconButton();
+            clearButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.BackgroundColor = Color.FromArgb(34, 33, 74);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 42, 99);
-            dataGridViewCellStyle1.Font = new Font("Montserrat", 14.999999F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(49, 48, 115);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(43, 42, 99);
+            dataGridViewCellStyle4.Font = new Font("Montserrat", 14.999999F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(49, 48, 115);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Cursor = Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(50, 49, 117);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(77, 75, 179);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(222, 222, 224);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(50, 49, 117);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(77, 75, 179);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(222, 222, 224);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(134, 142);
+            dataGridView1.Location = new Point(190, 200);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(43, 42, 99);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 14.999999F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(77, 75, 179);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(43, 42, 99);
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 14.999999F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(77, 75, 179);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(893, 566);
+            dataGridView1.Size = new Size(884, 535);
             dataGridView1.TabIndex = 2;
             // 
-            // comboBox1
+            // sortCriteria
             // 
-            comboBox1.AutoCompleteCustomSource.AddRange(new string[] { "ID" });
-            comboBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "ID", "Tytuł", "Data", "Cena", "Długość", "Sala" });
-            comboBox1.Location = new Point(182, 63);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 33);
-            comboBox1.TabIndex = 3;
+            sortCriteria.AutoCompleteCustomSource.AddRange(new string[] { "ID" });
+            sortCriteria.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            sortCriteria.FormattingEnabled = true;
+            sortCriteria.Items.AddRange(new object[] { "ID", "Tytuł", "Data", "Cena", "Długość", "Sala" });
+            sortCriteria.Location = new Point(243, 62);
+            sortCriteria.Name = "sortCriteria";
+            sortCriteria.Size = new Size(217, 33);
+            sortCriteria.TabIndex = 3;
             // 
             // label1
             // 
             label1.Font = new Font("Montserrat", 13.1999989F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Window;
-            label1.Location = new Point(12, 63);
+            label1.Location = new Point(54, 56);
             label1.Name = "label1";
-            label1.Size = new Size(181, 28);
+            label1.Size = new Size(183, 41);
             label1.TabIndex = 4;
             label1.Text = "Sortuj według:";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // iconButton1
+            // ascButton
             // 
-            iconButton1.BackColor = Color.FromArgb(78, 81, 217);
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton1.ForeColor = SystemColors.Window;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.SortUp;
-            iconButton1.IconColor = SystemColors.Window;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 32;
-            iconButton1.Location = new Point(358, 60);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(99, 37);
-            iconButton1.TabIndex = 5;
-            iconButton1.Text = "ASC";
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
+            ascButton.BackColor = Color.FromArgb(78, 81, 217);
+            ascButton.Cursor = Cursors.Hand;
+            ascButton.FlatAppearance.BorderSize = 0;
+            ascButton.FlatStyle = FlatStyle.Flat;
+            ascButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            ascButton.ForeColor = SystemColors.Window;
+            ascButton.IconChar = FontAwesome.Sharp.IconChar.SortUp;
+            ascButton.IconColor = SystemColors.Window;
+            ascButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ascButton.IconSize = 32;
+            ascButton.Location = new Point(480, 56);
+            ascButton.Name = "ascButton";
+            ascButton.Size = new Size(102, 43);
+            ascButton.TabIndex = 5;
+            ascButton.Text = "ASC";
+            ascButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ascButton.UseVisualStyleBackColor = false;
             // 
-            // iconButton2
+            // dscButton
             // 
-            iconButton2.BackColor = Color.FromArgb(78, 81, 217);
-            iconButton2.Cursor = Cursors.Hand;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton2.ForeColor = SystemColors.Window;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.SortDesc;
-            iconButton2.IconColor = SystemColors.Window;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 32;
-            iconButton2.Location = new Point(484, 60);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(110, 37);
-            iconButton2.TabIndex = 6;
-            iconButton2.Text = "DSC";
-            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton2.UseVisualStyleBackColor = false;
+            dscButton.BackColor = Color.FromArgb(78, 81, 217);
+            dscButton.Cursor = Cursors.Hand;
+            dscButton.FlatAppearance.BorderSize = 0;
+            dscButton.FlatStyle = FlatStyle.Flat;
+            dscButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dscButton.ForeColor = SystemColors.Window;
+            dscButton.IconChar = FontAwesome.Sharp.IconChar.SortDesc;
+            dscButton.IconColor = SystemColors.Window;
+            dscButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            dscButton.IconSize = 32;
+            dscButton.Location = new Point(618, 56);
+            dscButton.Name = "dscButton";
+            dscButton.Size = new Size(102, 43);
+            dscButton.TabIndex = 6;
+            dscButton.Text = "DSC";
+            dscButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            dscButton.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             label2.Font = new Font("Montserrat", 13.1999989F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Window;
-            label2.Location = new Point(12, 124);
+            label2.Location = new Point(107, 130);
             label2.Name = "label2";
-            label2.Size = new Size(125, 28);
+            label2.Size = new Size(130, 39);
             label2.TabIndex = 7;
             label2.Text = "Wyszukaj:";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // searchValue
             // 
-            textBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(143, 124);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(204, 31);
-            textBox1.TabIndex = 8;
+            searchValue.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            searchValue.Location = new Point(243, 137);
+            searchValue.Name = "searchValue";
+            searchValue.Size = new Size(217, 31);
+            searchValue.TabIndex = 8;
             // 
-            // iconButton3
+            // searchButton
             // 
-            iconButton3.BackColor = Color.FromArgb(78, 81, 217);
-            iconButton3.Cursor = Cursors.Hand;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton3.ForeColor = SystemColors.Window;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton3.IconColor = SystemColors.Window;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 32;
-            iconButton3.Location = new Point(387, 121);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(164, 37);
-            iconButton3.TabIndex = 9;
-            iconButton3.Text = "Szukaj";
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = false;
+            searchButton.BackColor = Color.FromArgb(78, 81, 217);
+            searchButton.Cursor = Cursors.Hand;
+            searchButton.FlatAppearance.BorderSize = 0;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            searchButton.ForeColor = SystemColors.Window;
+            searchButton.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            searchButton.IconColor = SystemColors.Window;
+            searchButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            searchButton.IconSize = 32;
+            searchButton.Location = new Point(480, 130);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(240, 42);
+            searchButton.TabIndex = 9;
+            searchButton.Text = "Szukaj";
+            searchButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            searchButton.UseVisualStyleBackColor = false;
             // 
-            // iconButton4
+            // addButton
             // 
-            iconButton4.BackColor = Color.FromArgb(78, 81, 217);
-            iconButton4.Cursor = Cursors.Hand;
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton4.ForeColor = SystemColors.Window;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            iconButton4.IconColor = SystemColors.Window;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 32;
-            iconButton4.Location = new Point(948, 142);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(164, 37);
-            iconButton4.TabIndex = 10;
-            iconButton4.Text = "Dodaj nowy";
-            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = false;
+            addButton.BackColor = Color.FromArgb(50, 168, 82);
+            addButton.Cursor = Cursors.Hand;
+            addButton.FlatAppearance.BorderSize = 0;
+            addButton.FlatStyle = FlatStyle.Flat;
+            addButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            addButton.ForeColor = SystemColors.Window;
+            addButton.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            addButton.IconColor = SystemColors.Window;
+            addButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            addButton.IconSize = 34;
+            addButton.Location = new Point(788, 51);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(192, 51);
+            addButton.TabIndex = 10;
+            addButton.Text = "Dodaj nowy";
+            addButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            addButton.UseVisualStyleBackColor = false;
             // 
-            // iconButton5
+            // deleteButton
             // 
-            iconButton5.BackColor = Color.FromArgb(78, 81, 217);
-            iconButton5.Cursor = Cursors.Hand;
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton5.ForeColor = SystemColors.Window;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            iconButton5.IconColor = SystemColors.Window;
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 32;
-            iconButton5.Location = new Point(948, 201);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(164, 37);
-            iconButton5.TabIndex = 11;
-            iconButton5.Text = "Usuń";
-            iconButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton5.UseVisualStyleBackColor = false;
+            deleteButton.BackColor = Color.FromArgb(168, 50, 50);
+            deleteButton.Cursor = Cursors.Hand;
+            deleteButton.FlatAppearance.BorderSize = 0;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteButton.ForeColor = SystemColors.Window;
+            deleteButton.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            deleteButton.IconColor = SystemColors.Window;
+            deleteButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            deleteButton.IconSize = 34;
+            deleteButton.Location = new Point(1003, 125);
+            deleteButton.Margin = new Padding(3, 20, 3, 3);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(192, 51);
+            deleteButton.TabIndex = 11;
+            deleteButton.Text = "Usuń";
+            deleteButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            deleteButton.UseVisualStyleBackColor = false;
             // 
-            // iconButton6
+            // modifyButton
             // 
-            iconButton6.BackColor = Color.FromArgb(78, 81, 217);
-            iconButton6.Cursor = Cursors.Hand;
-            iconButton6.FlatAppearance.BorderSize = 0;
-            iconButton6.FlatStyle = FlatStyle.Flat;
-            iconButton6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton6.ForeColor = SystemColors.Window;
-            iconButton6.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            iconButton6.IconColor = SystemColors.Window;
-            iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton6.IconSize = 32;
-            iconButton6.Location = new Point(948, 260);
-            iconButton6.Name = "iconButton6";
-            iconButton6.Size = new Size(164, 37);
-            iconButton6.TabIndex = 12;
-            iconButton6.Text = "Modyfikuj";
-            iconButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton6.UseVisualStyleBackColor = false;
+            modifyButton.BackColor = Color.FromArgb(219, 143, 2);
+            modifyButton.Cursor = Cursors.Hand;
+            modifyButton.FlatAppearance.BorderSize = 0;
+            modifyButton.FlatStyle = FlatStyle.Flat;
+            modifyButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            modifyButton.ForeColor = SystemColors.Window;
+            modifyButton.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            modifyButton.IconColor = SystemColors.Window;
+            modifyButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            modifyButton.IconSize = 34;
+            modifyButton.Location = new Point(1003, 51);
+            modifyButton.Margin = new Padding(20, 20, 20, 3);
+            modifyButton.Name = "modifyButton";
+            modifyButton.Size = new Size(192, 51);
+            modifyButton.TabIndex = 13;
+            modifyButton.Text = "Modyfikuj";
+            modifyButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            modifyButton.UseVisualStyleBackColor = false;
+            // 
+            // clearButton
+            // 
+            clearButton.BackColor = Color.FromArgb(7, 146, 232);
+            clearButton.Cursor = Cursors.Hand;
+            clearButton.FlatAppearance.BorderSize = 0;
+            clearButton.FlatStyle = FlatStyle.Flat;
+            clearButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            clearButton.ForeColor = SystemColors.Window;
+            clearButton.IconChar = FontAwesome.Sharp.IconChar.FilterCircleXmark;
+            clearButton.IconColor = SystemColors.Window;
+            clearButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            clearButton.IconSize = 34;
+            clearButton.Location = new Point(788, 125);
+            clearButton.Margin = new Padding(3, 20, 3, 3);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(192, 51);
+            clearButton.TabIndex = 14;
+            clearButton.Text = "Wyczyść filtry";
+            clearButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            clearButton.UseVisualStyleBackColor = false;
             // 
             // AdminMoviesListView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 35, 68);
-            ClientSize = new Size(1124, 732);
-            Controls.Add(iconButton6);
-            Controls.Add(iconButton5);
-            Controls.Add(iconButton4);
-            Controls.Add(iconButton3);
-            Controls.Add(textBox1);
+            ClientSize = new Size(1238, 801);
+            Controls.Add(clearButton);
+            Controls.Add(modifyButton);
+            Controls.Add(deleteButton);
+            Controls.Add(addButton);
+            Controls.Add(searchButton);
+            Controls.Add(searchValue);
             Controls.Add(label2);
-            Controls.Add(iconButton2);
-            Controls.Add(iconButton1);
+            Controls.Add(dscButton);
+            Controls.Add(ascButton);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(sortCriteria);
             Controls.Add(dataGridView1);
             Name = "AdminMoviesListView";
             Text = "Lista filmów";
@@ -275,15 +300,16 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private ComboBox comboBox1;
+        private ComboBox sortCriteria;
         private Label label1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton ascButton;
+        private FontAwesome.Sharp.IconButton dscButton;
         private Label label2;
-        private TextBox textBox1;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private TextBox searchValue;
+        private FontAwesome.Sharp.IconButton searchButton;
+        private FontAwesome.Sharp.IconButton addButton;
+        private FontAwesome.Sharp.IconButton deleteButton;
+        private FontAwesome.Sharp.IconButton modifyButton;
+        private FontAwesome.Sharp.IconButton clearButton;
     }
 }

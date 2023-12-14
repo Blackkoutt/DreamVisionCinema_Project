@@ -61,7 +61,7 @@
             panelUserMenu.Dock = DockStyle.Left;
             panelUserMenu.Location = new Point(0, 0);
             panelUserMenu.Name = "panelUserMenu";
-            panelUserMenu.Size = new Size(250, 900);
+            panelUserMenu.Size = new Size(250, 853);
             panelUserMenu.TabIndex = 1;
             // 
             // iconButton1
@@ -189,7 +189,7 @@
             titleBar.Dock = DockStyle.Top;
             titleBar.Location = new Point(250, 0);
             titleBar.Name = "titleBar";
-            titleBar.Size = new Size(1369, 75);
+            titleBar.Size = new Size(1269, 75);
             titleBar.TabIndex = 2;
             titleBar.MouseDown += titleBar_MouseDown_1;
             // 
@@ -224,14 +224,14 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(250, 75);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1369, 825);
+            panelDesktop.Size = new Size(1269, 778);
             panelDesktop.TabIndex = 4;
             // 
             // bigLogo
             // 
             bigLogo.Anchor = AnchorStyles.None;
             bigLogo.Image = Properties.Resources.logo;
-            bigLogo.Location = new Point(375, 253);
+            bigLogo.Location = new Point(325, 230);
             bigLogo.Name = "bigLogo";
             bigLogo.Size = new Size(646, 320);
             bigLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -242,12 +242,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1619, 900);
+            ClientSize = new Size(1519, 853);
             Controls.Add(panelDesktop);
             Controls.Add(titleBar);
             Controls.Add(panelUserMenu);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1637, 947);
+            MinimumSize = new Size(1437, 847);
             Name = "MainAdminForm";
             Text = "Panel administratora";
             panelUserMenu.ResumeLayout(false);
