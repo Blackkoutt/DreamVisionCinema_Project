@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static GUI.Views.AdminViews.DeleteMessage;
+using static GUI.Views.AdminViews.EditMovieForm;
 
 namespace GUI.Presenters.AdminPresenters
 {
@@ -24,6 +25,7 @@ namespace GUI.Presenters.AdminPresenters
 
         private IAddMovieView addMovieView;
         private List<IDeleteMessage> deleteMessages = new List<IDeleteMessage>();
+        private List<IEditMovieView> editMovieViews = new List<IEditMovieView>();
 
         public AdminMoviePresenter(IMovieRepository movieRepository, IReservationRepository reservationRepository, IAdminMoviesView view)
         {
@@ -57,10 +59,19 @@ namespace GUI.Presenters.AdminPresenters
             {
                 addMovieView = new AddMovieForm();
                 addMovieView.Show();
+                addMovieView.addFormClosing += HandleCloseAddForm;
                 addMovieView.submitAddForm += HandleSubmitAddMovie;
             }
-            
+            else
+            {
+                addMovieView.BringToFront();
+            }          
             // tutaj formularz do wypełnienia (nowe okno ale może się otworzyć tylko raz dla danego filmu)
+        }
+
+        private void HandleCloseAddForm(object? sender, EventArgs e)
+        {
+            addMovieView = null;
         }
 
         private void HandleSubmitAddMovie(object? sender, EventArgs e)
@@ -88,8 +99,71 @@ namespace GUI.Presenters.AdminPresenters
         private void ModifyMovie(object? sender, EventArgs e)
         {
             // tutaj formularz do wypełnienia (nowe okno ale może się otworzyć tylko raz dla danego filmu)
-            // Formularz powinien zawierać wypełnione wartości atrybutami filmu
             // dużo wyjątków
+            // Formularz powinien zawierać wypełnione wartości atrybutami filmu
+            
+            string[] all = movieBindingSource.Current.ToString().Split(",");
+            string title = all[1].Split("=")[1].Trim();
+            string id = all[0].Split("=")[1].Trim();
+            string date = all[2].Split("=")[1].Trim();
+            string price = all[3].Split("=")[1].Trim();
+            string roomNumber = all[5].Split("=")[1].Trim()[0].ToString();
+
+            IEditMovieView editMovieView = new EditMovieForm(id, title, date, price, roomNumber);
+            IEditMovieView? existingView = editMovieViews.FirstOrDefault(form => form.ID == editMovieView.ID);
+            if (existingView!=null)
+            {
+                existingView.BringToFront();
+            }
+            else
+            {
+                editMovieView.Show();
+                editMovieView.submitEditForm += HandleSubmitEditMovie;
+                editMovieView.editFormClosing += HandleCloseEditForm;
+                editMovieViews.Add(editMovieView);
+            }          
+        }
+
+        private void HandleCloseEditForm(object? sender, EventArgs e)
+        {
+            IEditMovieView edit = (IEditMovieView)sender;
+            editMovieViews.Remove(edit);
+        }
+
+        private void HandleSubmitEditMovie(object? sender, EventArgs e)
+        {
+            string id = "";
+            string date = "";
+            string price = "";
+            string room_nr = "";
+            IEditMovieView edit = (IEditMovieView)sender;
+            if (e is EditEventArgs editEventArgs)
+            {
+                id = editEventArgs.Id;
+                date = (editEventArgs.Date != edit.OldDate) ? editEventArgs.Date : "";
+                price = (editEventArgs.Price != edit.OldPrice) ? editEventArgs.Price : "";
+                room_nr = (editEventArgs.RoomNumber != edit.OldRoomNumber) ? editEventArgs.RoomNumber : "";
+            }
+            if (price != "")
+            {
+                //THROWS EXCEPTIONS
+                movieRepository.ModifyMoviePrice(id, price);
+                RefreshMovieList();
+            }
+            if (date != "" || room_nr != "")
+            {
+                //THROWS EXCEPTIONS
+                reservationRepository.ModifyMovieDateOrRoomWithReservation(id, date, room_nr);
+                RefreshMovieList();
+            }
+            // jeśli to przeszło to powiadomienie i zamknięcie formularza
+           
+            if(price =="" && date=="" && room_nr == "")
+            {
+                // jeśli nic nie zmieniono to powinno wyświetlić się poraiwdomienie też 
+            }
+            edit.Close();
+            editMovieViews.Remove(edit);          
         }
 
         private void DeleteMovie(object? sender, EventArgs e)
@@ -99,11 +173,25 @@ namespace GUI.Presenters.AdminPresenters
             string id = movieBindingSource.Current.ToString().Split(",")[0].Split("=")[1].Trim();
 
             IDeleteMessage newMessage = new DeleteMessage(title, id);
-            newMessage.Show();
-            newMessage.submitDelete += HandleSubmitDeleteMovie;
-            newMessage.cancelDelete += HandleCancelDeleteMovie;
-            deleteMessages.Add(newMessage);
-            
+            IDeleteMessage? existingView = deleteMessages.FirstOrDefault(form => form.ID == newMessage.ID);
+            if (existingView != null)
+            {
+                existingView.BringToFront();
+            }
+            else
+            {
+                newMessage.Show();
+                newMessage.submitDelete += HandleSubmitDeleteMovie;
+                newMessage.cancelDelete += HandleCancelDeleteMovie;
+                newMessage.deleteFormClosing += HandleCloseDeleteForm;
+                deleteMessages.Add(newMessage);
+            }   
+        }
+
+        private void HandleCloseDeleteForm(object? sender, EventArgs e)
+        {
+            IDeleteMessage delete = (IDeleteMessage)sender;
+            deleteMessages.Remove(delete);
         }
 
         private void HandleSubmitDeleteMovie(object? sender, EventArgs e)

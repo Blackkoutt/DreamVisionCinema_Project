@@ -79,3 +79,5 @@ C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.AdminViews.AddMovieForm.resources
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.AdminViews.DeleteMessage.resources
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.AdminViews.EditMovieForm.resources
+C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\bin\Debug\net7.0-windows\OxyPlot.dll
+C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\bin\Debug\net7.0-windows\OxyPlot.WindowsForms.dll

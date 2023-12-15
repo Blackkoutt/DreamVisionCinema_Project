@@ -18,6 +18,8 @@ namespace GUI.Presenters.AdminPresenters
         {
             this.reservationRepository = reservationRepository;
             this._view = view;
+
+            _view.Show();
         }
     }
 }

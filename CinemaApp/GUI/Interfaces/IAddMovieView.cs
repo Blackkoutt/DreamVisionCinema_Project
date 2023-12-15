@@ -9,6 +9,7 @@ namespace GUI.Interfaces
     public interface IAddMovieView
     {
         event EventHandler submitAddForm;
+        event EventHandler addFormClosing;
         void Show();
         void Close();
         void BringToFront();

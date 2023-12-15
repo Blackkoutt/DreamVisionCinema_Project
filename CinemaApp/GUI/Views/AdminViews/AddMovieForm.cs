@@ -16,7 +16,9 @@ namespace GUI.Views.AdminViews
         public AddMovieForm()
         {
             InitializeComponent();
+            this.durationTextView.Text = "01:00";
             submitAddButton.Click += delegate { submitAddForm?.Invoke(this, EventArgs.Empty); };
+            this.FormClosed += delegate { addFormClosing?.Invoke(this, EventArgs.Empty); };
         }
 
         public RichTextBox TitleValue
@@ -45,6 +47,8 @@ namespace GUI.Views.AdminViews
         }
 
         public event EventHandler submitAddForm;
+        public event EventHandler addFormClosing;
+
         public Control.ControlCollection GetControls()
         {
             return this.Controls;

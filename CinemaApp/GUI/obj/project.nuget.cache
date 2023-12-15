@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ENxcoR7a9e6FQeGRDyh/knxwKsLsfV2KvYOxRD5H0Edg2BirCAiizfzSvOhk6vz6KH9Fvb5WBQsYiWEm36ccOQ==",
+  "dgSpecHash": "Z1CUj7UkMb0WzTJOsDPgn3RoCw0i3KI6a7tN1nfN4OxAdOGTGEqNXtHS7UtewnM4H+ppEAIoYMJiOjR9fQHoqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\Repositories\\KCK repo save\\KCK\\CinemaApp\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Mateusz\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+    "C:\\Users\\Mateusz\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Mateusz\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
+    "C:\\Users\\Mateusz\\.nuget\\packages\\oxyplot.windowsforms\\2.1.2\\oxyplot.windowsforms.2.1.2.nupkg.sha512"
   ],
   "logs": []
 }
