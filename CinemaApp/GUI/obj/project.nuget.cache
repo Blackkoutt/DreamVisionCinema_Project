@@ -1,12 +1,35 @@
 {
   "version": 2,
-  "dgSpecHash": "Z1CUj7UkMb0WzTJOsDPgn3RoCw0i3KI6a7tN1nfN4OxAdOGTGEqNXtHS7UtewnM4H+ppEAIoYMJiOjR9fQHoqA==",
+  "dgSpecHash": "opOeGyxDVchgt+I3I3REz0g2nFxE1UFbXS14j51OYoE6f+2Za+vdCWewbtwDy/Si6kVv+dzaGeed2w5Q5RW7Bg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\Repositories\\KCK repo save\\KCK\\CinemaApp\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\circularprogressbar.2.8.0.16.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
-    "C:\\Users\\Mateusz\\.nuget\\packages\\oxyplot.windowsforms\\2.1.2\\oxyplot.windowsforms.2.1.2.nupkg.sha512"
+    "C:\\Users\\Mateusz\\.nuget\\packages\\oxyplot.windowsforms\\2.1.2\\oxyplot.windowsforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\Mateusz\\.nuget\\packages\\winformanimation\\1.6.0.4\\winformanimation.1.6.0.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „CircularProgressBar 2.8.0.16” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net7.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "CircularProgressBar",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „WinFormAnimation 1.6.0.4” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net7.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "WinFormAnimation",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    }
+  ]
 }

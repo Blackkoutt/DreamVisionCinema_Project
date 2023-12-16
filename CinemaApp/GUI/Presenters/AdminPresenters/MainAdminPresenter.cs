@@ -118,8 +118,8 @@ namespace GUI.Presenters.AdminPresenters
             }
             if (adminStatisticsView == null)
             {
-                adminStatisticsView = new AdminStatisticView(reservationRepository);
-                new AdminStatisticPresenter(reservationRepository, adminStatisticsView);
+                adminStatisticsView = new AdminStatisticView();
+                new AdminStatisticPresenter(reservationRepository, adminStatisticsView, _mainAdminForm);
 
                 _mainAdminForm.PanelContainer.Controls.Clear();
                 _mainAdminForm.PanelContainer.Controls.Add((Form)adminStatisticsView);

@@ -19,6 +19,9 @@
     <Compile Update="Views\AdminViews\EditMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\AdminViews\MostPopularMoviesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\MainAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>

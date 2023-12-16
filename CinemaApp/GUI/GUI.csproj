@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CircularProgressBar" Version="2.8.0.16" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="OxyPlot.Core" Version="2.1.2" />
     <PackageReference Include="OxyPlot.WindowsForms" Version="2.1.2" />
