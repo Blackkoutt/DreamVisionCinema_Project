@@ -28,6 +28,7 @@ partial class MainUserForm
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUserForm));
         panelUserMenu = new Panel();
         backButton = new FontAwesome.Sharp.IconButton();
         showReservationsButton = new FontAwesome.Sharp.IconButton();
@@ -35,9 +36,6 @@ partial class MainUserForm
         panelLogo = new Panel();
         logoPictureBox = new PictureBox();
         titleBar = new Panel();
-        minimiseButton = new FontAwesome.Sharp.IconButton();
-        maximiseButton = new FontAwesome.Sharp.IconButton();
-        closeButton = new FontAwesome.Sharp.IconButton();
         lblTitleChildForm = new Label();
         iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
         panelShadow = new Panel();
@@ -161,9 +159,6 @@ partial class MainUserForm
         // titleBar
         // 
         titleBar.BackColor = Color.FromArgb(31, 30, 68);
-        titleBar.Controls.Add(minimiseButton);
-        titleBar.Controls.Add(maximiseButton);
-        titleBar.Controls.Add(closeButton);
         titleBar.Controls.Add(lblTitleChildForm);
         titleBar.Controls.Add(iconCurrentChildForm);
         titleBar.Dock = DockStyle.Top;
@@ -172,66 +167,6 @@ partial class MainUserForm
         titleBar.Size = new Size(1169, 75);
         titleBar.TabIndex = 1;
         titleBar.MouseDown += titleBar_MouseDown;
-        // 
-        // minimiseButton
-        // 
-        minimiseButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        minimiseButton.BackColor = Color.FromArgb(31, 30, 68);
-        minimiseButton.Cursor = Cursors.Hand;
-        minimiseButton.FlatAppearance.BorderSize = 0;
-        minimiseButton.FlatAppearance.MouseOverBackColor = Color.DarkOrange;
-        minimiseButton.FlatStyle = FlatStyle.Flat;
-        minimiseButton.ForeColor = Color.Gainsboro;
-        minimiseButton.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-        minimiseButton.IconColor = Color.Gainsboro;
-        minimiseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        minimiseButton.IconSize = 25;
-        minimiseButton.Location = new Point(1076, 12);
-        minimiseButton.Name = "minimiseButton";
-        minimiseButton.Size = new Size(20, 20);
-        minimiseButton.TabIndex = 4;
-        minimiseButton.UseVisualStyleBackColor = false;
-        minimiseButton.Click += minimiseButton_Click;
-        // 
-        // maximiseButton
-        // 
-        maximiseButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        maximiseButton.BackColor = Color.FromArgb(31, 30, 68);
-        maximiseButton.Cursor = Cursors.Hand;
-        maximiseButton.FlatAppearance.BorderSize = 0;
-        maximiseButton.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
-        maximiseButton.FlatStyle = FlatStyle.Flat;
-        maximiseButton.ForeColor = Color.Gainsboro;
-        maximiseButton.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-        maximiseButton.IconColor = Color.Gainsboro;
-        maximiseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        maximiseButton.IconSize = 25;
-        maximiseButton.Location = new Point(1111, 12);
-        maximiseButton.Name = "maximiseButton";
-        maximiseButton.Size = new Size(20, 20);
-        maximiseButton.TabIndex = 3;
-        maximiseButton.UseVisualStyleBackColor = false;
-        maximiseButton.Click += maximiseButton_Click;
-        // 
-        // closeButton
-        // 
-        closeButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        closeButton.BackColor = Color.FromArgb(31, 30, 68);
-        closeButton.Cursor = Cursors.Hand;
-        closeButton.FlatAppearance.BorderSize = 0;
-        closeButton.FlatAppearance.MouseOverBackColor = Color.Red;
-        closeButton.FlatStyle = FlatStyle.Flat;
-        closeButton.ForeColor = Color.Gainsboro;
-        closeButton.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-        closeButton.IconColor = Color.Gainsboro;
-        closeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        closeButton.IconSize = 25;
-        closeButton.Location = new Point(1137, 12);
-        closeButton.Name = "closeButton";
-        closeButton.Size = new Size(20, 20);
-        closeButton.TabIndex = 2;
-        closeButton.UseVisualStyleBackColor = false;
-        closeButton.Click += closeButton_Click;
         // 
         // lblTitleChildForm
         // 
@@ -297,9 +232,10 @@ partial class MainUserForm
         Controls.Add(panelShadow);
         Controls.Add(titleBar);
         Controls.Add(panelUserMenu);
+        Icon = (Icon)resources.GetObject("$this.Icon");
         MinimumSize = new Size(1437, 747);
         Name = "MainUserForm";
-        Text = "Form1";
+        Text = "Panel użytkownika";
         panelUserMenu.ResumeLayout(false);
         panelLogo.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
@@ -325,7 +261,4 @@ partial class MainUserForm
     private Panel panelShadow;
     private Panel panelDesktop;
     private PictureBox bigLogo;
-    private FontAwesome.Sharp.IconButton closeButton;
-    private FontAwesome.Sharp.IconButton minimiseButton;
-    private FontAwesome.Sharp.IconButton maximiseButton;
 }

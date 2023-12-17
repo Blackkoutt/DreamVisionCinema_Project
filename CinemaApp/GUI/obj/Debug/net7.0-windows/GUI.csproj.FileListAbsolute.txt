@@ -84,3 +84,7 @@ C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\bin\Debug\
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.AdminViews.MostPopularMoviesView.resources
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\bin\Debug\net7.0-windows\CircularProgressBar.dll
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\bin\Debug\net7.0-windows\WinFormAnimation.dll
+C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.AdminViews.MostProfitableMoviesView.resources
+C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.ModeSelectionForm.resources
+C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.AdminAuthenticationForm.resources
+C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.CustomAlertBox.resources

@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Views\AdminAuthenticationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\AdminViews\AddMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -22,10 +25,19 @@
     <Compile Update="Views\AdminViews\MostPopularMoviesView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\AdminViews\MostProfitableMoviesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\CustomAlertBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\MainAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\MainUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\ModeSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\UserViews\MovieReservationView.cs">

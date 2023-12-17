@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAdminForm));
             panelUserMenu = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            backButton = new FontAwesome.Sharp.IconButton();
             statisticButton = new FontAwesome.Sharp.IconButton();
             showReservationsButton = new FontAwesome.Sharp.IconButton();
             showMoviesListButton = new FontAwesome.Sharp.IconButton();
@@ -53,7 +53,7 @@
             // panelUserMenu
             // 
             panelUserMenu.BackColor = Color.FromArgb(31, 30, 68);
-            panelUserMenu.Controls.Add(iconButton1);
+            panelUserMenu.Controls.Add(backButton);
             panelUserMenu.Controls.Add(statisticButton);
             panelUserMenu.Controls.Add(showReservationsButton);
             panelUserMenu.Controls.Add(showMoviesListButton);
@@ -64,29 +64,29 @@
             panelUserMenu.Size = new Size(250, 853);
             panelUserMenu.TabIndex = 1;
             // 
-            // iconButton1
+            // backButton
             // 
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.Dock = DockStyle.Top;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.Gainsboro;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.CircleChevronLeft;
-            iconButton1.IconColor = Color.Gainsboro;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 32;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 320);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(10, 0, 20, 0);
-            iconButton1.Size = new Size(250, 60);
-            iconButton1.TabIndex = 4;
-            iconButton1.Text = "Wróć";
-            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
+            backButton.Cursor = Cursors.Hand;
+            backButton.Dock = DockStyle.Top;
+            backButton.FlatAppearance.BorderSize = 0;
+            backButton.FlatStyle = FlatStyle.Flat;
+            backButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            backButton.ForeColor = Color.Gainsboro;
+            backButton.IconChar = FontAwesome.Sharp.IconChar.CircleChevronLeft;
+            backButton.IconColor = Color.Gainsboro;
+            backButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            backButton.IconSize = 32;
+            backButton.ImageAlign = ContentAlignment.MiddleLeft;
+            backButton.Location = new Point(0, 320);
+            backButton.Name = "backButton";
+            backButton.Padding = new Padding(10, 0, 20, 0);
+            backButton.Size = new Size(250, 60);
+            backButton.TabIndex = 4;
+            backButton.Text = "Wróć";
+            backButton.TextAlign = ContentAlignment.MiddleLeft;
+            backButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            backButton.UseVisualStyleBackColor = true;
+            backButton.Click += iconButton1_Click;
             // 
             // statisticButton
             // 
@@ -273,6 +273,6 @@
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private Panel panelDesktop;
         private PictureBox bigLogo;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton backButton;
     }
 }

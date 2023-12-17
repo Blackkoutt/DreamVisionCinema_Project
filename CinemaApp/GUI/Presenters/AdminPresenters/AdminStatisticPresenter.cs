@@ -14,6 +14,7 @@ namespace GUI.Presenters.AdminPresenters
     {
         private IAdminStatisticsView _view;
         private IPopluarMovies _popularMoviesView;
+        private IProfitableMovies _profitableMoviesView;
         private IMainAdminForm _mainAdminForm;
 
         private IReservationRepository reservationRepository;
@@ -35,7 +36,27 @@ namespace GUI.Presenters.AdminPresenters
 
         private void HandleProfitableClickEvent(object? sender, EventArgs e)
         {
-            
+            Dictionary<string, double> data = reservationRepository.GetMoviesIncome();
+            data = data.Take(10).ToDictionary(pair => pair.Key, pair => pair.Value);
+            data = new Dictionary<string, double> { { "", 0 } }.Concat(data).ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            _profitableMoviesView = new MostProfitableMoviesView(data);
+            _mainAdminForm.PanelContainer.Controls.Clear();
+            _mainAdminForm.PanelContainer.Controls.Add((Form)_profitableMoviesView);
+
+            _profitableMoviesView.Show();
+            _profitableMoviesView.BringToFront();
+            _profitableMoviesView.BackFromProfitableMovies += HandleBackFromProfitableMovies;
+        }
+
+        private void HandleBackFromProfitableMovies(object? sender, EventArgs e)
+        {
+            _profitableMoviesView.Close();
+            _mainAdminForm.PanelContainer.Controls.Clear();
+            _profitableMoviesView = null;
+            PrepareStatisticView();
+            _mainAdminForm.PanelContainer.Controls.Add((Form)_view);
+            _view.Show();
         }
 
         private void HandlePopularClickEvent(object? sender, EventArgs e)
@@ -52,6 +73,18 @@ namespace GUI.Presenters.AdminPresenters
 
             _popularMoviesView.Show();
             _popularMoviesView.BringToFront();
+            _popularMoviesView.BackFromPupularMovies += HandleBackFromPopularMovies;
+        }
+
+        private void HandleBackFromPopularMovies(object? sender, EventArgs e)
+        {
+            _popularMoviesView.Close();
+            _mainAdminForm.PanelContainer.Controls.Clear();
+            _popularMoviesView = null;
+            PrepareStatisticView();
+            _mainAdminForm.PanelContainer.Controls.Add((Form)_view);
+            _view.Show();
+           // _view.BringToFront();
         }
 
         public void PrepareStatisticView()

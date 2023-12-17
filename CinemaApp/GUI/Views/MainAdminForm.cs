@@ -21,9 +21,13 @@ namespace GUI.Views
         public event EventHandler ShowAdminMoviesView;
         public event EventHandler ShowAdminStatisticsView;
         public event EventHandler AdminLoadDefault;
+        public event EventHandler goBackEvent;
+
         public MainAdminForm()
         {
             InitializeComponent();
+
+            backButton.Click += delegate { goBackEvent?.Invoke(this, EventArgs.Empty); };
 
             showReservationsButton.Click += delegate { ShowAdminReservationsView?.Invoke(this, EventArgs.Empty); };
 
@@ -32,6 +36,8 @@ namespace GUI.Views
             statisticButton.Click += delegate { ShowAdminStatisticsView?.Invoke(this, EventArgs.Empty); };
 
             logoPictureBox.Click += delegate { AdminLoadDefault?.Invoke(this, EventArgs.Empty); };
+
+
 
 
             leftBorderButton = new Panel();

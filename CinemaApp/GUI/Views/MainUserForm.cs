@@ -13,6 +13,7 @@ public partial class MainUserForm : Form, IMainUserForm
     public event EventHandler ShowReservationsView;
     public event EventHandler ShowMoviesView;
     public event EventHandler LoadDefault;
+    public event EventHandler GoBack;
 
     public PictureBox MainBigLogo
     {
@@ -50,15 +51,16 @@ public partial class MainUserForm : Form, IMainUserForm
         //buyTicketButton.Click += delegate { ShowMoviesView?.Invoke(this, EventArgs.Empty); };
 
         logoPictureBox.Click += delegate { LoadDefault?.Invoke(this, EventArgs.Empty); };
+        backButton.Click += delegate { GoBack?.Invoke(this, EventArgs.Empty); };
 
         leftBorderButton = new Panel();
         leftBorderButton.Size = new Size(7, 60);
         panelUserMenu.Controls.Add(leftBorderButton);
 
-        this.Text = string.Empty;
-        this.ControlBox = false;
+        /*this.Text = string.Empty;
+        /*this.ControlBox = false;
         this.DoubleBuffered = true;
-        this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;*/
     }
 
     private struct RGBColors
@@ -66,7 +68,7 @@ public partial class MainUserForm : Form, IMainUserForm
         public static Color color1 = Color.FromArgb(172, 126, 241);
         public static Color color2 = Color.FromArgb(249, 118, 176);
         public static Color color3 = Color.FromArgb(253, 138, 114);
-        
+
     }
 
     private void ActivateButton(object sender, Color color)
@@ -144,29 +146,5 @@ public partial class MainUserForm : Form, IMainUserForm
     {
         ReleaseCapture();
         SendMessage(this.Handle, 0x112, 0xf012, 0);
-    }
-
-    private void closeButton_Click(object sender, EventArgs e)
-    {
-        Application.Exit();
-    }
-
-    private void maximiseButton_Click(object sender, EventArgs e)
-    {
-        if (WindowState == FormWindowState.Normal)
-        {
-            WindowState = FormWindowState.Maximized;
-            maximiseButton.IconChar = IconChar.WindowRestore;
-        }
-        else
-        {
-            WindowState = FormWindowState.Normal;
-            maximiseButton.IconChar = IconChar.WindowMaximize;
-        }
-    }
-
-    private void minimiseButton_Click(object sender, EventArgs e)
-    {
-        WindowState = FormWindowState.Minimized;
     }
 }

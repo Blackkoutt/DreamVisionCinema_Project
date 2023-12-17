@@ -11,5 +11,6 @@ namespace GUI.Interfaces
         void Show();
         void Close();
         void BringToFront();
+        event EventHandler BackFromPupularMovies;
     }
 }

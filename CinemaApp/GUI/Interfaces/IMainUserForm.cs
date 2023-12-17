@@ -13,6 +13,7 @@ namespace GUI.Interfaces
         event EventHandler ShowReservationsView;
         event EventHandler ShowMoviesView;
         event EventHandler LoadDefault;
+        event EventHandler GoBack;
 
         Panel PanelContainer { get; }
         public Label lblTitle { get; }
@@ -20,6 +21,9 @@ namespace GUI.Interfaces
         public IconPictureBox topIcon { get; }
         public Panel ButtonBorderLeft { get; }
         public PictureBox MainBigLogo { get; }
+        void Show();
+        void Close();
+        void BringToFront();
 
         void DisableButton();
     }

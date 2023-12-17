@@ -23,10 +23,14 @@ namespace GUI.Views.AdminViews
             this.Dock = DockStyle.Fill;
 
             InitializeComponent();
+            backButton.Click += delegate { BackFromPupularMovies?.Invoke(this, EventArgs.Empty); };
 
 
             PrepareChart(data);
         }
+
+        public event EventHandler BackFromPupularMovies;
+
         public void PrepareChart(Dictionary<string, int> data)
         {
             // Utwórz model i osie

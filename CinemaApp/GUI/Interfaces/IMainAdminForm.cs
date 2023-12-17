@@ -12,6 +12,10 @@ namespace GUI.Interfaces
         event EventHandler ShowAdminMoviesView;
         event EventHandler ShowAdminStatisticsView;
         event EventHandler AdminLoadDefault;
+        event EventHandler goBackEvent;
+        void Show();
+        void Close();
+        void BringToFront();
 
         public PictureBox MainBigLogo { get; }
         Panel PanelContainer { get; }
