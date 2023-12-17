@@ -19,15 +19,27 @@ namespace GUI.Views
             // signInButton.
             signInButton.Click += delegate { SignIn?.Invoke(this, EventArgs.Empty); };
         }
-        public RichTextBox Login
+        public TextBox Login
         {
-            get { return loginTextView; }
+            get { return loginText; }
         }
-        public RichTextBox Password
+        public TextBox Password
         {
-            get { return passwordTextView; }
+            get { return passwordText; }
         }
 
         public event EventHandler SignIn;
+
+        private void showPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPasswordCheckBox.Checked)
+            {
+                passwordText.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordText.PasswordChar = '*';
+            }
+        }
     }
 }

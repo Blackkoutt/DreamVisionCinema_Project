@@ -32,10 +32,11 @@
             bigLogo = new PictureBox();
             filmEditlabel = new Label();
             loginLabel = new Label();
-            loginTextView = new RichTextBox();
             passwordLabel = new Label();
-            passwordTextView = new RichTextBox();
             signInButton = new FontAwesome.Sharp.IconButton();
+            passwordText = new TextBox();
+            showPasswordCheckBox = new CheckBox();
+            loginText = new TextBox();
             ((System.ComponentModel.ISupportInitialize)bigLogo).BeginInit();
             SuspendLayout();
             // 
@@ -72,16 +73,6 @@
             loginLabel.Text = "Login:";
             loginLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // loginTextView
-            // 
-            loginTextView.BackColor = SystemColors.Window;
-            loginTextView.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            loginTextView.Location = new Point(205, 337);
-            loginTextView.Name = "loginTextView";
-            loginTextView.Size = new Size(416, 37);
-            loginTextView.TabIndex = 109;
-            loginTextView.Text = "";
-            // 
             // passwordLabel
             // 
             passwordLabel.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
@@ -92,16 +83,6 @@
             passwordLabel.TabIndex = 110;
             passwordLabel.Text = "Hasło:";
             passwordLabel.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // passwordTextView
-            // 
-            passwordTextView.BackColor = SystemColors.Window;
-            passwordTextView.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextView.Location = new Point(205, 433);
-            passwordTextView.Name = "passwordTextView";
-            passwordTextView.Size = new Size(416, 37);
-            passwordTextView.TabIndex = 111;
-            passwordTextView.Text = "";
             // 
             // signInButton
             // 
@@ -115,7 +96,7 @@
             signInButton.IconColor = SystemColors.Window;
             signInButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             signInButton.IconSize = 34;
-            signInButton.Location = new Point(321, 525);
+            signInButton.Location = new Point(320, 534);
             signInButton.Name = "signInButton";
             signInButton.Size = new Size(163, 51);
             signInButton.TabIndex = 116;
@@ -123,16 +104,47 @@
             signInButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             signInButton.UseVisualStyleBackColor = false;
             // 
+            // passwordText
+            // 
+            passwordText.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordText.Location = new Point(205, 433);
+            passwordText.Name = "passwordText";
+            passwordText.PasswordChar = '*';
+            passwordText.Size = new Size(416, 38);
+            passwordText.TabIndex = 117;
+            // 
+            // showPasswordCheckBox
+            // 
+            showPasswordCheckBox.AutoSize = true;
+            showPasswordCheckBox.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            showPasswordCheckBox.ForeColor = SystemColors.Window;
+            showPasswordCheckBox.Location = new Point(205, 477);
+            showPasswordCheckBox.Name = "showPasswordCheckBox";
+            showPasswordCheckBox.Size = new Size(128, 29);
+            showPasswordCheckBox.TabIndex = 118;
+            showPasswordCheckBox.Text = "Pokaż hasło";
+            showPasswordCheckBox.UseVisualStyleBackColor = true;
+            showPasswordCheckBox.CheckedChanged += showPasswordCheckBox_CheckedChanged;
+            // 
+            // loginText
+            // 
+            loginText.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            loginText.Location = new Point(205, 337);
+            loginText.Name = "loginText";
+            loginText.Size = new Size(416, 38);
+            loginText.TabIndex = 119;
+            // 
             // AdminAuthenticationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
             ClientSize = new Size(826, 617);
+            Controls.Add(loginText);
+            Controls.Add(showPasswordCheckBox);
+            Controls.Add(passwordText);
             Controls.Add(signInButton);
-            Controls.Add(passwordTextView);
             Controls.Add(passwordLabel);
-            Controls.Add(loginTextView);
             Controls.Add(loginLabel);
             Controls.Add(filmEditlabel);
             Controls.Add(bigLogo);
@@ -141,6 +153,7 @@
             Text = "Logowanie";
             ((System.ComponentModel.ISupportInitialize)bigLogo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -148,9 +161,11 @@
         private PictureBox bigLogo;
         private Label filmEditlabel;
         private Label loginLabel;
-        private RichTextBox loginTextView;
         private Label passwordLabel;
         private RichTextBox passwordTextView;
         private FontAwesome.Sharp.IconButton signInButton;
+        private TextBox passwordText;
+        private CheckBox showPasswordCheckBox;
+        private TextBox loginText;
     }
 }

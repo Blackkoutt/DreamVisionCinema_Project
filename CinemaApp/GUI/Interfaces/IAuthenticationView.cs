@@ -12,8 +12,8 @@ namespace GUI.Interfaces
         void Close();
         void BringToFront();
         void Hide();
-        public RichTextBox Login { get; }
-        public RichTextBox Password { get; }
+        public TextBox Login { get; }
+        public TextBox Password { get; }
         event EventHandler SignIn;
     }
 }

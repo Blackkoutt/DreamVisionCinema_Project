@@ -34,9 +34,10 @@ static class Program
         Application.Run(adminForm);*/
 
         // User
-        ISelectionView selectionView = new ModeSelectionForm();
+        ISelectionView selectionView = new ModeSelectionForm();       
         new MainPresenter(selectionView);
         Application.Run((Form)selectionView);
+
 
         /*IMainUserForm mainUserForm = new MainUserForm();
         new MainUserPresenter(mainUserForm, movieRepository, reservationRepository);

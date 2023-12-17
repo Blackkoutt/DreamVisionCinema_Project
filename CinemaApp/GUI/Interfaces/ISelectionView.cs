@@ -14,5 +14,6 @@ namespace GUI.Interfaces
         void BringToFront();
         event EventHandler ShowAuthenticationView;
         event EventHandler ShowMainUserView;
+        void StartFailure(string msg);
     }
 }

@@ -38,6 +38,7 @@
             // 
             // Message
             // 
+            Message.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Message.ForeColor = SystemColors.Window;
             Message.Location = new Point(95, 11);
             Message.Name = "Message";

@@ -14,6 +14,7 @@ public partial class MainUserForm : Form, IMainUserForm
     public event EventHandler ShowMoviesView;
     public event EventHandler LoadDefault;
     public event EventHandler GoBack;
+    public event EventHandler MainUserFormCloseEvent;
 
     public PictureBox MainBigLogo
     {
@@ -52,6 +53,7 @@ public partial class MainUserForm : Form, IMainUserForm
 
         logoPictureBox.Click += delegate { LoadDefault?.Invoke(this, EventArgs.Empty); };
         backButton.Click += delegate { GoBack?.Invoke(this, EventArgs.Empty); };
+        this.FormClosed += delegate { MainUserFormCloseEvent?.Invoke(this, EventArgs.Empty); };
 
         leftBorderButton = new Panel();
         leftBorderButton.Size = new Size(7, 60);

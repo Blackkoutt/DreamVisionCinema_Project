@@ -22,6 +22,7 @@ namespace GUI.Views
         public event EventHandler ShowAdminStatisticsView;
         public event EventHandler AdminLoadDefault;
         public event EventHandler goBackEvent;
+        public event EventHandler closeEvent;
 
         public MainAdminForm()
         {
@@ -36,6 +37,7 @@ namespace GUI.Views
             statisticButton.Click += delegate { ShowAdminStatisticsView?.Invoke(this, EventArgs.Empty); };
 
             logoPictureBox.Click += delegate { AdminLoadDefault?.Invoke(this, EventArgs.Empty); };
+            this.FormClosed += delegate { closeEvent?.Invoke(this, EventArgs.Empty); };
 
 
 

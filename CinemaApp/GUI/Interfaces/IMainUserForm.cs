@@ -14,6 +14,7 @@ namespace GUI.Interfaces
         event EventHandler ShowMoviesView;
         event EventHandler LoadDefault;
         event EventHandler GoBack;
+        event EventHandler MainUserFormCloseEvent;
 
         Panel PanelContainer { get; }
         public Label lblTitle { get; }

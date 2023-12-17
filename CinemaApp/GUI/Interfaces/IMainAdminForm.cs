@@ -13,6 +13,7 @@ namespace GUI.Interfaces
         event EventHandler ShowAdminStatisticsView;
         event EventHandler AdminLoadDefault;
         event EventHandler goBackEvent;
+        event EventHandler closeEvent;
         void Show();
         void Close();
         void BringToFront();

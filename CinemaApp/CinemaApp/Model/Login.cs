@@ -35,7 +35,7 @@ namespace CinemaApp.Model
                 }
                 catch (Exception ex)
                 {
-                    throw new CannotReadFileException("Sprawdź czy plik z hasłami: password.txt istnieje w katalogu. Jeśli nie istnieje wprowadź nowy login i hasło:");
+                    throw new CannotReadFileException("Sprawdź czy plik z hasłami: password.txt istnieje w katalogu.");
                 }
 
                 // Oczytanie z pliku loginu i hasła
