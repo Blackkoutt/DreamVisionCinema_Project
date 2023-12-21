@@ -20,5 +20,9 @@ namespace CinemaApp.Interfaces
         void SaveReservationsToFile();
         void CreateTempDeleteFile();
         void CreateTempModificationFile();
+        void DestroyTicketJPG(string resID);
+        void RemoveTicketForReservatedMovies(string id);
+        bool IsMovieHaveReservation(Movie movie);
+        List<Reservation> GetReservationForMovie(Movie movie);
     }
 }

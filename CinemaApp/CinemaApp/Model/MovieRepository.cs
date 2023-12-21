@@ -307,7 +307,7 @@ namespace CinemaApp.Model
             // Jeśli lista jest pusta wyrzuć wyjątek
             if (!SortedMovies.Any())
             {
-                throw new ListIsEmptyException("Lista jest pusta!");
+                throw new ListIsEmptyException("Lista jest pusta");
             }
             return SortedMovies;
         }
@@ -364,7 +364,7 @@ namespace CinemaApp.Model
             // Jeśli lista jest pusta wyrzuć wyjątek
             if (!SortedMovies.Any())
             {
-                throw new ListIsEmptyException("Lista jest pusta!");
+                throw new ListIsEmptyException("Lista jest pusta");
             }
             return SortedMovies;
         } 

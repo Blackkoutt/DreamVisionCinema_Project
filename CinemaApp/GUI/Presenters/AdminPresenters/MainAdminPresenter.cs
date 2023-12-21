@@ -1,15 +1,7 @@
 ﻿using CinemaApp.Interfaces.IRepositories;
 using CinemaApp.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GUI.Interfaces;
-using GUI.UserForms;
-using GUI.Views.UserViews;
 using GUI.Views.AdminViews;
-using GUI.Presenters.UserPresenters;
 
 namespace GUI.Presenters.AdminPresenters
 {

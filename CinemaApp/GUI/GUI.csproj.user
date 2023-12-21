@@ -31,6 +31,9 @@
     <Compile Update="Views\CustomAlertBox.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\MainAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -38,6 +41,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\ModeSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\TicketCreatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\UserViews\MovieReservationView.cs">

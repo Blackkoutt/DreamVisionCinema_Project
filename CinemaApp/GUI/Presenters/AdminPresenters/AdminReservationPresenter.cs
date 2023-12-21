@@ -1,11 +1,8 @@
-﻿using CinemaApp.Interfaces;
+﻿using CinemaApp.Exceptions;
+using CinemaApp.Interfaces;
 using CinemaApp.Model;
 using GUI.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GUI.Views;
 
 namespace GUI.Presenters.AdminPresenters
 {
@@ -31,23 +28,38 @@ namespace GUI.Presenters.AdminPresenters
             _view.BringToFront();
             _view.Show();
         }
+        private void MakeAlert(string msg, CustomAlertBox.enmType type)
+        {
+            CustomAlertBox customAlertBox = new CustomAlertBox(true);
+            customAlertBox.ShowAlert(msg, type);
+            customAlertBox.BringToFront();
+        }
 
         private void LoadReservationList()
         {
-            // Throws exceptions
-            //_reservationRepository.ReadReservationsFromFile();
-            reservationsList = _reservationRepository.GetReservationsList();
-            //reservationBindingSource.DataSource = reservationsList;
-            reservationBindingSource.DataSource = reservationsList.Select
-                (r => new {
-                    ID = r.Id,
-                    Tytuł = r.Movie.Title,
-                    Data = r.Movie.Date.ToString("dd/MM/yyyy HH:mm"),
-                    Sala = r.Movie.Room.Number.ToString(),
-                    Cena = r.Ticket.CalculatePrice(r.Movie.Price, r.Seats.Count).ToString(),
-                    Miejsca = string.Join(" ", r.Seats)
-                });
-            // _reservationlistView.SetReservationListBindingSource(res);
+            try
+            {
+                reservationsList = _reservationRepository.GetReservationsList();
+                reservationBindingSource.DataSource = reservationsList.Select
+                    (r => new {
+                        ID = r.Id,
+                        Tytuł = r.Movie.Title,
+                        Data = r.Movie.Date.ToString("dd/MM/yyyy HH:mm"),
+                        Sala = r.Movie.Room.Number.ToString(),
+                        Cena = r.Ticket.CalculatePrice(r.Movie.Price, r.Seats.Count).ToString(),
+                        Miejsca = string.Join(" ", r.Seats)
+                    });
+            }
+            catch(ReservationListIsEmptyException RLIEE)
+            {
+                MakeAlert(RLIEE.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
+            catch(Exception ex)
+            {
+                MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                return;
+            }        
         }
     }
 }

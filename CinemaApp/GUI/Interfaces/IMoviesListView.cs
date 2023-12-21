@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GUI.Interfaces
+﻿namespace GUI.Interfaces
 {
     public interface IMoviesListView
     {
@@ -13,6 +7,13 @@ namespace GUI.Interfaces
         //void SetReservationListBindingSource(List<Reservation> res);
         event EventHandler ShowMovieRoom;
         void SetMoviesListBindingSource(BindingSource moviesList);
+        event EventHandler searchMovieUser;
+        event EventHandler sortASCUser;
+        event EventHandler sortDSCUser;
+        event EventHandler clearFiltersUser;
+
+        public ComboBox SortCriteria { get; }
+        public TextBox SearchValue { get; }
         void Show();
         void Close();
         void BringToFront();

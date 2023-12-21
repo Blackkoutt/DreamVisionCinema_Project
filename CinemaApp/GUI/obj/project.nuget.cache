@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "opOeGyxDVchgt+I3I3REz0g2nFxE1UFbXS14j51OYoE6f+2Za+vdCWewbtwDy/Si6kVv+dzaGeed2w5Q5RW7Bg==",
+  "dgSpecHash": "PVXMMuPWHoIYcNvnblFrOVYQrwOsO5rkyDTNHWl091rfmUZiHV+7aLlyzka8es66gOJ0dqdk69mMfsi9oNetMg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\Repositories\\KCK repo save\\KCK\\CinemaApp\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\circularprogressbar.2.8.0.16.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Mateusz\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\oxyplot.windowsforms\\2.1.2\\oxyplot.windowsforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\Mateusz\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
+    "C:\\Users\\Mateusz\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\winformanimation\\1.6.0.4\\winformanimation.1.6.0.4.nupkg.sha512"
   ],
   "logs": [

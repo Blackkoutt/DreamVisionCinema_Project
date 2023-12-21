@@ -1,11 +1,5 @@
-using CinemaApp.Interfaces;
-using CinemaApp.Interfaces.IRepositories;
-using CinemaApp.Model;
 using GUI.Interfaces;
 using GUI.Presenters;
-using GUI.Presenters.AdminPresenters;
-using GUI.Presenters.UserPresenters;
-using GUI.UserForms;
 using GUI.Views;
 
 namespace GUI;
@@ -32,6 +26,10 @@ static class Program
 
         /*Form adminForm = new MainAdminForm();
         Application.Run(adminForm);*/
+        LoadingForm form = new LoadingForm();
+        //form.Show();
+        form.ShowDialog();
+        //form.Close();
 
         // User
         ISelectionView selectionView = new ModeSelectionForm();       

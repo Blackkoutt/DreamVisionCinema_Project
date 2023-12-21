@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomAlertBox));
             Message = new Label();
             closeButton = new FontAwesome.Sharp.IconButton();
             iconMessage = new FontAwesome.Sharp.IconPictureBox();
@@ -42,9 +43,9 @@
             Message.ForeColor = SystemColors.Window;
             Message.Location = new Point(95, 11);
             Message.Name = "Message";
-            Message.Size = new Size(512, 56);
+            Message.Size = new Size(512, 85);
             Message.TabIndex = 0;
-            Message.Text = "Message Text";
+            Message.Text = resources.GetString("Message.Text");
             Message.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // closeButton
@@ -55,7 +56,7 @@
             closeButton.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             closeButton.IconColor = SystemColors.Window;
             closeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            closeButton.Location = new Point(616, 15);
+            closeButton.Location = new Point(616, 26);
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(48, 52);
             closeButton.TabIndex = 1;
@@ -71,7 +72,7 @@
             iconMessage.IconColor = SystemColors.Window;
             iconMessage.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMessage.IconSize = 66;
-            iconMessage.Location = new Point(12, 5);
+            iconMessage.Location = new Point(12, 12);
             iconMessage.Name = "iconMessage";
             iconMessage.Size = new Size(77, 66);
             iconMessage.SizeMode = PictureBoxSizeMode.Zoom;
@@ -86,7 +87,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.Highlight;
-            ClientSize = new Size(676, 84);
+            ClientSize = new Size(676, 105);
             Controls.Add(iconMessage);
             Controls.Add(closeButton);
             Controls.Add(Message);

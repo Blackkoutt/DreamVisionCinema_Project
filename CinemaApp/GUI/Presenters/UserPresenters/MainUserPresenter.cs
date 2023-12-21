@@ -1,15 +1,13 @@
 ﻿using CinemaApp.Interfaces.IRepositories;
 using CinemaApp.Interfaces;
-using CinemaApp.Model;
 using GUI.Interfaces;
 using GUI.UserForms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FontAwesome.Sharp;
 using GUI.Views.UserViews;
+using CinemaApp.Exceptions;
+using CinemaApp.Views;
+using GUI.Views;
+using CinemaApp.Model;
 
 namespace GUI.Presenters.UserPresenters
 {
@@ -21,6 +19,8 @@ namespace GUI.Presenters.UserPresenters
         private IMovieRepository movieRepository;
         private IReservationRepository reservationRepository;
 
+        private List<Movie> moviesList;
+
         public MainUserPresenter(IMainUserForm mainUserForm, IMovieRepository movieRepository, IReservationRepository reservationRepository)
         {
             this.movieRepository = movieRepository;
@@ -30,8 +30,92 @@ namespace GUI.Presenters.UserPresenters
             this._mainUserForm.ShowReservationsView += ShowReservationsView;
             this._mainUserForm.ShowMoviesView += ShowMoviesView;
             this._mainUserForm.LoadDefault += LoadDefault;
+            CheckForDeletedOrEditedMovies();
         }
+        private void MakeAlert(string msg, CustomAlertBox.enmType type)
+        {
+            CustomAlertBox customAlertBox = new CustomAlertBox(false);
+            customAlertBox.ShowAlert(msg, type);
+            customAlertBox.BringToFront();
+        }
+        private void CheckForDeletedOrEditedMovies()
+        {
 
+            List<string> info_about_deleted_movies = new List<string>();
+            List<string> info_about_modificated_movies = new List<string>();
+            try
+            {
+                info_about_deleted_movies = reservationRepository.CheckDeletedReservations();
+            }
+            catch (CannotReadFileException)
+            {
+                reservationRepository.CreateTempDeleteFile();
+            }
+            catch (Exception ex)
+            {
+                MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
+            try
+            {
+
+                info_about_modificated_movies = reservationRepository.CheckModificatedMoviesWithReservation();
+            }
+            catch (CannotReadFileException)
+            {
+                reservationRepository.CreateTempModificationFile();
+            }
+            catch (Exception ex)
+            {
+                MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
+
+            if (info_about_deleted_movies.Any())
+            {
+                SetInfoAboutDeletedReservations(info_about_deleted_movies);
+            }
+            if (info_about_modificated_movies.Any())
+            {
+                SetInfoAboutModificatedReservations(info_about_modificated_movies);
+            }
+        }
+        private void SetInfoAboutModificatedReservations(List<string> info_list)
+        {
+            string info;
+            for(int i = info_list.Count - 1; i > 0; i--)
+            {
+                if (info_list[i][1] == '!')
+                {
+                    info = info_list[i-1].Substring("[!] ".Length) + " " + info_list[i].Substring("[!] ".Length);
+                    MakeAlert(info, CustomAlertBox.enmType.Info);
+                    i -= 1;
+                }
+                else
+                {
+                    info = info_list[i].Substring("[V] ".Length);
+                    MakeAlert(info, CustomAlertBox.enmType.Success);
+                }
+                if ((i - 1) == 0)
+                {
+                    break;
+                }
+            }
+        }
+        private void SetInfoAboutDeletedReservations(List<string> info_list)
+        {
+            string info;
+            for (int i = 0; i < info_list.Count; i++)
+            {
+                info = info_list[i].Substring("[!] ".Length) + " " + info_list[i + 1].Substring("[!] ".Length);
+                MakeAlert(info, CustomAlertBox.enmType.Info);
+                if ((i + 1) == info_list.Count)
+                {
+                    break;
+                }
+                i += 1;
+            }
+        }
         private void LoadDefault(object? sender, EventArgs e)
         {
             if (reservationListView != null)
@@ -69,10 +153,6 @@ namespace GUI.Presenters.UserPresenters
             }
             if (moviesListView == null)
             {
-                // to możliwe ze trzeba stad wywalic
-                /*IMovieRepository movieRepository = new MovieRepository();
-                movieRepository.ReadMoviesFromFile(); // throws exceptions*/
-
                 moviesListView = new MoviesListView();
                 new UserMoviePresenter(moviesListView, movieRepository, reservationRepository);
                 _mainUserForm.PanelContainer.Controls.Clear();
@@ -87,7 +167,6 @@ namespace GUI.Presenters.UserPresenters
 
         private void ShowReservationsView(object? sender, EventArgs e)
         {
-                // zamkniecie filmu
                 if (moviesListView != null)
                 {
                     moviesListView.Close();
@@ -95,13 +174,6 @@ namespace GUI.Presenters.UserPresenters
                 }
                 if (reservationListView == null)
                 {
-                    // to możliwe ze trzeba stad wywalic
-                    /*IMovieRepository movieRepository = new MovieRepository();
-                    movieRepository.ReadMoviesFromFile(); // throws exceptions
-                    IReservationRepository reservationRepository = new ReservationRepository(movieRepository);*/
-
-
-
                     reservationListView = new ReservationListView();
                     new UserReservationPresenter(reservationListView, reservationRepository);
                     _mainUserForm.PanelContainer.Controls.Clear();

@@ -1,11 +1,4 @@
-﻿using CinemaApp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GUI.Interfaces
+﻿namespace GUI.Interfaces
 {
     public interface IReservationListView
     {

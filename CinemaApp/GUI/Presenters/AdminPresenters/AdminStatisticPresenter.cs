@@ -1,12 +1,9 @@
 ﻿using CinemaApp.Enums;
+using CinemaApp.Exceptions;
 using CinemaApp.Interfaces;
 using GUI.Interfaces;
+using GUI.Views;
 using GUI.Views.AdminViews;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI.Presenters.AdminPresenters
 {
@@ -33,10 +30,31 @@ namespace GUI.Presenters.AdminPresenters
             _view.Show();
             _mainAdminForm = mainAdminForm;
         }
+        private void MakeAlert(string msg, CustomAlertBox.enmType type)
+        {
+            CustomAlertBox customAlertBox = new CustomAlertBox(true);
+            customAlertBox.ShowAlert(msg, type);
+            customAlertBox.BringToFront();
+        }
 
         private void HandleProfitableClickEvent(object? sender, EventArgs e)
         {
-            Dictionary<string, double> data = reservationRepository.GetMoviesIncome();
+            Dictionary<string, double> data;
+            try
+            {
+                data = reservationRepository.GetMoviesIncome();
+            }
+            catch(ListIsEmptyException LIEE)
+            {
+                MakeAlert("Lista rezerwacji jest pusta!", CustomAlertBox.enmType.Error);
+                return;
+            }
+            catch(Exception ex)
+            {
+                MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
+             
             data = data.Take(10).ToDictionary(pair => pair.Key, pair => pair.Value);
             data = new Dictionary<string, double> { { "", 0 } }.Concat(data).ToDictionary(pair => pair.Key, pair => pair.Value);
 
@@ -61,7 +79,22 @@ namespace GUI.Presenters.AdminPresenters
 
         private void HandlePopularClickEvent(object? sender, EventArgs e)
         {
-            Dictionary<string, int> data = reservationRepository.GetMostPopularMovies();
+            Dictionary<string, int> data;
+            try
+            {
+                data = reservationRepository.GetMostPopularMovies();
+            }
+            catch (ListIsEmptyException LIEE)
+            {
+                MakeAlert("Lista rezerwacji jest pusta!", CustomAlertBox.enmType.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
+
             data = data.Take(10).ToDictionary(pair => pair.Key, pair => pair.Value);
             data = new Dictionary<string, int> { { "", 0 } }.Concat(data).ToDictionary(pair => pair.Key, pair => pair.Value);
 

@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace GUI.Views
+﻿namespace GUI.Views
 {
     public partial class CustomAlertBox : Form
     {
-        public CustomAlertBox()
+        private bool isTimerEnabled;
+        public CustomAlertBox(bool isTimerEnabled)
         {
             InitializeComponent();
+            this.isTimerEnabled = isTimerEnabled;
         }
         public enum enumAction
         {
@@ -75,15 +67,27 @@ namespace GUI.Views
 
             this.Message.Text = msg;
             Show();
-            this.action = enumAction.start;
-            this.timer1.Interval = 1;
-            timer1.Start();
+            if (isTimerEnabled)
+            {
+                this.action = enumAction.start;
+                this.timer1.Interval = 1;
+                timer1.Start();
+                
+            }
+            else
+            {
+                this.Opacity = 1.0;
+            }
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
             timer1.Interval = 1;
             action = enumAction.close;
+            if (!isTimerEnabled)
+            {
+                timer1.Start();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

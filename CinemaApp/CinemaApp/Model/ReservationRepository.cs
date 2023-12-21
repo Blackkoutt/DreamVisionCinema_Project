@@ -197,11 +197,33 @@ namespace CinemaApp.Model
 
 
         // Metoda sprawdzająca czy dany film posiada jakąkolwiek rezerwację
-        private bool IsMovieHaveReservation(Movie movie)
+        public bool IsMovieHaveReservation(Movie movie)
         {
             return reservations.Any(reservation => reservation.Movie == movie);
         }
 
+        public void DestroyTicketJPG(string resID)
+        {
+            int id = Conversions.TryParseToInt(resID, "ID musi być liczbą całkowitą");
+            Reservation res = GetOneReservation(id);
+            if(res == null)
+            {
+                throw new NoReservationWithGivenIdException("Brak rezerwacji o podanym ID");
+            }
+            //title = title.Replace(" ", "_");
+            string directoryPath = "TicketsJPG";
+            string fileName = res.Ticket.Id + "_" + res.Movie.Title + ".jpg";
+            string filePath = Path.Combine(directoryPath, fileName);
+
+            try
+            {
+                File.Delete(filePath);  // Usuń plik
+            }
+            catch
+            {
+                throw new CannotDestroyTicketException($"Nie udało się usunąć pliku z biletem o nazwie {fileName}");
+            }
+        }
 
         // Metoda modyfikująca datę lub salę filmu który posiada jakąkolwiek rezerwację
         public void ModifyMovieDateOrRoomWithReservation(string id, string new_date, string new_room_number)
@@ -296,7 +318,25 @@ namespace CinemaApp.Model
             }
         }
 
+        public void RemoveTicketForReservatedMovies(string id)
+        {
+            int Id = Conversions.TryParseToInt(id, "ID musi być liczbą całkowitą");
 
+            // Sprawdzenie poprawności podanego parametru
+            Movie movie = movies.GetOneMovie(Id);
+            if (movie == null)
+            {
+                throw new NoMovieWithGivenIdException("Brak filmu o podanym Id.");
+            }
+            if (IsMovieHaveReservation(movie))
+            {
+                List<Reservation> reservation_list = GetReservationForMovie(movie);
+                foreach(Reservation res in reservation_list)
+                {
+                    DestroyTicketJPG(res.Id.ToString());
+                }
+            }
+        }
 
         // Metoda usuwająca film który posiada rezerwację
         public void RemoveMovieWithReservation(string id)
@@ -340,7 +380,7 @@ namespace CinemaApp.Model
 
 
         // Metoda zwracająca listę rezerwacji na dany film
-        private List<Reservation> GetReservationForMovie(Movie movie)
+        public List<Reservation> GetReservationForMovie(Movie movie)
         {
             return reservations.Where(reservation => reservation.Movie.Id == movie.Id).ToList();
         }

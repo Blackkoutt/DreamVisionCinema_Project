@@ -6,13 +6,7 @@ using GUI.Interfaces;
 using GUI.Presenters.AdminPresenters;
 using GUI.Presenters.UserPresenters;
 using GUI.Views;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Printing;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI.Presenters
 {
@@ -31,10 +25,17 @@ namespace GUI.Presenters
         {
             _selectionView = selectionView;
             GetMoviesAndReservations();
+            CreateTickets();
             _selectionView.ShowMainUserView += ShowUserView;
             _selectionView.ShowAuthenticationView += ShowAdminAuthenticationView;
         }
-
+        private void CreateTickets()
+        {
+            ITicketCreator ticketCreator = new TicketCreatorForm();
+            TicketCreatorPresenter ticketPresenter = new TicketCreatorPresenter(reservationRepository, ticketCreator);
+            ticketPresenter.PrepareTickets();
+            ticketCreator.Close();
+        }
         private void GetMoviesAndReservations()
         {
             movieRepository = new MovieRepository();
@@ -116,7 +117,7 @@ namespace GUI.Presenters
 
         private void MakeAlert(string msg, CustomAlertBox.enmType type)
         {
-            CustomAlertBox customAlertBox = new CustomAlertBox();
+            CustomAlertBox customAlertBox = new CustomAlertBox(true);
             customAlertBox.ShowAlert(msg, type);
             customAlertBox.BringToFront();
         }

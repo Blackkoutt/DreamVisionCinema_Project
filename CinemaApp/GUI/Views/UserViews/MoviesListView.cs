@@ -1,13 +1,4 @@
 ﻿using GUI.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI.Views.UserViews
 {
@@ -20,6 +11,11 @@ namespace GUI.Views.UserViews
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
             reserveationButton.Click += delegate { ShowMovieRoom?.Invoke(this, EventArgs.Empty); };
+
+            searchButton.Click += delegate { searchMovieUser?.Invoke(this, EventArgs.Empty); };
+            ascButton.Click += delegate { sortASCUser?.Invoke(this, EventArgs.Empty); };
+            dscButton.Click += delegate { sortDSCUser?.Invoke(this, EventArgs.Empty); };
+            clearButton.Click += delegate { clearFiltersUser?.Invoke(this, EventArgs.Empty); };
         }
         public DataGridView dataGridView
         {
@@ -27,6 +23,20 @@ namespace GUI.Views.UserViews
         }
 
         public event EventHandler ShowMovieRoom;
+        public event EventHandler searchMovieUser;
+        public event EventHandler sortASCUser;
+        public event EventHandler sortDSCUser;
+        public event EventHandler clearFiltersUser;
+
+        public ComboBox SortCriteria
+        {
+            get { return sortCriteria; }
+        }
+
+        public TextBox SearchValue
+        {
+            get { return searchValue; }
+        }
 
         public void SetMoviesListBindingSource(BindingSource moviesList)
         {

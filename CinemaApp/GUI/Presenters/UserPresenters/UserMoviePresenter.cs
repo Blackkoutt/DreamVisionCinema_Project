@@ -1,14 +1,10 @@
-﻿using CinemaApp.Interfaces;
+﻿using CinemaApp.Exceptions;
+using CinemaApp.Interfaces;
 using CinemaApp.Interfaces.IRepositories;
 using CinemaApp.Model;
 using GUI.Interfaces;
-using GUI.UserForms;
+using GUI.Views;
 using GUI.Views.UserViews;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI.Presenters.UserPresenters
 {
@@ -31,37 +27,206 @@ namespace GUI.Presenters.UserPresenters
 
             this._movieslistView.ShowMovieRoom += ShowMovieRoom;
 
-            // Load data
-            LoadMoviesList();
+            _movieslistView.clearFiltersUser += ClearFilters;
+            _movieslistView.searchMovieUser += SearchMovie;
+            _movieslistView.sortASCUser += SortASC;
+            _movieslistView.sortDSCUser += SortDSC;
+
             _movieslistView.BringToFront();
             _movieslistView.Show();
+
+            // Load data
+            try
+            {
+                moviesList = _movieRepository.GetAllMovies();
+                LoadMoviesList(moviesList);
+            }
+            catch (MovieListIsEmptyException MLIEE)
+            {
+                MakeAlert(MLIEE.Message, CustomAlertBox.enmType.Info);
+            }
+            catch (Exception ex)
+            {
+                MakeAlert(ex.Message, CustomAlertBox.enmType.Info);
+            }
+            // LoadMoviesList();
+            
+        }
+
+        private void SortDSC(object? sender, EventArgs e)
+        {
+            string atribute = (_movieslistView.SortCriteria.SelectedItem != null) ? _movieslistView.SortCriteria.SelectedItem.ToString() : string.Empty;
+            List<Movie> sortedMovies;
+            // jeśli "" wyrzuci wyjątek braku atrybutu
+            if (moviesList != null)
+            {
+                try
+                {
+                    sortedMovies = _movieRepository.SortDescending(atribute);
+
+                    LoadMoviesList(sortedMovies);
+
+                    movieBindingSource.ResetBindings(false);
+                }
+                catch (BadAttributeException BAE)
+                {
+                    MakeAlert(BAE.Message, CustomAlertBox.enmType.Info);
+                    return;
+                }
+                catch (ListIsEmptyException LIEE)
+                {
+                    MakeAlert(LIEE.Message, CustomAlertBox.enmType.Info);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+            }
+            else
+            {
+                MakeAlert("Lista filmów jest pusta", CustomAlertBox.enmType.Info);
+            }
+        }
+
+        private void SortASC(object? sender, EventArgs e)
+        {
+            string atribute = (_movieslistView.SortCriteria.SelectedItem != null) ? _movieslistView.SortCriteria.SelectedItem.ToString() : string.Empty;
+            List<Movie> sortedMovies;
+            // jeśli "" wyrzuci wyjątek braku atrybutu
+            if (moviesList != null)
+            {
+                try
+                {
+                    sortedMovies = _movieRepository.SortAscending(atribute);
+
+                    LoadMoviesList(sortedMovies);
+
+                    movieBindingSource.ResetBindings(false);
+                }
+                catch (BadAttributeException BAE)
+                {
+                    MakeAlert(BAE.Message, CustomAlertBox.enmType.Info);
+                    return;
+                }
+                catch (ListIsEmptyException LIEE)
+                {
+                    MakeAlert(LIEE.Message, CustomAlertBox.enmType.Info);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+
+            }
+            else
+            {
+                MakeAlert("Lista filmów jest pusta", CustomAlertBox.enmType.Info);
+            }
+        }
+
+        private void SearchMovie(object? sender, EventArgs e)
+        {
+            string search_value = (_movieslistView.SearchValue.Text != null) ? _movieslistView.SearchValue.Text : string.Empty;
+            List<Movie> filtredList;
+            // throws exceptions
+            if (moviesList != null)
+            {
+                try
+                {
+                    filtredList = _movieRepository.FilterList(search_value);
+
+                    LoadMoviesList(filtredList);
+
+                    movieBindingSource.ResetBindings(false);
+                }
+                catch (CannotFindMatchingMovieException CFMME)
+                {
+                    MakeAlert(CFMME.Message, CustomAlertBox.enmType.Info);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+            }
+            else
+            {
+                MakeAlert("Lista filmów jest pusta", CustomAlertBox.enmType.Info);
+            }
+        }
+
+        private void ClearFilters(object? sender, EventArgs e)
+        {
+            _movieslistView.SearchValue.Text = string.Empty;
+            RefreshMovieList();
+        }
+        private void RefreshMovieList()
+        {
+            if (moviesList != null)
+            {
+                LoadMoviesList(moviesList);
+                movieBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MakeAlert("Lista filmów jest pusta", CustomAlertBox.enmType.Info);
+            }
+
         }
 
         private void ShowMovieRoom(object? sender, EventArgs e)
         {
             movieReservationView = new MovieReservationView();
             string currentMovieIdString = movieBindingSource.Current.ToString().Split(",")[0].Split("=")[1].Trim();
-            Movie movie = _movieRepository.GetOneMovie(currentMovieIdString);
-
-            new MovieReservationPresenter(movieReservationView, _reservationRepository, movie);
+            Movie movie;
+            try
+            {
+                movie = _movieRepository.GetOneMovie(currentMovieIdString);
+                new MovieReservationPresenter(movieReservationView, _reservationRepository, movie);
+            }
+            catch(CannotConvertException CCE)
+            {
+                MakeAlert(CCE.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
+            catch(NoMovieWithGivenIdException NMWGIE)
+            {
+                MakeAlert(NMWGIE.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
+            catch(Exception ex)
+            {
+                MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                return;
+            }
         }
 
-        private void LoadMoviesList()
+        private void MakeAlert(string msg, CustomAlertBox.enmType type)
         {
-            // Throws exceptions
-            //_movieRepository.ReadMoviesFromFile();
-            moviesList = _movieRepository.GetAllMovies();
-            //reservationBindingSource.DataSource = reservationsList;
-            movieBindingSource.DataSource = moviesList.Select
-                (mov => new {
-                    ID = mov.Id,
-                    Tytuł = mov.Title,
-                    Data = mov.Date.ToString("dd/MM/yyyy HH:mm"),
-                    Cena = mov.Price,
-                    Długość = $"{mov.Duration} h",
-                    Sala = mov.Room.Number.ToString(),
-                });
-            // _reservationlistView.SetReservationListBindingSource(res);
+            CustomAlertBox customAlertBox = new CustomAlertBox(true);
+            customAlertBox.ShowAlert(msg, type);
+            customAlertBox.BringToFront();
+        }
+
+        private void LoadMoviesList(List<Movie> movies)
+        {
+            if (movies != null)
+            {
+                movieBindingSource.DataSource = movies.Select
+               (mov => new {
+                   ID = mov.Id,
+                   Tytuł = mov.Title,
+                   Data = mov.Date.ToString("dd/MM/yyyy HH:mm"),
+                   Cena = mov.Price,
+                   Długość = $"{mov.Duration} h",
+                   Sala = mov.Room.Number.ToString(),
+               });
+            }
         }
     }
 }

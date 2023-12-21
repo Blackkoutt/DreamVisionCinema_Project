@@ -1,19 +1,12 @@
 ﻿using CinemaApp.Enums;
+using CinemaApp.Exceptions;
 using CinemaApp.Interfaces;
 using CinemaApp.Model;
 using FontAwesome.Sharp;
 using GUI.Interfaces;
-using GUI.Views.UserViews;
-using System;
-using System.Collections.Generic;
+using GUI.Views;
 using System.Data;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GUI.Presenters.UserPresenters
 {
@@ -41,11 +34,50 @@ namespace GUI.Presenters.UserPresenters
             // Dodanie przycisków
             _movieReservationView.Show();
         }
+        private void MakeAlert(string msg, CustomAlertBox.enmType type)
+        {
+            CustomAlertBox customAlertBox = new CustomAlertBox(true);
+            customAlertBox.ShowAlert(msg, type);
+            customAlertBox.BringToFront();
+        }
 
         private async void BuyTicket(object? sender, EventArgs e)
         {
             if (seatList.Any())
             {
+                List<string> seatStringList = seatList.Select(seat => seat.Number.ToString()).ToList();
+
+                try
+                {
+                    _reservationRepository.MakeReservation(null, movie.Id.ToString(), seatStringList);
+                }
+                catch (CannotConvertException CCE)
+                {
+                    MakeAlert(CCE.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+                catch(NoMovieWithGivenIdException NMWGIE)
+                {
+                    MakeAlert(NMWGIE.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+                catch(NoSeatWithGivenNumberException NSWGNE)
+                {
+                    MakeAlert(NSWGNE.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+                catch(SeatIsNotAvailableException SINAE)
+                {
+                    MakeAlert(SINAE.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+                catch(Exception ex)
+                {
+                    MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+
+
                 Control.ControlCollection controls = _movieReservationView.GetControls();
                 controls.Clear();
 
@@ -63,9 +95,7 @@ namespace GUI.Presenters.UserPresenters
                 controls.Add(label);
 
                 await Task.Delay(5000);
-                List<string> seatStringList = seatList.Select(seat => seat.Number.ToString()).ToList();
-
-                _reservationRepository.MakeReservation(null, movie.Id.ToString(), seatStringList);
+               
 
                 controls.Clear();
                 buyTicketForm.Text = "Twój bilet";
@@ -80,7 +110,23 @@ namespace GUI.Presenters.UserPresenters
                 PictureBox ticket_template = CreateTicket(controls);
                 Control.ControlCollection tt_controls = ticket_template.Controls;
 
-                Reservation res = _reservationRepository.GetLastReservation();
+                // exceptions
+                Reservation res;
+                try
+                {
+                    res = _reservationRepository.GetLastReservation();
+                }
+                catch(ReservationListIsEmptyException RLIEE)
+                {
+                    MakeAlert(RLIEE.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+                catch(Exception ex)
+                {
+                    MakeAlert(ex.Message, CustomAlertBox.enmType.Error);
+                    return;
+                }
+                
 
                 string info_header = "Oto twój bilet na film";
                 string fileName = res.Ticket.Id + "_" + movie.Title + ".jpg";
@@ -107,7 +153,7 @@ namespace GUI.Presenters.UserPresenters
                 labels.Add(labelInPictureBox);
 
                 SaveTicketToJPGFile(ticket_template, labels, fileName);
-
+                MakeAlert("Rezerwacja przebiegła pomyślnie!", CustomAlertBox.enmType.Success);
             }
         }
 

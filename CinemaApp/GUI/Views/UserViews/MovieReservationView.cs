@@ -1,15 +1,4 @@
 ﻿using GUI.Interfaces;
-using System;
-using FontAwesome.Sharp;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CinemaApp.Enums;
 
 namespace GUI.Views.UserViews
 {
