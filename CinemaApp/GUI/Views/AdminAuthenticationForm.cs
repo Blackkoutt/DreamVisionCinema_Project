@@ -10,7 +10,7 @@ namespace GUI.Views
             // signInButton.
             signInButton.Click += delegate { SignIn?.Invoke(this, EventArgs.Empty); };
             KeyPreview = true;
-            KeyDown += Form_KeyDown; 
+            KeyDown += Form_KeyDown;
         }
 
         private void Form_KeyDown(object? sender, KeyEventArgs e)

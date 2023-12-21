@@ -73,6 +73,7 @@
             // adminButton
             // 
             adminButton.BackColor = Color.FromArgb(58, 56, 128);
+            adminButton.Cursor = Cursors.Hand;
             adminButton.FlatAppearance.BorderSize = 0;
             adminButton.FlatStyle = FlatStyle.Flat;
             adminButton.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
@@ -92,6 +93,7 @@
             // userButton
             // 
             userButton.BackColor = Color.FromArgb(58, 56, 128);
+            userButton.Cursor = Cursors.Hand;
             userButton.FlatAppearance.BorderSize = 0;
             userButton.FlatStyle = FlatStyle.Flat;
             userButton.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
@@ -120,6 +122,8 @@
             Controls.Add(filmEditlabel);
             Controls.Add(bigLogo);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(860, 651);
+            MinimumSize = new Size(860, 651);
             Name = "ModeSelectionForm";
             Text = "DreamVisionCinema";
             ((System.ComponentModel.ISupportInitialize)bigLogo).EndInit();

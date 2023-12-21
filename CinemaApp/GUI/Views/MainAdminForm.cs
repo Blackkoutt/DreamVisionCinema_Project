@@ -15,6 +15,27 @@ namespace GUI.Views
         public event EventHandler goBackEvent;
         public event EventHandler closeEvent;
 
+        private Rectangle PanelOriginalRectangle;
+        private Rectangle orignialFormSize;
+        private Rectangle orginalPanelLogoRectangle;
+        private Rectangle originalTopPanelRectangle;
+        private Rectangle originalBigLogoRectangle;
+        private Rectangle originalMenuButtonSize1;
+        private Rectangle originalMenuButtonSize2;
+        private Rectangle originalMenuButtonSize3;
+        private Rectangle originalMenuButtonSize4;
+
+        private Rectangle originalTextTopSize;
+
+        float originalbuttonMenuFont1;
+        float originalbuttonMenuFont2;
+        float originalbuttonMenuFont3;
+        float originalbuttonMenuFont4;
+
+        float originalTextTopFont;
+        //float 
+        // private float fontScale = 9f;
+
         public MainAdminForm()
         {
             InitializeComponent();
@@ -36,6 +57,89 @@ namespace GUI.Views
             leftBorderButton = new Panel();
             leftBorderButton.Size = new Size(7, 60);
             panelUserMenu.Controls.Add(leftBorderButton);
+        }
+
+        private void MainAdminForm_Load(object sender, EventArgs e)
+        {
+            orignialFormSize = new Rectangle(
+                this.Location,
+                this.Size
+                );
+            PanelOriginalRectangle = new Rectangle(
+                panelUserMenu.Location,
+                panelUserMenu.Size
+                );
+            orginalPanelLogoRectangle = new Rectangle(
+                logoPictureBox.Location,
+                logoPictureBox.Size);
+            originalTopPanelRectangle = new Rectangle(
+               titleBar.Location,
+               titleBar.Size
+               );
+            originalBigLogoRectangle = new Rectangle(
+               bigLogo.Location,
+               bigLogo.Size);
+            originalMenuButtonSize1 = new Rectangle(
+               showMoviesListButton.Location,
+               showMoviesListButton.Size);
+            originalMenuButtonSize2 = new Rectangle(
+               showReservationsButton.Location,
+                showReservationsButton.Size);
+            originalMenuButtonSize3 = new Rectangle(
+               statisticButton.Location,
+               statisticButton.Size);
+            originalMenuButtonSize4 = new Rectangle(
+               backButton.Location,
+               backButton.Size);
+
+            originalTextTopSize = new Rectangle(
+               lblTitleChildForm.Location,
+               lblTitleChildForm.Size);
+
+            originalbuttonMenuFont1 = showMoviesListButton.Font.Size;
+            originalbuttonMenuFont2 = showReservationsButton.Font.Size;
+            originalbuttonMenuFont3 = statisticButton.Font.Size;
+            originalbuttonMenuFont4 = backButton.Font.Size;
+            originalTextTopFont = lblTitleChildForm.Font.Size;
+
+
+
+        }
+        private void resizeControl(Rectangle r, Control c, float originalFontSize)
+        {
+            float xRatio = (float)(this.Width) / (float)(orignialFormSize.Width);
+            float yRatio = (float)(this.Height) / (float)(orignialFormSize.Height);
+
+            int newX = (int)(r.Width * xRatio);
+            int newY = (int)(r.Height * yRatio);
+
+            int newWidth = (int)(r.Width * xRatio);
+            int newHeight = (int)(r.Height * yRatio);
+
+            // c.Location = new Point(newX, newY);
+            c.Size = new Size(newWidth, newHeight);
+            float ratio = xRatio;
+            if (xRatio >= yRatio)
+            {
+                ratio = yRatio;
+            }
+            float newFontSize = originalFontSize * ratio;
+
+            Font newFont = new Font(c.Font.FontFamily, newFontSize);
+            c.Font = newFont;
+        }
+        private void MainAdminForm_Resize(object sender, EventArgs e)
+        {
+            resizeControl(PanelOriginalRectangle, this.panelUserMenu, this.panelUserMenu.Font.Size);
+            resizeControl(originalTopPanelRectangle, this.titleBar, this.titleBar.Font.Size);
+            resizeControl(originalBigLogoRectangle, this.bigLogo, this.bigLogo.Font.Size);
+            resizeControl(orginalPanelLogoRectangle, this.logoPictureBox, this.logoPictureBox.Font.Size);
+            resizeControl(originalMenuButtonSize1, this.showMoviesListButton, originalbuttonMenuFont1);
+            resizeControl(originalMenuButtonSize2, this.showReservationsButton, originalbuttonMenuFont2);
+            resizeControl(originalMenuButtonSize3, this.statisticButton, originalbuttonMenuFont3);
+            resizeControl(originalMenuButtonSize4, this.backButton, originalbuttonMenuFont4);
+
+            resizeControl(originalTextTopSize, this.lblTitleChildForm, originalTextTopFont);
         }
         public PictureBox MainBigLogo
         {

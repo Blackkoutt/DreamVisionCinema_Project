@@ -69,12 +69,12 @@ partial class MainUserForm
         backButton.Dock = DockStyle.Top;
         backButton.FlatAppearance.BorderSize = 0;
         backButton.FlatStyle = FlatStyle.Flat;
-        backButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+        backButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
         backButton.ForeColor = Color.Gainsboro;
         backButton.IconChar = FontAwesome.Sharp.IconChar.CircleChevronLeft;
         backButton.IconColor = Color.Gainsboro;
         backButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        backButton.IconSize = 32;
+        backButton.IconSize = 34;
         backButton.ImageAlign = ContentAlignment.MiddleLeft;
         backButton.Location = new Point(0, 260);
         backButton.Name = "backButton";
@@ -93,12 +93,12 @@ partial class MainUserForm
         showReservationsButton.Dock = DockStyle.Top;
         showReservationsButton.FlatAppearance.BorderSize = 0;
         showReservationsButton.FlatStyle = FlatStyle.Flat;
-        showReservationsButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+        showReservationsButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
         showReservationsButton.ForeColor = Color.Gainsboro;
         showReservationsButton.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
         showReservationsButton.IconColor = Color.Gainsboro;
         showReservationsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        showReservationsButton.IconSize = 32;
+        showReservationsButton.IconSize = 34;
         showReservationsButton.ImageAlign = ContentAlignment.MiddleLeft;
         showReservationsButton.Location = new Point(0, 200);
         showReservationsButton.Name = "showReservationsButton";
@@ -117,12 +117,12 @@ partial class MainUserForm
         buyTicketButton.Dock = DockStyle.Top;
         buyTicketButton.FlatAppearance.BorderSize = 0;
         buyTicketButton.FlatStyle = FlatStyle.Flat;
-        buyTicketButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+        buyTicketButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
         buyTicketButton.ForeColor = Color.Gainsboro;
         buyTicketButton.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
         buyTicketButton.IconColor = Color.Gainsboro;
         buyTicketButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        buyTicketButton.IconSize = 32;
+        buyTicketButton.IconSize = 34;
         buyTicketButton.ImageAlign = ContentAlignment.MiddleLeft;
         buyTicketButton.Location = new Point(0, 140);
         buyTicketButton.Name = "buyTicketButton";
@@ -158,26 +158,27 @@ partial class MainUserForm
         // 
         // titleBar
         // 
+        titleBar.AutoSize = true;
         titleBar.BackColor = Color.FromArgb(31, 30, 68);
         titleBar.Controls.Add(lblTitleChildForm);
         titleBar.Controls.Add(iconCurrentChildForm);
         titleBar.Dock = DockStyle.Top;
         titleBar.Location = new Point(250, 0);
         titleBar.Name = "titleBar";
-        titleBar.Size = new Size(1269, 75);
+        titleBar.Size = new Size(1269, 70);
         titleBar.TabIndex = 1;
         titleBar.MouseDown += titleBar_MouseDown;
         // 
         // lblTitleChildForm
         // 
-        lblTitleChildForm.AutoSize = true;
-        lblTitleChildForm.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+        lblTitleChildForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         lblTitleChildForm.ForeColor = Color.Gainsboro;
-        lblTitleChildForm.Location = new Point(73, 33);
+        lblTitleChildForm.Location = new Point(74, 21);
         lblTitleChildForm.Name = "lblTitleChildForm";
-        lblTitleChildForm.Size = new Size(120, 23);
+        lblTitleChildForm.Size = new Size(485, 46);
         lblTitleChildForm.TabIndex = 1;
         lblTitleChildForm.Text = "Strona główna";
+        lblTitleChildForm.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // iconCurrentChildForm
         // 
@@ -186,10 +187,10 @@ partial class MainUserForm
         iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
         iconCurrentChildForm.IconColor = Color.MediumPurple;
         iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        iconCurrentChildForm.IconSize = 40;
+        iconCurrentChildForm.IconSize = 48;
         iconCurrentChildForm.Location = new Point(16, 21);
         iconCurrentChildForm.Name = "iconCurrentChildForm";
-        iconCurrentChildForm.Size = new Size(40, 40);
+        iconCurrentChildForm.Size = new Size(52, 46);
         iconCurrentChildForm.TabIndex = 0;
         iconCurrentChildForm.TabStop = false;
         // 
@@ -197,7 +198,7 @@ partial class MainUserForm
         // 
         panelShadow.BackColor = Color.FromArgb(26, 24, 58);
         panelShadow.Dock = DockStyle.Top;
-        panelShadow.Location = new Point(250, 75);
+        panelShadow.Location = new Point(250, 70);
         panelShadow.Name = "panelShadow";
         panelShadow.Size = new Size(1269, 9);
         panelShadow.TabIndex = 2;
@@ -207,16 +208,16 @@ partial class MainUserForm
         panelDesktop.BackColor = Color.FromArgb(34, 33, 74);
         panelDesktop.Controls.Add(bigLogo);
         panelDesktop.Dock = DockStyle.Fill;
-        panelDesktop.Location = new Point(250, 84);
+        panelDesktop.Location = new Point(250, 79);
         panelDesktop.Name = "panelDesktop";
-        panelDesktop.Size = new Size(1269, 769);
+        panelDesktop.Size = new Size(1269, 774);
         panelDesktop.TabIndex = 3;
         // 
         // bigLogo
         // 
         bigLogo.Anchor = AnchorStyles.None;
         bigLogo.Image = Properties.Resources.logo;
-        bigLogo.Location = new Point(316, 217);
+        bigLogo.Location = new Point(316, 220);
         bigLogo.Name = "bigLogo";
         bigLogo.Size = new Size(646, 320);
         bigLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -233,18 +234,20 @@ partial class MainUserForm
         Controls.Add(titleBar);
         Controls.Add(panelUserMenu);
         Icon = (Icon)resources.GetObject("$this.Icon");
-        MinimumSize = new Size(1437, 747);
+        MinimumSize = new Size(1537, 900);
         Name = "MainUserForm";
         Text = "Panel użytkownika";
+        Load += MainUserForm_Load;
+        Resize += MainUserForm_Resize;
         panelUserMenu.ResumeLayout(false);
         panelLogo.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
         titleBar.ResumeLayout(false);
-        titleBar.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
         panelDesktop.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)bigLogo).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion

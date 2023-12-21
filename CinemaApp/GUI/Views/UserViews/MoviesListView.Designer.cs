@@ -263,6 +263,8 @@
             Controls.Add(dataGridView1);
             Name = "MoviesListView";
             Text = "Lista filmów";
+            Load += MoviesListView_Load;
+            Resize += MoviesListView_Resize;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

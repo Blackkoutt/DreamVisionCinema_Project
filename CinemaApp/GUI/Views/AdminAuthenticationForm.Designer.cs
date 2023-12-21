@@ -149,6 +149,8 @@
             Controls.Add(filmEditlabel);
             Controls.Add(bigLogo);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(844, 664);
+            MinimumSize = new Size(844, 664);
             Name = "AdminAuthenticationForm";
             Text = "Logowanie";
             ((System.ComponentModel.ISupportInitialize)bigLogo).EndInit();

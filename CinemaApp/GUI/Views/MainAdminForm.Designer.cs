@@ -70,12 +70,12 @@
             backButton.Dock = DockStyle.Top;
             backButton.FlatAppearance.BorderSize = 0;
             backButton.FlatStyle = FlatStyle.Flat;
-            backButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            backButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             backButton.ForeColor = Color.Gainsboro;
             backButton.IconChar = FontAwesome.Sharp.IconChar.CircleChevronLeft;
             backButton.IconColor = Color.Gainsboro;
             backButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            backButton.IconSize = 32;
+            backButton.IconSize = 34;
             backButton.ImageAlign = ContentAlignment.MiddleLeft;
             backButton.Location = new Point(0, 320);
             backButton.Name = "backButton";
@@ -94,12 +94,12 @@
             statisticButton.Dock = DockStyle.Top;
             statisticButton.FlatAppearance.BorderSize = 0;
             statisticButton.FlatStyle = FlatStyle.Flat;
-            statisticButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            statisticButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             statisticButton.ForeColor = Color.Gainsboro;
             statisticButton.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
             statisticButton.IconColor = Color.Gainsboro;
             statisticButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            statisticButton.IconSize = 32;
+            statisticButton.IconSize = 34;
             statisticButton.ImageAlign = ContentAlignment.MiddleLeft;
             statisticButton.Location = new Point(0, 260);
             statisticButton.Name = "statisticButton";
@@ -118,12 +118,12 @@
             showReservationsButton.Dock = DockStyle.Top;
             showReservationsButton.FlatAppearance.BorderSize = 0;
             showReservationsButton.FlatStyle = FlatStyle.Flat;
-            showReservationsButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            showReservationsButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             showReservationsButton.ForeColor = Color.Gainsboro;
             showReservationsButton.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
             showReservationsButton.IconColor = Color.Gainsboro;
             showReservationsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            showReservationsButton.IconSize = 32;
+            showReservationsButton.IconSize = 34;
             showReservationsButton.ImageAlign = ContentAlignment.MiddleLeft;
             showReservationsButton.Location = new Point(0, 200);
             showReservationsButton.Name = "showReservationsButton";
@@ -142,12 +142,12 @@
             showMoviesListButton.Dock = DockStyle.Top;
             showMoviesListButton.FlatAppearance.BorderSize = 0;
             showMoviesListButton.FlatStyle = FlatStyle.Flat;
-            showMoviesListButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            showMoviesListButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             showMoviesListButton.ForeColor = Color.Gainsboro;
             showMoviesListButton.IconChar = FontAwesome.Sharp.IconChar.Film;
             showMoviesListButton.IconColor = Color.Gainsboro;
             showMoviesListButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            showMoviesListButton.IconSize = 32;
+            showMoviesListButton.IconSize = 34;
             showMoviesListButton.ImageAlign = ContentAlignment.MiddleLeft;
             showMoviesListButton.Location = new Point(0, 140);
             showMoviesListButton.Name = "showMoviesListButton";
@@ -171,6 +171,7 @@
             // 
             // logoPictureBox
             // 
+            logoPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             logoPictureBox.Cursor = Cursors.Hand;
             logoPictureBox.Image = Properties.Resources.logo;
             logoPictureBox.Location = new Point(0, 0);
@@ -195,13 +196,14 @@
             // 
             // lblTitleChildForm
             // 
-            lblTitleChildForm.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleChildForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitleChildForm.ForeColor = Color.Gainsboro;
-            lblTitleChildForm.Location = new Point(73, 33);
+            lblTitleChildForm.Location = new Point(73, 21);
             lblTitleChildForm.Name = "lblTitleChildForm";
-            lblTitleChildForm.Size = new Size(321, 23);
+            lblTitleChildForm.Size = new Size(517, 40);
             lblTitleChildForm.TabIndex = 1;
             lblTitleChildForm.Text = "Strona główna";
+            lblTitleChildForm.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // iconCurrentChildForm
             // 
@@ -210,10 +212,10 @@
             iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildForm.IconSize = 40;
+            iconCurrentChildForm.IconSize = 48;
             iconCurrentChildForm.Location = new Point(16, 21);
             iconCurrentChildForm.Name = "iconCurrentChildForm";
-            iconCurrentChildForm.Size = new Size(40, 40);
+            iconCurrentChildForm.Size = new Size(51, 48);
             iconCurrentChildForm.TabIndex = 0;
             iconCurrentChildForm.TabStop = false;
             // 
@@ -229,7 +231,7 @@
             // 
             // bigLogo
             // 
-            bigLogo.Anchor = AnchorStyles.None;
+            bigLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             bigLogo.Image = Properties.Resources.logo;
             bigLogo.Location = new Point(325, 230);
             bigLogo.Name = "bigLogo";
@@ -242,14 +244,17 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(1519, 853);
             Controls.Add(panelDesktop);
             Controls.Add(titleBar);
             Controls.Add(panelUserMenu);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1437, 847);
+            MinimumSize = new Size(1537, 900);
             Name = "MainAdminForm";
             Text = "Panel administratora";
+            Load += MainAdminForm_Load;
+            Resize += MainAdminForm_Resize;
             panelUserMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
