@@ -4,13 +4,11 @@ namespace GUI.Interfaces
 {
     public interface IMainUserForm
     {
-        // Zadarzenia do obsługi nowych okien
         event EventHandler ShowReservationsView;
         event EventHandler ShowMoviesView;
         event EventHandler LoadDefault;
         event EventHandler GoBack;
         event EventHandler MainUserFormCloseEvent;
-
         Panel PanelContainer { get; }
         public Label lblTitle { get; }
         public PictureBox MainLogo { get; }

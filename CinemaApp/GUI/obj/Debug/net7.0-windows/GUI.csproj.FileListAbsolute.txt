@@ -91,3 +91,4 @@ C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.TicketCreatorForm.resources
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\bin\Debug\net7.0-windows\QRCoder.dll
 C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.LoadingForm.resources
+C:\Users\Mateusz\Desktop\Repositories\KCK repo save\KCK\CinemaApp\GUI\obj\Debug\net7.0-windows\GUI.Views.UserViews.CancelMessage.resources

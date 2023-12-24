@@ -103,6 +103,7 @@
             Controls.Add(dataGridView1);
             Name = "AdminReservationListView";
             Text = "AdminReservationListView";
+            Resize += AdminReservationListView_Resize;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

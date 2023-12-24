@@ -21,13 +21,17 @@ namespace GUI.Presenters.AdminPresenters
 
             this._view = view;
 
+            // Ustawienie bindingSource dla dataGridView
             this.reservationBindingSource = new BindingSource();
             this._view.SetReservationListBindingSource(reservationBindingSource);
 
+            // Pobranie listy rezerwacji i przypisanie jej do dataGridView
             LoadReservationList();
             _view.BringToFront();
             _view.Show();
         }
+
+        // Metoda tworząca powiadomienie (Success, Error, Info)
         private void MakeAlert(string msg, CustomAlertBox.enmType type)
         {
             CustomAlertBox customAlertBox = new CustomAlertBox(true);
@@ -35,12 +39,16 @@ namespace GUI.Presenters.AdminPresenters
             customAlertBox.BringToFront();
         }
 
+
+        // Metoda przypisująca pobrane dane do dataGridView
         private void LoadReservationList()
         {
             try
             {
-                reservationsList = _reservationRepository.GetReservationsList();
-                reservationBindingSource.DataSource = reservationsList.Select
+                reservationsList = _reservationRepository.GetReservationsList();    // Pobranie danych odnośnie rezerwacji
+                
+                // Przypisanie danych do dataGridView
+                reservationBindingSource.DataSource = reservationsList.Select   
                     (r => new {
                         ID = r.Id,
                         Tytuł = r.Movie.Title,

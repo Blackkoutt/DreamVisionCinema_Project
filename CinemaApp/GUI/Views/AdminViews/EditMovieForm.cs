@@ -4,6 +4,7 @@ namespace GUI.Views.AdminViews
 {
     public partial class EditMovieForm : Form, IEditMovieView
     {
+        // Klasa przechowująca argumenty eventu
         public class EditEventArgs : EventArgs
         {
             public string Id { get; }
@@ -31,11 +32,15 @@ namespace GUI.Views.AdminViews
             oldPrice = price;
             oldRoomNumber = room_nr;
 
+            // Przypisanie odpowiednich wartości kontrolkom
+            this.Text = $"Modyfikacja filmu - \"{title}\"";
             this.filmNameLabel.Text = $"\"{title}\"";
             this.dateValueEdit.Text = date;
             this.priceValueEdit.Text = price;
             this.roomTextViewEdit.Text = room_nr;
-            submitEditButton.Click += delegate { submitEditForm?.Invoke(this, new EditEventArgs(
+            submitEditButton.Click += delegate
+            {
+                submitEditForm?.Invoke(this, new EditEventArgs(
                 id,
                 this.dateValueEdit.Text,
                 this.priceValueEdit.Text,
@@ -44,11 +49,17 @@ namespace GUI.Views.AdminViews
             };
             this.FormClosed += delegate { editFormClosing?.Invoke(this, EventArgs.Empty); };
         }
+
+
+        public event EventHandler submitEditForm;
+        public event EventHandler editFormClosing;
+
         public string ID
         {
             get { return Id; }
         }
-        public string OldPrice{
+        public string OldPrice
+        {
             get { return oldPrice; }
         }
         public string OldDate
@@ -74,8 +85,5 @@ namespace GUI.Views.AdminViews
         {
             get { return this.roomTextViewEdit; }
         }
-
-        public event EventHandler submitEditForm;
-        public event EventHandler editFormClosing;
     }
 }

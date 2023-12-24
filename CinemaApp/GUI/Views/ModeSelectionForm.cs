@@ -8,12 +8,18 @@ namespace GUI.Views
         {
             InitializeComponent();
 
-
-
+            // Deletowane Eventy
             adminButton.Click += delegate { ShowAuthenticationView?.Invoke(this, EventArgs.Empty); };
             userButton.Click += delegate { ShowMainUserView?.Invoke(this, EventArgs.Empty); };
-            //this.Load
+
+            this.FormClosed += delegate { closeSelectionEvent?.Invoke(this, EventArgs.Empty); };
         }
+
+        public event EventHandler closeSelectionEvent;
+        public event EventHandler ShowAuthenticationView;
+        public event EventHandler ShowMainUserView;
+
+        // Metoda wywoływana w momenice błędy krytycznego uniemożliwiającego dalsze korzystanie z aplikacji
         public void StartFailure(string msg)
         {
             this.Controls.Clear();
@@ -39,7 +45,5 @@ namespace GUI.Views
             this.Controls.Add(failLogo);
 
         }
-        public event EventHandler ShowAuthenticationView;
-        public event EventHandler ShowMainUserView;
     }
 }

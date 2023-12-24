@@ -187,7 +187,7 @@ partial class MainUserForm
         iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
         iconCurrentChildForm.IconColor = Color.MediumPurple;
         iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        iconCurrentChildForm.IconSize = 48;
+        iconCurrentChildForm.IconSize = 46;
         iconCurrentChildForm.Location = new Point(16, 21);
         iconCurrentChildForm.Name = "iconCurrentChildForm";
         iconCurrentChildForm.Size = new Size(52, 46);

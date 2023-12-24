@@ -93,6 +93,7 @@
             Controls.Add(Message);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomAlertBox";
             Text = "CustomAlertBox";
             ((System.ComponentModel.ISupportInitialize)iconMessage).EndInit();

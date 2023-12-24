@@ -9,8 +9,21 @@ namespace GUI.Views.UserViews
             InitializeComponent();
             undoButton.Click += delegate { Undo?.Invoke(this, EventArgs.Empty); };
             buyTicketButton.Click += delegate { BuyTicket?.Invoke(this, EventArgs.Empty); };
-            //AddSeatControl
         }
+
+
+        public event EventHandler Undo;
+        public event EventHandler BuyTicket;
+
+        public string SubTitle
+        {
+            set { this.label1.Text = value; }
+        }
+        public string Title
+        {
+            set { this.Text = value; }
+        }
+
         public Label SeatsLabel
         {
             get { return this.seatsLabel; }
@@ -19,11 +32,6 @@ namespace GUI.Views.UserViews
         {
             return this.Controls;
         }
-
-
-        public event EventHandler Undo;
-        public event EventHandler BuyTicket;
-
         public void AddSeatControl(Control control)
         {
             this.Controls.Add(control);

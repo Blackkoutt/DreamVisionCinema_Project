@@ -10,5 +10,7 @@
         event EventHandler BuyTicket;
         public Control.ControlCollection GetControls();
         public void AddSeatControl(Control control);
+        public string SubTitle { set; }
+        public string Title { set; }
     }
 }

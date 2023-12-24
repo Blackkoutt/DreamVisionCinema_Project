@@ -2,18 +2,23 @@
 {
     public partial class CustomAlertBox : Form
     {
+        // Flaga informująca czy timer powinien działać (czy powiadomienie powinno znikać po danym upływie czasu)
         private bool isTimerEnabled;
         public CustomAlertBox(bool isTimerEnabled)
         {
             InitializeComponent();
             this.isTimerEnabled = isTimerEnabled;
         }
+
+        // Enum dla określenia akcji wykonywanej przez timer
         public enum enumAction
         {
             wait,
             start,
             close
         }
+
+        // Enum dla określenia typu powiadomienia
         public enum enmType
         {
             Success,
@@ -22,6 +27,10 @@
         }
         private CustomAlertBox.enumAction action;
         private int x, y;
+
+        
+
+        // Metoda wyświetlająca Alert 
         public void ShowAlert(string msg, enmType type)
         {
             this.Opacity = 0.0;
@@ -32,6 +41,7 @@
                 fname = "alert" + i.ToString();
                 CustomAlertBox frm = (CustomAlertBox)Application.OpenForms[fname];
 
+                // Ustalenie punktu w którym ma pojawić się powiadomienie
                 if (frm == null)
                 {
                     this.Name = fname;
@@ -43,6 +53,8 @@
             }
             x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
+
+            // Ustawienie właściwości formularza zależnie od typu powiadomienia
             switch (type)
             {
                 case enmType.Success:
@@ -67,19 +79,24 @@
 
             this.Message.Text = msg;
             Show();
+
+            // Jeśli timer jest włączony rozpocznij odliczanie do schowania się powiadomienia
             if (isTimerEnabled)
             {
                 this.action = enumAction.start;
                 this.timer1.Interval = 1;
                 timer1.Start();
-                
+
             }
+
+            // W przeciwnym wypadku tylko wyśweitl powiadomienie
             else
             {
                 this.Opacity = 1.0;
             }
         }
 
+        // Metoda obsługująca zamknięcie powiadomienia
         private void closeButton_Click(object sender, EventArgs e)
         {
             timer1.Interval = 1;
@@ -90,16 +107,21 @@
             }
         }
 
+
+        // Metoda wywoływana w każdym cyklu timera
         private void timer1_Tick(object sender, EventArgs e)
         {
             switch (this.action)
             {
+                // Zaczekaj 5 sekund po pokazaniu powiadomienia
                 case enumAction.wait:
                     {
                         timer1.Interval = 5000;
                         action = enumAction.close;
                         break;
                     }
+
+                // Pokaż powiadomienie
                 case enumAction.start:
                     {
                         timer1.Interval = 1;
@@ -117,6 +139,8 @@
                         }
                         break;
                     }
+
+                // Ukryj powiadomienie
                 case enumAction.close:
                     {
                         timer1.Interval = 1;

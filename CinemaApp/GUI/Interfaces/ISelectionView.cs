@@ -8,6 +8,7 @@
         void BringToFront();
         event EventHandler ShowAuthenticationView;
         event EventHandler ShowMainUserView;
+        event EventHandler closeSelectionEvent;
         void StartFailure(string msg);
     }
 }

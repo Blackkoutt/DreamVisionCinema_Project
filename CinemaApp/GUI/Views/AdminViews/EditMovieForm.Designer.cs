@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMovieForm));
             pictureBox1 = new PictureBox();
             filmEditlabel = new Label();
             filmNameLabel = new Label();
@@ -176,6 +177,9 @@
             Controls.Add(filmNameLabel);
             Controls.Add(filmEditlabel);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(844, 694);
+            MinimumSize = new Size(844, 694);
             Name = "EditMovieForm";
             Text = "EditMovieForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

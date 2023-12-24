@@ -5,7 +5,6 @@ using GUI.UserForms;
 using FontAwesome.Sharp;
 using GUI.Views.UserViews;
 using CinemaApp.Exceptions;
-using CinemaApp.Views;
 using GUI.Views;
 using CinemaApp.Model;
 
@@ -26,25 +25,31 @@ namespace GUI.Presenters.UserPresenters
             this.movieRepository = movieRepository;
             this.reservationRepository = reservationRepository;
             _mainUserForm = mainUserForm;
+
+            // Dodanie obsługi eventów widoku
             this._mainUserForm.ShowMoviesView += ShowMoviesView;
             this._mainUserForm.ShowReservationsView += ShowReservationsView;
             this._mainUserForm.ShowMoviesView += ShowMoviesView;
             this._mainUserForm.LoadDefault += LoadDefault;
-            CheckForDeletedOrEditedMovies();
+            CheckForDeletedOrEditedMovies();    // Sprawdzenie czy istnieją usunięte lub zmodyfikowane filmy
         }
+
+        // Metoda tworząca powiadomienie (Success, Error, Info)
         private void MakeAlert(string msg, CustomAlertBox.enmType type)
         {
             CustomAlertBox customAlertBox = new CustomAlertBox(false);
             customAlertBox.ShowAlert(msg, type);
             customAlertBox.BringToFront();
         }
+
+        // Metoda sprawdzająca czy istnieją usunięte lub edytowane filmy
         private void CheckForDeletedOrEditedMovies()
         {
-
             List<string> info_about_deleted_movies = new List<string>();
             List<string> info_about_modificated_movies = new List<string>();
             try
             {
+                // Pobranie listy usuniętych filmów z pliku
                 info_about_deleted_movies = reservationRepository.CheckDeletedReservations();
             }
             catch (CannotReadFileException)
@@ -58,7 +63,7 @@ namespace GUI.Presenters.UserPresenters
             }
             try
             {
-
+                // Pobranie listy zmodyfikowanych filmów z pliku
                 info_about_modificated_movies = reservationRepository.CheckModificatedMoviesWithReservation();
             }
             catch (CannotReadFileException)
@@ -71,6 +76,7 @@ namespace GUI.Presenters.UserPresenters
                 return;
             }
 
+            // Jeśli któraś z list zawiera cokolwiek wypisz informację na ekranie
             if (info_about_deleted_movies.Any())
             {
                 SetInfoAboutDeletedReservations(info_about_deleted_movies);
@@ -80,6 +86,9 @@ namespace GUI.Presenters.UserPresenters
                 SetInfoAboutModificatedReservations(info_about_modificated_movies);
             }
         }
+
+
+        // Metoda wypisująca informacje o zmodyfikowanych filmach (zmodyfikowane zostały także bilety)
         private void SetInfoAboutModificatedReservations(List<string> info_list)
         {
             string info;
@@ -102,6 +111,9 @@ namespace GUI.Presenters.UserPresenters
                 }
             }
         }
+
+
+        // Metoda wypisująca informacje o usuniętych filmach (usunięte zostały także bilety)
         private void SetInfoAboutDeletedReservations(List<string> info_list)
         {
             string info;
@@ -116,8 +128,11 @@ namespace GUI.Presenters.UserPresenters
                 i += 1;
             }
         }
+
+        // Metoda ładująca podstawowy widok (logo aplikacji)
         private void LoadDefault(object? sender, EventArgs e)
         {
+            // Jeśli wcześniej otwarty był formularz rezerwacji lub filmów to zamknij je 
             if (reservationListView != null)
             {
                 reservationListView.Close();
@@ -128,24 +143,27 @@ namespace GUI.Presenters.UserPresenters
                 moviesListView.Close();
                 moviesListView = null;
             }
-            // też dla filmu
-
+            // Zmień właściowści przycisku w menu
             _mainUserForm.DisableButton();
             _mainUserForm.ButtonBorderLeft.Visible = false;
 
+            // Zmień właściowści wyświetlanego tyułu na górze
             _mainUserForm.topIcon.IconChar = IconChar.House;
             _mainUserForm.topIcon.IconColor = Color.MediumPurple;
 
             _mainUserForm.lblTitle.Text = "Strona główna";
-            // tutaj może być problem z tym że logo jest umiejscowione wzgledem poprzedniego rozmiaru okna
             _mainUserForm.MainBigLogo.Anchor= AnchorStyles.None;
             _mainUserForm.MainBigLogo.Dock = DockStyle.None;
+
+            // Dodaj do głównego kontenera logo
             _mainUserForm.PanelContainer.Controls.Add(_mainUserForm.MainBigLogo); 
         }
 
+
+        // Metoda pokazująca widok listy fimów
         private void ShowMoviesView(object? sender, EventArgs e)
         {
-            // Tutaj inicjalizacja nowego formularza
+            // Jeśli był otwarty widok rezerwacji to go zamknij
             if(reservationListView != null) 
             {
                 reservationListView.Close();
@@ -153,36 +171,40 @@ namespace GUI.Presenters.UserPresenters
             }
             if (moviesListView == null)
             {
+                // Utwórz nowy widok listy filmów
                 moviesListView = new MoviesListView();
                 new UserMoviePresenter(moviesListView, movieRepository, reservationRepository);
                 _mainUserForm.PanelContainer.Controls.Clear();
+
+                // Dodaj go do głównego kontenera 
                 _mainUserForm.PanelContainer.Controls.Add((Form)moviesListView);
                 _mainUserForm.PanelContainer.Tag = (Form)moviesListView;
-
-                _mainUserForm.lblTitle.Text = ((Form)moviesListView).Text;
-            }
-            
-           
+                _mainUserForm.lblTitle.Text = ((Form)moviesListView).Text;  // Ustaw tekst na górze ekranu
+            }       
         }
 
+
+        // Metoda pokazująca widok listy rezerwacji
         private void ShowReservationsView(object? sender, EventArgs e)
         {
-                if (moviesListView != null)
-                {
-                    moviesListView.Close();
-                    moviesListView = null;
-                }
-                if (reservationListView == null)
-                {
-                    reservationListView = new ReservationListView();
-                    new UserReservationPresenter(reservationListView, reservationRepository);
-                    _mainUserForm.PanelContainer.Controls.Clear();
-                    _mainUserForm.PanelContainer.Controls.Add((Form)reservationListView);
-                    _mainUserForm.PanelContainer.Tag = (Form)reservationListView;
+            // Jeśli był otwarty widok listy filmów to go zamknij
+            if (moviesListView != null)
+            {
+                moviesListView.Close();
+                moviesListView = null;
+            }
+            if (reservationListView == null)
+            {
+                // Utwórz nowy widok listy rezerwacji
+                reservationListView = new ReservationListView();
+                new UserReservationPresenter(reservationListView, reservationRepository);
+                _mainUserForm.PanelContainer.Controls.Clear();
 
-                    _mainUserForm.lblTitle.Text = ((Form)reservationListView).Text;
-                }
-            
+                // Dodaj go do głównego kontenera 
+                _mainUserForm.PanelContainer.Controls.Add((Form)reservationListView);
+                _mainUserForm.PanelContainer.Tag = (Form)reservationListView;
+                _mainUserForm.lblTitle.Text = ((Form)reservationListView).Text; // Ustaw tekst na górze ekranu
+            } 
         }
     }
 }

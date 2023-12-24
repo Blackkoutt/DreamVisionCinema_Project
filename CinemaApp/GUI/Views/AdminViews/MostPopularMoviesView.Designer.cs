@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             popularChart = new OxyPlot.WindowsForms.PlotView();
-            filmEditlabel = new Label();
+            headerMain = new Label();
             label1 = new Label();
             backButton = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
@@ -48,16 +48,16 @@
             popularChart.ZoomRectangleCursor = Cursors.SizeNWSE;
             popularChart.ZoomVerticalCursor = Cursors.SizeNS;
             // 
-            // filmEditlabel
+            // headerMain
             // 
-            filmEditlabel.Font = new Font("Montserrat", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            filmEditlabel.ForeColor = SystemColors.Window;
-            filmEditlabel.Location = new Point(164, 24);
-            filmEditlabel.Name = "filmEditlabel";
-            filmEditlabel.Size = new Size(1036, 54);
-            filmEditlabel.TabIndex = 105;
-            filmEditlabel.Text = "Poniżej przedstawiono 10 najpopularniejszych filmów";
-            filmEditlabel.TextAlign = ContentAlignment.MiddleCenter;
+            headerMain.Font = new Font("Montserrat", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            headerMain.ForeColor = SystemColors.Window;
+            headerMain.Location = new Point(164, 24);
+            headerMain.Name = "headerMain";
+            headerMain.Size = new Size(1036, 54);
+            headerMain.TabIndex = 105;
+            headerMain.Text = "Poniżej przedstawiono 10 najpopularniejszych filmów";
+            headerMain.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -99,17 +99,18 @@
             ClientSize = new Size(1275, 743);
             Controls.Add(backButton);
             Controls.Add(label1);
-            Controls.Add(filmEditlabel);
+            Controls.Add(headerMain);
             Controls.Add(popularChart);
             Name = "MostPopularMoviesView";
             Text = "MostPopularMoviesView";
+            Resize += MostPopularMoviesView_Resize;
             ResumeLayout(false);
         }
 
         #endregion
 
         private OxyPlot.WindowsForms.PlotView popularChart;
-        private Label filmEditlabel;
+        private Label headerMain;
         private Label label1;
         private FontAwesome.Sharp.IconButton backButton;
     }

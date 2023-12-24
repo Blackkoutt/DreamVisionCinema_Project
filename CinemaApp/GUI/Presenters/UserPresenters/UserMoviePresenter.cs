@@ -22,10 +22,12 @@ namespace GUI.Presenters.UserPresenters
             _movieRepository = moviesRepository;   
             _reservationRepository= reservationRepository;
 
+            // Utstawienie BindingSource dla dataGridView
             this.movieBindingSource = new BindingSource();
             this._movieslistView.SetMoviesListBindingSource(movieBindingSource);
 
-            this._movieslistView.ShowMovieRoom += ShowMovieRoom;
+            // Dołączenie obsługi eventów
+            _movieslistView.ShowMovieRoom += ShowMovieRoom;
 
             _movieslistView.clearFiltersUser += ClearFilters;
             _movieslistView.searchMovieUser += SearchMovie;
@@ -35,7 +37,7 @@ namespace GUI.Presenters.UserPresenters
             _movieslistView.BringToFront();
             _movieslistView.Show();
 
-            // Load data
+            // Pobranie danych z pliku i dodanie ich do listy dataGridView
             try
             {
                 moviesList = _movieRepository.GetAllMovies();
@@ -48,25 +50,25 @@ namespace GUI.Presenters.UserPresenters
             catch (Exception ex)
             {
                 MakeAlert(ex.Message, CustomAlertBox.enmType.Info);
-            }
-            // LoadMoviesList();
-            
+            }            
         }
 
+
+        // Metoda obslugująca event wciśnięcia przycisku DSC - sortowanie
         private void SortDSC(object? sender, EventArgs e)
         {
+            // Pobranie wybranego atrybutu z listy rozwijanej
             string atribute = (_movieslistView.SortCriteria.SelectedItem != null) ? _movieslistView.SortCriteria.SelectedItem.ToString() : string.Empty;
             List<Movie> sortedMovies;
-            // jeśli "" wyrzuci wyjątek braku atrybutu
             if (moviesList != null)
             {
                 try
                 {
-                    sortedMovies = _movieRepository.SortDescending(atribute);
+                    sortedMovies = _movieRepository.SortDescending(atribute);   // Metoda zwraca postrowaną listę względem danego atrybutu
+                       
+                    LoadMoviesList(sortedMovies);   // Ładowanie postorowanej listy do dataGridView
 
-                    LoadMoviesList(sortedMovies);
-
-                    movieBindingSource.ResetBindings(false);
+                    movieBindingSource.ResetBindings(false);    // Zresetowanie dataGridView
                 }
                 catch (BadAttributeException BAE)
                 {
@@ -90,20 +92,22 @@ namespace GUI.Presenters.UserPresenters
             }
         }
 
+
+        // Metoda obslugująca event wciśnięcia przycisku ASC - sortowanie
         private void SortASC(object? sender, EventArgs e)
         {
+            // Pobranie wybranego atrybutu z listy rozwijanej
             string atribute = (_movieslistView.SortCriteria.SelectedItem != null) ? _movieslistView.SortCriteria.SelectedItem.ToString() : string.Empty;
             List<Movie> sortedMovies;
-            // jeśli "" wyrzuci wyjątek braku atrybutu
             if (moviesList != null)
             {
                 try
                 {
-                    sortedMovies = _movieRepository.SortAscending(atribute);
+                    sortedMovies = _movieRepository.SortAscending(atribute);    // Metoda zwraca postrowaną listę względem danego atrybutu
 
-                    LoadMoviesList(sortedMovies);
+                    LoadMoviesList(sortedMovies);   // Ładowanie postorowanej listy do dataGridView
 
-                    movieBindingSource.ResetBindings(false);
+                    movieBindingSource.ResetBindings(false);    // Zresetowanie dataGridView
                 }
                 catch (BadAttributeException BAE)
                 {
@@ -128,20 +132,22 @@ namespace GUI.Presenters.UserPresenters
             }
         }
 
+
+        // Metoda obsługująca event wciśnięcia przycisku "Szukaj"
         private void SearchMovie(object? sender, EventArgs e)
         {
+            // Poberanie z widoku wartości względem której odbędzie się wyszukiwanie 
             string search_value = (_movieslistView.SearchValue.Text != null) ? _movieslistView.SearchValue.Text : string.Empty;
             List<Movie> filtredList;
-            // throws exceptions
             if (moviesList != null)
             {
                 try
                 {
-                    filtredList = _movieRepository.FilterList(search_value);
+                    filtredList = _movieRepository.FilterList(search_value);    // Metoda zwraca dopasowane rekordy
 
-                    LoadMoviesList(filtredList);
+                    LoadMoviesList(filtredList);    // Ładowanie przefiltrowanej listy do dataGridView
 
-                    movieBindingSource.ResetBindings(false);
+                    movieBindingSource.ResetBindings(false);    // Odświeżenie dataGridView
                 }
                 catch (CannotFindMatchingMovieException CFMME)
                 {
@@ -160,11 +166,16 @@ namespace GUI.Presenters.UserPresenters
             }
         }
 
+
+        // Metoda obsługująca event wciśnięcia przycisku "Wyczyść filtry"
         private void ClearFilters(object? sender, EventArgs e)
         {
             _movieslistView.SearchValue.Text = string.Empty;
             RefreshMovieList();
         }
+
+
+        // Metoda odwieżająca listę dataGridView
         private void RefreshMovieList()
         {
             if (moviesList != null)
@@ -179,14 +190,21 @@ namespace GUI.Presenters.UserPresenters
 
         }
 
+
+        // Metoda obsługująca event wciśnięcia przycisku "Rezerwuj"
         private void ShowMovieRoom(object? sender, EventArgs e)
         {
             movieReservationView = new MovieReservationView();
+
+            // Pobranie id wybranego filmu
             string currentMovieIdString = movieBindingSource.Current.ToString().Split(",")[0].Split("=")[1].Trim();
             Movie movie;
             try
             {
+                // Pobranie filmu o danym id z listy
                 movie = _movieRepository.GetOneMovie(currentMovieIdString);
+
+                // Utworzenie prezentera - graficzna reprezentacja miejsc w sali kinowej
                 new MovieReservationPresenter(movieReservationView, _reservationRepository, movie);
             }
             catch(CannotConvertException CCE)
@@ -206,6 +224,8 @@ namespace GUI.Presenters.UserPresenters
             }
         }
 
+
+        // Metoda tworząca Alert (Success, Info, Error)
         private void MakeAlert(string msg, CustomAlertBox.enmType type)
         {
             CustomAlertBox customAlertBox = new CustomAlertBox(true);
@@ -213,10 +233,12 @@ namespace GUI.Presenters.UserPresenters
             customAlertBox.BringToFront();
         }
 
+        // Metoda ładująca listę do dataGridView
         private void LoadMoviesList(List<Movie> movies)
         {
             if (movies != null)
             {
+                // Przypisanie listy do BindingSource dataGridView
                 movieBindingSource.DataSource = movies.Select
                (mov => new {
                    ID = mov.Id,

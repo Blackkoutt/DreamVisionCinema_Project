@@ -30,7 +30,7 @@ namespace GUI.Views.AdminViews
         private void InitializeComponent()
         {
             earningsPanel = new Panel();
-            earningsLabel = new Label();
+            earningsLabelText = new Label();
             earnigsLabel = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel1 = new Panel();
@@ -47,7 +47,7 @@ namespace GUI.Views.AdminViews
             // earningsPanel
             // 
             earningsPanel.BackColor = Color.FromArgb(50, 52, 102);
-            earningsPanel.Controls.Add(earningsLabel);
+            earningsPanel.Controls.Add(earningsLabelText);
             earningsPanel.Controls.Add(earnigsLabel);
             earningsPanel.Controls.Add(iconPictureBox1);
             earningsPanel.Location = new Point(74, 96);
@@ -55,19 +55,21 @@ namespace GUI.Views.AdminViews
             earningsPanel.Size = new Size(516, 199);
             earningsPanel.TabIndex = 0;
             // 
-            // earningsLabel
+            // earningsLabelText
             // 
-            earningsLabel.Font = new Font("Montserrat", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            earningsLabel.ForeColor = Color.FromArgb(143, 241, 126);
-            earningsLabel.Location = new Point(17, 78);
-            earningsLabel.Name = "earningsLabel";
-            earningsLabel.Size = new Size(359, 75);
-            earningsLabel.TabIndex = 106;
-            earningsLabel.Text = "1223 $";
-            earningsLabel.TextAlign = ContentAlignment.MiddleCenter;
+            earningsLabelText.BackColor = Color.Transparent;
+            earningsLabelText.Font = new Font("Montserrat", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            earningsLabelText.ForeColor = Color.FromArgb(143, 241, 126);
+            earningsLabelText.Location = new Point(17, 78);
+            earningsLabelText.Name = "earningsLabelText";
+            earningsLabelText.Size = new Size(359, 75);
+            earningsLabelText.TabIndex = 106;
+            earningsLabelText.Text = "1223 $";
+            earningsLabelText.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // earnigsLabel
             // 
+            earnigsLabel.BackColor = Color.Transparent;
             earnigsLabel.Font = new Font("Montserrat", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             earnigsLabel.ForeColor = SystemColors.Window;
             earnigsLabel.Location = new Point(17, 29);
@@ -87,7 +89,7 @@ namespace GUI.Views.AdminViews
             iconPictureBox1.IconSize = 122;
             iconPictureBox1.Location = new Point(382, 42);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(122, 124);
+            iconPictureBox1.Size = new Size(122, 122);
             iconPictureBox1.TabIndex = 0;
             iconPictureBox1.TabStop = false;
             // 
@@ -159,6 +161,7 @@ namespace GUI.Views.AdminViews
             // popularButton
             // 
             popularButton.BackColor = Color.FromArgb(50, 52, 102);
+            popularButton.Cursor = Cursors.Hand;
             popularButton.FlatAppearance.BorderSize = 0;
             popularButton.FlatStyle = FlatStyle.Flat;
             popularButton.Font = new Font("Montserrat", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -171,13 +174,14 @@ namespace GUI.Views.AdminViews
             popularButton.Name = "popularButton";
             popularButton.Size = new Size(516, 332);
             popularButton.TabIndex = 2;
-            popularButton.Text = "Diagram najpopularniejszych filmów";
+            popularButton.Text = "Wykres najpopularniejszych filmów";
             popularButton.TextImageRelation = TextImageRelation.ImageAboveText;
             popularButton.UseVisualStyleBackColor = false;
             // 
             // profitableButton
             // 
             profitableButton.BackColor = Color.FromArgb(50, 52, 102);
+            profitableButton.Cursor = Cursors.Hand;
             profitableButton.FlatAppearance.BorderSize = 0;
             profitableButton.FlatStyle = FlatStyle.Flat;
             profitableButton.Font = new Font("Montserrat", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -190,7 +194,7 @@ namespace GUI.Views.AdminViews
             profitableButton.Name = "profitableButton";
             profitableButton.Size = new Size(516, 332);
             profitableButton.TabIndex = 3;
-            profitableButton.Text = "Diagram najbardziej dochodowych filmów";
+            profitableButton.Text = "Wykres najbardziej dochodowych filmów";
             profitableButton.TextImageRelation = TextImageRelation.ImageAboveText;
             profitableButton.UseVisualStyleBackColor = false;
             // 
@@ -206,6 +210,7 @@ namespace GUI.Views.AdminViews
             Controls.Add(earningsPanel);
             Name = "AdminStatisticView";
             Text = "AdminStatisticView";
+            Resize += AdminStatisticView_Resize;
             earningsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel1.ResumeLayout(false);
@@ -216,7 +221,7 @@ namespace GUI.Views.AdminViews
 
         private Panel earningsPanel;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Label earningsLabel;
+        private Label earningsLabelText;
         private Label earnigsLabel;
         private Panel panel1;
         private Label guidelineLabel;

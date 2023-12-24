@@ -247,9 +247,12 @@ namespace CinemaApp.Model
             if (new_date != "")
             {
                 NewDate = Conversions.TryParseToDateTime(new_date, "Sprawdź czy data jest podana w formacie dd/MM/yyyy HH:mm");
-
+                if (NewDate < DateTime.Now)
+                {
+                    throw new IncorrectParametrException("Data nie może być wcześniejsza niż data bieżąca!");
+                }
                 // Jeśli zmieniono też salę
-                if(new_room_number != "")
+                if (new_room_number != "")
                 {
                     newRoomNumber = Conversions.TryParseToInt(new_room_number, "Numer sali powinien być wartością całkowitą");
                     if (!Validation.IsValidRoomNumber(newRoomNumber))

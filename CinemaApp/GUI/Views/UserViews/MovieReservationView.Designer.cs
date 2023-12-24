@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieReservationView));
             panel1 = new Panel();
             label1 = new Label();
             label2 = new Label();
@@ -54,9 +55,9 @@
             // 
             label1.Font = new Font("Montserrat", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Window;
-            label1.Location = new Point(398, 9);
+            label1.Location = new Point(13, 9);
             label1.Name = "label1";
-            label1.Size = new Size(626, 54);
+            label1.Size = new Size(1396, 54);
             label1.TabIndex = 102;
             label1.Text = "Wybierz interesujące cię miejsca w sali";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -151,6 +152,7 @@
             // undoButton
             // 
             undoButton.BackColor = Color.FromArgb(217, 145, 2);
+            undoButton.Cursor = Cursors.Hand;
             undoButton.FlatAppearance.BorderSize = 0;
             undoButton.FlatStyle = FlatStyle.Flat;
             undoButton.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -170,6 +172,7 @@
             // buyTicketButton
             // 
             buyTicketButton.BackColor = Color.FromArgb(145, 52, 237);
+            buyTicketButton.Cursor = Cursors.Hand;
             buyTicketButton.FlatAppearance.BorderSize = 0;
             buyTicketButton.FlatStyle = FlatStyle.Flat;
             buyTicketButton.Font = new Font("Montserrat", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -204,6 +207,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1439, 817);
             MinimumSize = new Size(1439, 817);
             Name = "MovieReservationView";

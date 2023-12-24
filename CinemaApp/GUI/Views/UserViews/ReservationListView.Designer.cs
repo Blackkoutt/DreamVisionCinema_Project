@@ -34,7 +34,7 @@ namespace GUI.UserForms
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dataGridView = new DataGridView();
-            deleteReservationButton = new FontAwesome.Sharp.IconButton();
+            deleteReservaationButton = new FontAwesome.Sharp.IconButton();
             reservationListLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -83,25 +83,25 @@ namespace GUI.UserForms
             dataGridView.Size = new Size(833, 554);
             dataGridView.TabIndex = 1;
             // 
-            // deleteReservationButton
+            // deleteReservaationButton
             // 
-            deleteReservationButton.BackColor = Color.FromArgb(78, 81, 217);
-            deleteReservationButton.Cursor = Cursors.Hand;
-            deleteReservationButton.FlatAppearance.BorderSize = 0;
-            deleteReservationButton.FlatStyle = FlatStyle.Flat;
-            deleteReservationButton.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
-            deleteReservationButton.ForeColor = SystemColors.Window;
-            deleteReservationButton.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            deleteReservationButton.IconColor = Color.Crimson;
-            deleteReservationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            deleteReservationButton.IconSize = 38;
-            deleteReservationButton.Location = new Point(781, 49);
-            deleteReservationButton.Name = "deleteReservationButton";
-            deleteReservationButton.Size = new Size(260, 48);
-            deleteReservationButton.TabIndex = 3;
-            deleteReservationButton.Text = "Anuluj rezerwację";
-            deleteReservationButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            deleteReservationButton.UseVisualStyleBackColor = false;
+            deleteReservaationButton.BackColor = Color.FromArgb(78, 81, 217);
+            deleteReservaationButton.Cursor = Cursors.Hand;
+            deleteReservaationButton.FlatAppearance.BorderSize = 0;
+            deleteReservaationButton.FlatStyle = FlatStyle.Flat;
+            deleteReservaationButton.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteReservaationButton.ForeColor = SystemColors.Window;
+            deleteReservaationButton.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            deleteReservaationButton.IconColor = Color.Crimson;
+            deleteReservaationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            deleteReservaationButton.IconSize = 38;
+            deleteReservaationButton.Location = new Point(781, 49);
+            deleteReservaationButton.Name = "deleteReservaationButton";
+            deleteReservaationButton.Size = new Size(260, 48);
+            deleteReservaationButton.TabIndex = 3;
+            deleteReservaationButton.Text = "Anuluj rezerwację";
+            deleteReservaationButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            deleteReservaationButton.UseVisualStyleBackColor = false;
             // 
             // reservationListLabel
             // 
@@ -121,11 +121,10 @@ namespace GUI.UserForms
             BackColor = Color.FromArgb(34, 35, 68);
             ClientSize = new Size(1222, 732);
             Controls.Add(reservationListLabel);
-            Controls.Add(deleteReservationButton);
+            Controls.Add(deleteReservaationButton);
             Controls.Add(dataGridView);
             Name = "ReservationListView";
             Text = "Lista rezerwacji";
-            Load += ReservationListView_Load;
             Resize += ReservationListView_Resize;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
@@ -135,7 +134,7 @@ namespace GUI.UserForms
 
         private DataGridView dataGridView;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton deleteReservationButton;
+        private FontAwesome.Sharp.IconButton deleteReservaationButton;
         private Label reservationListLabel;
     }
 }

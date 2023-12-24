@@ -46,6 +46,9 @@
     <Compile Update="Views\TicketCreatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\UserViews\CancelMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\UserViews\MovieReservationView.cs">
       <SubType>Form</SubType>
     </Compile>

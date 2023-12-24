@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteMessage));
             delete_info = new Label();
             pictureBox1 = new PictureBox();
             filmName = new Label();
@@ -134,6 +135,9 @@
             Controls.Add(filmName);
             Controls.Add(pictureBox1);
             Controls.Add(delete_info);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(818, 513);
+            MinimumSize = new Size(818, 513);
             Name = "DeleteMessage";
             Text = "Usuwanie filmu";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -6,7 +6,6 @@
         void Close();
         void BringToFront();
         public string ID { get; }
-
         event EventHandler submitDelete;
         event EventHandler cancelDelete;
         event EventHandler deleteFormClosing;

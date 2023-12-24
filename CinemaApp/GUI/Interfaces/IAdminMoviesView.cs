@@ -9,7 +9,6 @@
         event EventHandler searchMovie;
         event EventHandler sortASC;
         event EventHandler sortDSC;
-
         public ComboBox SortCriteria { get; }
         public TextBox SearchValue { get; }
         void Show();

@@ -30,6 +30,7 @@ namespace GUI.Views.AdminViews
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMovieForm));
             pictureBox1 = new PictureBox();
             titleTextView = new RichTextBox();
             infoLabel = new Label();
@@ -51,7 +52,7 @@ namespace GUI.Views.AdminViews
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.movie_png1;
-            pictureBox1.Location = new Point(342, 1);
+            pictureBox1.Location = new Point(290, -1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(217, 121);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -62,7 +63,7 @@ namespace GUI.Views.AdminViews
             // 
             titleTextView.BackColor = SystemColors.Window;
             titleTextView.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            titleTextView.Location = new Point(269, 273);
+            titleTextView.Location = new Point(240, 244);
             titleTextView.Name = "titleTextView";
             titleTextView.Size = new Size(325, 37);
             titleTextView.TabIndex = 6;
@@ -72,9 +73,9 @@ namespace GUI.Views.AdminViews
             // 
             infoLabel.Font = new Font("Montserrat", 18F, FontStyle.Regular, GraphicsUnit.Point);
             infoLabel.ForeColor = SystemColors.Window;
-            infoLabel.Location = new Point(311, 134);
+            infoLabel.Location = new Point(0, 123);
             infoLabel.Name = "infoLabel";
-            infoLabel.Size = new Size(269, 54);
+            infoLabel.Size = new Size(794, 54);
             infoLabel.TabIndex = 103;
             infoLabel.Text = "Dodaj nowy film";
             infoLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -83,7 +84,7 @@ namespace GUI.Views.AdminViews
             // 
             titleLabel.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
             titleLabel.ForeColor = SystemColors.Window;
-            titleLabel.Location = new Point(269, 236);
+            titleLabel.Location = new Point(240, 207);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(78, 34);
             titleLabel.TabIndex = 104;
@@ -94,7 +95,7 @@ namespace GUI.Views.AdminViews
             // 
             dataLabel.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
             dataLabel.ForeColor = SystemColors.Window;
-            dataLabel.Location = new Point(269, 322);
+            dataLabel.Location = new Point(240, 296);
             dataLabel.Name = "dataLabel";
             dataLabel.Size = new Size(78, 34);
             dataLabel.TabIndex = 105;
@@ -105,7 +106,7 @@ namespace GUI.Views.AdminViews
             // 
             priceLabel.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
             priceLabel.ForeColor = SystemColors.Window;
-            priceLabel.Location = new Point(269, 421);
+            priceLabel.Location = new Point(240, 395);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new Size(120, 34);
             priceLabel.TabIndex = 109;
@@ -116,7 +117,7 @@ namespace GUI.Views.AdminViews
             // 
             durationLabel.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
             durationLabel.ForeColor = SystemColors.Window;
-            durationLabel.Location = new Point(269, 517);
+            durationLabel.Location = new Point(240, 491);
             durationLabel.Name = "durationLabel";
             durationLabel.Size = new Size(210, 34);
             durationLabel.TabIndex = 111;
@@ -127,7 +128,7 @@ namespace GUI.Views.AdminViews
             // 
             roomLabel.Font = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
             roomLabel.ForeColor = SystemColors.Window;
-            roomLabel.Location = new Point(269, 612);
+            roomLabel.Location = new Point(240, 586);
             roomLabel.Name = "roomLabel";
             roomLabel.Size = new Size(169, 34);
             roomLabel.TabIndex = 113;
@@ -146,7 +147,7 @@ namespace GUI.Views.AdminViews
             submitAddButton.IconColor = SystemColors.Window;
             submitAddButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submitAddButton.IconSize = 34;
-            submitAddButton.Location = new Point(342, 732);
+            submitAddButton.Location = new Point(313, 720);
             submitAddButton.Name = "submitAddButton";
             submitAddButton.Size = new Size(137, 51);
             submitAddButton.TabIndex = 115;
@@ -160,7 +161,7 @@ namespace GUI.Views.AdminViews
             dateValue.CustomFormat = "dd/MM/yyyy HH:mm";
             dateValue.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             dateValue.Format = DateTimePickerFormat.Custom;
-            dateValue.Location = new Point(269, 359);
+            dateValue.Location = new Point(240, 333);
             dateValue.Name = "dateValue";
             dateValue.ShowUpDown = true;
             dateValue.Size = new Size(325, 38);
@@ -169,7 +170,7 @@ namespace GUI.Views.AdminViews
             // priceValue
             // 
             priceValue.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            priceValue.Location = new Point(269, 458);
+            priceValue.Location = new Point(240, 432);
             priceValue.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             priceValue.Name = "priceValue";
             priceValue.Size = new Size(325, 38);
@@ -178,7 +179,7 @@ namespace GUI.Views.AdminViews
             // roomTextView
             // 
             roomTextView.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            roomTextView.Location = new Point(269, 649);
+            roomTextView.Location = new Point(240, 623);
             roomTextView.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
             roomTextView.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             roomTextView.Name = "roomTextView";
@@ -192,7 +193,7 @@ namespace GUI.Views.AdminViews
             durationTextView.CustomFormat = "HH:mm";
             durationTextView.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             durationTextView.Format = DateTimePickerFormat.Custom;
-            durationTextView.Location = new Point(269, 554);
+            durationTextView.Location = new Point(240, 528);
             durationTextView.Name = "durationTextView";
             durationTextView.ShowUpDown = true;
             durationTextView.Size = new Size(325, 38);
@@ -203,7 +204,7 @@ namespace GUI.Views.AdminViews
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 35, 68);
-            ClientSize = new Size(895, 816);
+            ClientSize = new Size(793, 816);
             Controls.Add(durationTextView);
             Controls.Add(roomTextView);
             Controls.Add(priceValue);
@@ -217,6 +218,9 @@ namespace GUI.Views.AdminViews
             Controls.Add(infoLabel);
             Controls.Add(titleTextView);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(811, 863);
+            MinimumSize = new Size(811, 863);
             Name = "AddMovieForm";
             Text = "Dodawanie nowego filmu";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

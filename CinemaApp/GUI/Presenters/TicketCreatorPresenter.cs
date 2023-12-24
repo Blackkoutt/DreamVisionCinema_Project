@@ -2,12 +2,12 @@
 using CinemaApp.Interfaces;
 using CinemaApp.Model;
 using GUI.Interfaces;
-using GUI.Views;
 using QRCoder;
 using System.Drawing.Imaging;
 
 namespace GUI.Presenters
 {
+    // Prezenter służący do manipulowania (ukrytym) widokiem tworzenia biletów
     public class TicketCreatorPresenter
     {
         private Control.ControlCollection controls;
@@ -15,23 +15,30 @@ namespace GUI.Presenters
         public TicketCreatorPresenter(IReservationRepository reservationRepository, ITicketCreator ticketCreator)
         {
             this.reservationRepository = reservationRepository;
-            //List<Reservation> res = reservationRepository.GetReservationsList(); //exceptions
             controls = ticketCreator.GetControls();
-            //PrepareTickets(res);
-
         }
+
+
+        // Metoda do aktualizacji biletu - w wyniku zmiany daty lub sali pokazu filmu przez administratora
         public void UpdateTicket(Reservation res)
         {
+            // Fonty różnej wielkości
             Font smallFont = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
             Font bigFont = new Font("Montserrat", 19.7999973F, FontStyle.Regular, GraphicsUnit.Point);
             Font mediumFont = new Font("Montserrat", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
 
-
+            // Utworzenie pustej templatki ticketu
             PictureBox ticket_template = CreateTicket(controls);
+
+            // Pobranie wewnętrznych kontrolek pictureboxa
             Control.ControlCollection tt_controls = ticket_template.Controls;
+
             List<Label> labels = new List<Label>();
+            
+            // Nazwa pliku z biletem: id_biletu_tytuł_filmu.jpg
             string fileName = res.Ticket.Id + "_" + res.Movie.Title + ".jpg";
 
+            // Utworzenie nowych kontrolek w odpowiednich miejscach templatki biletu
             string price = res.Ticket.CalculatePrice(res.Movie.Price, res.Seats.Count).ToString();
             Label labelInPictureBox = CreateTicketLabel(tt_controls, bigFont, new Point(258, 234), "movie_title", new Size(482, 62), 114, res.Movie.Title);
             labels.Add(labelInPictureBox);
@@ -48,30 +55,53 @@ namespace GUI.Presenters
             labelInPictureBox = CreateTicketLabel(tt_controls, bigFont, new Point(875, 76), "ticket_id", new Size(157, 53), 120, res.Ticket.Id.ToString());
             labels.Add(labelInPictureBox);
 
+            // Wygenerowanie kodu QR na podstawie id biletu i tytułu filmu
             PictureBox qrCode = CreateQRCode(res.Ticket.Id.ToString(), res.Movie.Title);
 
+            // Zapianie biletu do pliku w formacie JPG
             SaveTicketToJPGFile(ticket_template, labels, fileName, qrCode);
             labels.Clear();
             tt_controls.Clear();
         }
+
+
+        // Metoda odpowiedzialna za przygotowywanie biletów - każdorazowo w momencie uruchomienia programu
         public void PrepareTickets()
         {
-            List<Reservation> reservations = reservationRepository.GetReservationsList(); // exceptions
+            // Pobranie listy rezerwacji
+            List<Reservation> reservations;
+            try
+            {
+                reservations = reservationRepository.GetReservationsList();
+            }
+            catch(ReservationListIsEmptyException)
+            {
+                return;
+            }
+            catch(Exception) 
+            {
+                return;
+            }
+
+            // Fonty
             Font smallFont = new Font("Montserrat", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point);
             Font bigFont = new Font("Montserrat", 19.7999973F, FontStyle.Regular, GraphicsUnit.Point);
             Font mediumFont = new Font("Montserrat", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
 
-
+            // Przygotowanie templatki biletu
             PictureBox ticket_template = CreateTicket(controls);
+
+            // Pobranie kontrolek templatki biletu
             Control.ControlCollection tt_controls = ticket_template.Controls;
             List<Label> labels = new List<Label>();
 
+            // Dla każdej rezerwacji
             foreach (Reservation res in reservations)
             {
+                // Nazwa pilku z biletem
                 string fileName = res.Ticket.Id + "_" + res.Movie.Title + ".jpg";
-                
-                
 
+                // Tworzenie kontrolek - labeli z odpowiednimi danymi
                 string price = res.Ticket.CalculatePrice(res.Movie.Price, res.Seats.Count).ToString();
                 Label labelInPictureBox = CreateTicketLabel(tt_controls, bigFont, new Point(258, 234), "movie_title", new Size(482, 62), 114, res.Movie.Title);
                 labels.Add(labelInPictureBox);
@@ -88,14 +118,18 @@ namespace GUI.Presenters
                 labelInPictureBox = CreateTicketLabel(tt_controls, bigFont, new Point(875, 76), "ticket_id", new Size(157, 53), 120, res.Ticket.Id.ToString());
                 labels.Add(labelInPictureBox);
 
+                // Wygenerowanie kodu QR
                 PictureBox qrCode = CreateQRCode(res.Ticket.Id.ToString(), res.Movie.Title);
 
+                // Zapisanie biletu do pliku JPG
                 SaveTicketToJPGFile(ticket_template, labels, fileName, qrCode);
                 labels.Clear();
                 tt_controls.Clear();
             }
                     
         }
+
+        // Metoda generująca kod QR na podstawie id biletu i nazwy filmu - wykorzystana biblioteka: QRCoder
         private PictureBox CreateQRCode(string ticket_id, string movie_title)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
@@ -111,6 +145,9 @@ namespace GUI.Presenters
 
             return qrCodePicture;
         }
+
+
+        // Metoda zapisująca bilet do pliku JPG 
         private void SaveTicketToJPGFile(PictureBox ticket_template, List<Label> labels, string fileName, PictureBox qrCode)
         {
             Bitmap bitmap = new Bitmap(ticket_template.Width, ticket_template.Height);
@@ -130,6 +167,8 @@ namespace GUI.Presenters
             string filePath = Path.Combine(directoryPath, fileName);
             bitmap.Save(filePath, ImageFormat.Jpeg);
         }
+
+        // Metoda tworząca nowy label biletu na podstawie podanych parametrów
         private Label CreateTicketLabel(Control.ControlCollection controls, Font font, Point location, string name, Size size, int tab_index, string text)
         {
             Label label = new Label();
@@ -164,6 +203,7 @@ namespace GUI.Presenters
             return label;
         }
 
+        // Meotda tworząca templatkę biletu
         private PictureBox CreateTicket(Control.ControlCollection controls)
         {
             PictureBox ticket_template = new PictureBox();

@@ -12,6 +12,9 @@ namespace GUI.Views.AdminViews
             this.FormClosed += delegate { addFormClosing?.Invoke(this, EventArgs.Empty); };
         }
 
+        public event EventHandler submitAddForm;
+        public event EventHandler addFormClosing;
+
         public RichTextBox TitleValue
         {
             get { return this.titleTextView; }
@@ -36,9 +39,6 @@ namespace GUI.Views.AdminViews
         {
             get { return this.roomTextView; }
         }
-
-        public event EventHandler submitAddForm;
-        public event EventHandler addFormClosing;
 
         public Control.ControlCollection GetControls()
         {

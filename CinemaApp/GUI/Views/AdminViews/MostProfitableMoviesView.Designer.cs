@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            popularChart = new OxyPlot.WindowsForms.PlotView();
+            profitableChart = new OxyPlot.WindowsForms.PlotView();
             label1 = new Label();
-            filmEditlabel = new Label();
+            headerMain = new Label();
             backButton = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
-            // popularChart
+            // profitableChart
             // 
-            popularChart.BackColor = Color.FromArgb(50, 52, 102);
-            popularChart.ForeColor = SystemColors.Window;
-            popularChart.Location = new Point(84, 157);
-            popularChart.Name = "popularChart";
-            popularChart.PanCursor = Cursors.Hand;
-            popularChart.Size = new Size(1116, 555);
-            popularChart.TabIndex = 2;
-            popularChart.Text = "plotView1";
-            popularChart.ZoomHorizontalCursor = Cursors.SizeWE;
-            popularChart.ZoomRectangleCursor = Cursors.SizeNWSE;
-            popularChart.ZoomVerticalCursor = Cursors.SizeNS;
+            profitableChart.BackColor = Color.FromArgb(50, 52, 102);
+            profitableChart.ForeColor = SystemColors.Window;
+            profitableChart.Location = new Point(84, 157);
+            profitableChart.Name = "profitableChart";
+            profitableChart.PanCursor = Cursors.Hand;
+            profitableChart.Size = new Size(1116, 555);
+            profitableChart.TabIndex = 2;
+            profitableChart.Text = "plotView1";
+            profitableChart.ZoomHorizontalCursor = Cursors.SizeWE;
+            profitableChart.ZoomRectangleCursor = Cursors.SizeNWSE;
+            profitableChart.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // label1
             // 
@@ -59,16 +59,16 @@
             label1.Text = "[?] Dochody są zliczane na podstawie sumy cen sprzedanych biletów";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // filmEditlabel
+            // headerMain
             // 
-            filmEditlabel.Font = new Font("Montserrat", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            filmEditlabel.ForeColor = SystemColors.Window;
-            filmEditlabel.Location = new Point(164, 24);
-            filmEditlabel.Name = "filmEditlabel";
-            filmEditlabel.Size = new Size(1036, 54);
-            filmEditlabel.TabIndex = 108;
-            filmEditlabel.Text = "Poniżej przedstawiono 10 najbardziej dochodowych filmów";
-            filmEditlabel.TextAlign = ContentAlignment.MiddleCenter;
+            headerMain.Font = new Font("Montserrat", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            headerMain.ForeColor = SystemColors.Window;
+            headerMain.Location = new Point(164, 24);
+            headerMain.Name = "headerMain";
+            headerMain.Size = new Size(1036, 54);
+            headerMain.TabIndex = 108;
+            headerMain.Text = "Poniżej przedstawiono 10 najbardziej dochodowych filmów";
+            headerMain.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // backButton
             // 
@@ -98,19 +98,20 @@
             BackColor = Color.FromArgb(34, 35, 68);
             ClientSize = new Size(1275, 743);
             Controls.Add(backButton);
-            Controls.Add(filmEditlabel);
+            Controls.Add(headerMain);
             Controls.Add(label1);
-            Controls.Add(popularChart);
+            Controls.Add(profitableChart);
             Name = "MostProfitableMoviesView";
             Text = "MostProfitableMoviesView";
+            Resize += MostProfitableMoviesView_Resize;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private OxyPlot.WindowsForms.PlotView popularChart;
+        private OxyPlot.WindowsForms.PlotView profitableChart;
         private Label label1;
-        private Label filmEditlabel;
+        private Label headerMain;
         private FontAwesome.Sharp.IconButton backButton;
     }
 }

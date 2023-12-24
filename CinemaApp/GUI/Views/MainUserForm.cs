@@ -7,13 +7,6 @@ public partial class MainUserForm : Form, IMainUserForm
 {
     private IconButton currentButton;
     private Panel leftBorderButton;
-    private Form currentChildForm;
-
-    public event EventHandler ShowReservationsView;
-    public event EventHandler ShowMoviesView;
-    public event EventHandler LoadDefault;
-    public event EventHandler GoBack;
-    public event EventHandler MainUserFormCloseEvent;
 
     private Rectangle PanelOriginalRectangle;
     private Rectangle orignialFormSize;
@@ -22,17 +15,39 @@ public partial class MainUserForm : Form, IMainUserForm
     private Rectangle originalBigLogoRectangle;
     private Rectangle originalMenuButtonSize1;
     private Rectangle originalMenuButtonSize2;
-    private Rectangle originalMenuButtonSize3;
     private Rectangle originalMenuButtonSize4;
-
     private Rectangle originalTextTopSize;
 
-    float originalbuttonMenuFont1;
-    float originalbuttonMenuFont2;
-    float originalbuttonMenuFont3;
-    float originalbuttonMenuFont4;
+    private float originalbuttonMenuFont1;
+    private float originalbuttonMenuFont2;
+    private float originalbuttonMenuFont4;
+    private float originalTextTopFont;
 
-    float originalTextTopFont;
+
+    public MainUserForm()
+    {
+        InitializeComponent();
+        this.FormBorderStyle = FormBorderStyle.Sizable;
+
+        // Delegowane obs³ugi eventów
+        showReservationsButton.Click += delegate { ShowReservationsView?.Invoke(this, EventArgs.Empty); };
+
+        buyTicketButton.Click += delegate { ShowMoviesView?.Invoke(this, EventArgs.Empty); };
+
+        logoPictureBox.Click += delegate { LoadDefault?.Invoke(this, EventArgs.Empty); };
+        backButton.Click += delegate { GoBack?.Invoke(this, EventArgs.Empty); };
+        this.FormClosed += delegate { MainUserFormCloseEvent?.Invoke(this, EventArgs.Empty); };
+
+        leftBorderButton = new Panel();
+        leftBorderButton.Size = new Size(7, 60);
+        panelUserMenu.Controls.Add(leftBorderButton);
+    }
+
+    public event EventHandler ShowReservationsView;
+    public event EventHandler ShowMoviesView;
+    public event EventHandler LoadDefault;
+    public event EventHandler GoBack;
+    public event EventHandler MainUserFormCloseEvent;
 
     public PictureBox MainBigLogo
     {
@@ -58,71 +73,59 @@ public partial class MainUserForm : Form, IMainUserForm
     {
         get { return this.leftBorderButton; }
     }
-    public MainUserForm()
-    {
-        InitializeComponent();
-        this.FormBorderStyle = FormBorderStyle.Sizable;
 
-        showReservationsButton.Click += delegate { ShowReservationsView?.Invoke(this, EventArgs.Empty); };
 
-        buyTicketButton.Click += delegate { ShowMoviesView?.Invoke(this, EventArgs.Empty); };
-
-        //buyTicketButton.Click += delegate { ShowMoviesView?.Invoke(this, EventArgs.Empty); };
-
-        logoPictureBox.Click += delegate { LoadDefault?.Invoke(this, EventArgs.Empty); };
-        backButton.Click += delegate { GoBack?.Invoke(this, EventArgs.Empty); };
-        this.FormClosed += delegate { MainUserFormCloseEvent?.Invoke(this, EventArgs.Empty); };
-
-        leftBorderButton = new Panel();
-        leftBorderButton.Size = new Size(7, 60);
-        panelUserMenu.Controls.Add(leftBorderButton);
-
-        /*this.Text = string.Empty;
-        /*this.ControlBox = false;
-        this.DoubleBuffered = true;
-        this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;*/
-    }
+    // Przy ³adowaniu formularza zapamiêtywane s¹ oryginalne rozmiary kontrolek i ich umiejscowienie w formularzu
+    // Celem zastosowania responsywnoœci
     private void MainUserForm_Load(object sender, EventArgs e)
     {
         orignialFormSize = new Rectangle(
-                this.Location,
-                this.Size
-                );
+            this.Location,
+            this.Size
+            );
         PanelOriginalRectangle = new Rectangle(
             panelUserMenu.Location,
             panelUserMenu.Size
             );
         orginalPanelLogoRectangle = new Rectangle(
-            logoPictureBox.Location,
-            logoPictureBox.Size);
+           logoPictureBox.Location,
+           logoPictureBox.Size);
         originalTopPanelRectangle = new Rectangle(
            titleBar.Location,
            titleBar.Size
            );
         originalBigLogoRectangle = new Rectangle(
            bigLogo.Location,
-           bigLogo.Size);
+           bigLogo.Size
+           );
         originalMenuButtonSize1 = new Rectangle(
            buyTicketButton.Location,
-           buyTicketButton.Size);
+           buyTicketButton.Size
+           );
         originalMenuButtonSize2 = new Rectangle(
            showReservationsButton.Location,
-            showReservationsButton.Size);
+           showReservationsButton.Size
+           );
         originalMenuButtonSize4 = new Rectangle(
            backButton.Location,
-           backButton.Size);
-
+           backButton.Size
+           );
         originalTextTopSize = new Rectangle(
            lblTitleChildForm.Location,
-           lblTitleChildForm.Size);
+           lblTitleChildForm.Size
+           );
 
         originalbuttonMenuFont1 = buyTicketButton.Font.Size;
         originalbuttonMenuFont2 = showReservationsButton.Font.Size;
         originalbuttonMenuFont4 = backButton.Font.Size;
         originalTextTopFont = lblTitleChildForm.Font.Size;
     }
+
+
+    // Funkcja zmieniaj¹ca rozmiar kontrolki i jej czcionki
     private void resizeControl(Rectangle r, Control c, float originalFontSize)
     {
+        // Obliczenie ratio wzglêdem x oraz y (aktualny_rozmiar/oryginalny_rozmiar)
         float xRatio = (float)(this.Width) / (float)(orignialFormSize.Width);
         float yRatio = (float)(this.Height) / (float)(orignialFormSize.Height);
 
@@ -132,7 +135,6 @@ public partial class MainUserForm : Form, IMainUserForm
         int newWidth = (int)(r.Width * xRatio);
         int newHeight = (int)(r.Height * yRatio);
 
-        // c.Location = new Point(newX, newY);
         c.Size = new Size(newWidth, newHeight);
         float ratio = xRatio;
         if (xRatio >= yRatio)
@@ -140,11 +142,15 @@ public partial class MainUserForm : Form, IMainUserForm
             ratio = yRatio;
         }
         float newFontSize = originalFontSize * ratio;
-
-        Font newFont = new Font(c.Font.FontFamily, newFontSize);
-        c.Font = newFont;
+        if (newFontSize > 0 && newFontSize != float.NegativeInfinity && newFontSize != float.PositiveInfinity)
+        {
+            Font newFont = new Font(c.Font.FontFamily, newFontSize);
+            c.Font = newFont;
+        } 
     }
 
+
+    // Metoda wywo³ywana automatycznie w momenice zmiany rozmiaru formularza
     private void MainUserForm_Resize(object sender, EventArgs e)
     {
         resizeControl(PanelOriginalRectangle, this.panelUserMenu, this.panelUserMenu.Font.Size);
@@ -154,10 +160,11 @@ public partial class MainUserForm : Form, IMainUserForm
         resizeControl(originalMenuButtonSize1, this.buyTicketButton, originalbuttonMenuFont1);
         resizeControl(originalMenuButtonSize2, this.showReservationsButton, originalbuttonMenuFont2);
         resizeControl(originalMenuButtonSize4, this.backButton, originalbuttonMenuFont4);
-
         resizeControl(originalTextTopSize, this.lblTitleChildForm, originalTextTopFont);
     }
 
+
+    // Struktura zwieraj¹ca kolory RGB
     private struct RGBColors
     {
         public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -166,10 +173,13 @@ public partial class MainUserForm : Form, IMainUserForm
 
     }
 
+
+    // Metoda obs³uguj¹ca klikniêcie w przycisk menu g³ównego
     private void ActivateButton(object sender, Color color)
     {
         if (sender != null)
         {
+            // Zmiana w³aœciowœci klikniêtego przycisku
             DisableButton();
             currentButton = (IconButton)sender;
             currentButton.BackColor = Color.FromArgb(37, 36, 81);
@@ -178,7 +188,6 @@ public partial class MainUserForm : Form, IMainUserForm
             currentButton.IconColor = color;
             currentButton.TextImageRelation = TextImageRelation.TextBeforeImage;
             currentButton.ImageAlign = ContentAlignment.MiddleRight;
-
 
             leftBorderButton.BackColor = color;
             leftBorderButton.Location = new Point(0, currentButton.Location.Y);
@@ -189,6 +198,9 @@ public partial class MainUserForm : Form, IMainUserForm
             iconCurrentChildForm.IconColor = color;
         }
     }
+
+
+    // Metoda przywracaj¹ca poprzedni przycisk do stanu defauktowego
     public void DisableButton()
     {
         if (currentButton != null)
@@ -203,6 +215,8 @@ public partial class MainUserForm : Form, IMainUserForm
         }
     }
 
+
+    // Metody obs³uguj¹ce klikniêcie konkretnych przycisków
     private void buyTicketButton_Click(object sender, EventArgs e)
     {
         ActivateButton(sender, RGBColors.color1);
@@ -211,7 +225,6 @@ public partial class MainUserForm : Form, IMainUserForm
     private void showReservationsButton_Click(object sender, EventArgs e)
     {
         ActivateButton(sender, RGBColors.color2);
-        //OpenChildForm(new ReservationListView());
     }
 
     private void backButton_Click(object sender, EventArgs e)
@@ -219,13 +232,12 @@ public partial class MainUserForm : Form, IMainUserForm
         ActivateButton(sender, RGBColors.color3);
     }
 
+
+
+    // Metoda obs³uguj¹ca klikniêcie w logo aplikacji
     private void logoPictureBox_Click(object sender, EventArgs e)
     {
-        if (currentChildForm != null)
-        {
-            currentChildForm.Close();
-        }
-
+        // Przywrócenie wszytskich elementów widoku do stanu pocz¹tkowego
         DisableButton();
         leftBorderButton.Visible = false;
 
@@ -233,6 +245,8 @@ public partial class MainUserForm : Form, IMainUserForm
         iconCurrentChildForm.IconColor = Color.MediumPurple;
         lblTitleChildForm.Text = "Strona g³ówna";
     }
+
+    // Metody pozwalaj¹ce na zmianê rozmiaru okna np poprzez przeci¹gniêcie i upusczenie go na górze ekranu
     [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
     private extern static void ReleaseCapture();
     [DllImport("user32.DLL", EntryPoint = "SendMessage")]

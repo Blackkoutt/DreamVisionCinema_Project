@@ -7,19 +7,12 @@ namespace GUI.Views
         public AdminAuthenticationForm()
         {
             InitializeComponent();
-            // signInButton.
             signInButton.Click += delegate { SignIn?.Invoke(this, EventArgs.Empty); };
             KeyPreview = true;
             KeyDown += Form_KeyDown;
         }
 
-        private void Form_KeyDown(object? sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                SignIn?.Invoke(this, EventArgs.Empty);
-            }
-        }
+        public event EventHandler SignIn;
 
         public TextBox Login
         {
@@ -29,9 +22,19 @@ namespace GUI.Views
         {
             get { return passwordText; }
         }
+   
 
-        public event EventHandler SignIn;
+        // Metoda do obsługi logowania za pomocą entera
+        private void Form_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SignIn?.Invoke(this, EventArgs.Empty);
+            }
+        }
 
+
+        // Metoda zmieniająca wyśweitlanie się hasła w zależości od zaznaczenia checkBoxa
         private void showPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (showPasswordCheckBox.Checked)

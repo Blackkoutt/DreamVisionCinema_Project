@@ -86,6 +86,11 @@ namespace CinemaApp.Model
             price = price.Replace(".", ",");
             Price = Conversions.TryParseToDouble(price, "Cena powinna być wartością zmiennoprzecinkową np 23,99.");
 
+            if (Date < DateTime.Now)
+            {
+                throw new IncorrectParametrException("Data nie może być wcześniejsza niż data bieżąca");
+            }
+
             // Sprawdzenie poprawności parametrów
             if (Price < 0)
             {
@@ -292,6 +297,11 @@ namespace CinemaApp.Model
                         SortedMovies = movies.OrderBy(movie => movie.Duration).ToList();
                         break;
                     }
+                case "długość":
+                    {
+                        SortedMovies = movies.OrderBy(movie => movie.Duration).ToList();
+                        break;
+                    }
                 case "sala":
                     {
                         SortedMovies = movies.OrderBy(movie => movie.Room.Number).ToList();
@@ -345,6 +355,11 @@ namespace CinemaApp.Model
                         break;
                     }
                 case "czas":
+                    {
+                        SortedMovies = movies.OrderByDescending(movie => movie.Duration).ToList();
+                        break;
+                    }
+                case "długość":
                     {
                         SortedMovies = movies.OrderByDescending(movie => movie.Duration).ToList();
                         break;
