@@ -1,3 +1,17 @@
+# Table Of Content
+
+- [General info](#general-info)
+    - [Functionalities](#functionalities)
+    - [Additional informations](#additional-informations)
+- [Technologies](#technologies)
+- [Getting Started](#getting-started)
+    - [Instalation](#instalation)
+    - [Instruction](#instruction)
+        - [Login as administrator](#login-as-administrator)
+        - [Files](#files)
+        - [Instruction console solution](#instruction-console-solution)
+        - [Instruction GUI](#instruction-gui)
+
 # General info
 The project is a cinema management application. The application can be used in **graphical mode or text mode**.
 The assumption of the project is the ability to use the application in two modes: regular user and administrator.
@@ -70,7 +84,7 @@ GUI Solution:
 ![Static Badge](https://img.shields.io/badge/Windows%20Forms%20-%20%236a1577?style=for-the-badge&logo=csharp)
 
 # Getting Started
-### Instalation
+## Instalation
 To run the application from the .exe executable file, **you must have .NET Runtime version at least 7.0**.
 
 If you want to develop the application or use development tools it is necessary to have .NET SDK version 7.0 or higher.
@@ -119,7 +133,7 @@ names according to the formula: bilet_id_title_filmu.txt. So clearly
 you can distinguish the ticket you have just purchased (after purchasing the ticket, the application informs you
 what file it was saved in).
 
-### Instruction - console solution
+### Instruction console solution
 The application can only be operated using the keyboard. Navigating through the menu
 each view is navigated using the up and down arrows. Every option you choose is
 indicated by backlight and ">" indicator. The option is approved
@@ -149,8 +163,129 @@ button in the main menu. **Close the application by closing the console window
 will result in the introduced changes not being saved!**
 
 
-### Instruction - GUI
+### Instruction GUI
 
+**Application operation mode selection window**
 
+After starting and loading the application, the operating mode selection window appears
+application. The application can be run in user or administrator mode.
+
+**User panel**
+
+After selecting the "Log in as User" option, the user panel opens automatically
+without the need for authorization. On the left side of the panel there is a menu
+containing 3 options:
+- Buy a movie ticket - after clicking, a list of movies appears where you can buy one
+make a reservation and generate a ticket
+- Show list of reservations - when clicked, a list of reservations made from where appears
+you can cancel the selected reservation
+- Back – return to the mode selection window
+  
+Clicking on the application logo located in the upper left corner of the panel takes you through
+to the home page as shown in the photo below.
+The user panel is fully responsive, which means that it can be resized
+window, the size of the controls increases, their new position and size are calculated
+fonts.
+
+**Cancelling the reservation**
+
+Clicking the cancel booking button displays a confirmation window
+wish to cancel the selected reservation. You can select a reservation by clicking on
+selected row in the list. Multiple confirmation windows can be opened, but no more than that
+one to one booking. The cancellation confirmation displays information about
+consequences of such action and buttons to cancel a given reservation and
+going back to the reservation list view.
+
+**Movie list view**
+
+After clicking the "Buy movie ticket" button, a list of available movies is displayed
+you can freely sort or search for specific information there. Selecting a movie
+by clicking on the selected list line and then the "Book" button
+opening a window with a representation of a cinema hall, where they are indicated in red
+occupied seats and free seats in green. The selection of seats is done via
+pressing buttons with selected numbers. Undoing your selection is possible via
+"Undo" button. However, you can make a reservation by pressing
+"Buy ticket" button. Then a ticket file in JPG format and a ticket are generated
+is displayed in the window along with information about where it was saved.
+
+**Administrator panel**
+
+Selecting the "Log in as administrator" option requires entering a valid login
+and passwords. The password is provided at the beginning of the User Manual. After providing
+correct login and password, an administration panel appears, which is not much different
+from the user panel except that it has more options. The whole thing works on a similar basis
+basically - the main menu is placed on the left side of the panel, from where you can choose
+options such as:
+- Show movie list – takes you to the movie list from where you can manage movies
+- Show reservation list – takes you to the reservation list from where you can view it
+reservations made by users
+- Show statistics - shows statistics about cinema - earnings, most popular films,
+highest-grossing films
+- Back – goes back to the application mode selection view
+As in the case of the user panel, this panel is also responsive, which
+allows you to adjust the window size to the user's needs.
+
+**Adding a movie**
+
+Selecting "Add New" in the video list view opens a new window with
+a form where you must provide all the necessary data about the new film.
+The window can only be opened once, which means that if it is currently open then
+clicking "Add new" again will not open another adding window
+movie.
+
+**Movie modification**
+
+Movie modification is possible after selecting a movie from the list and clicking the button
+"Modify". The form is automatically completed with current data
+of a given movie. It is only possible to change the date, price or room number because change
+the remaining values ​​don't make much sense. Modification of date or room number
+it also updates ticket files (if the film has any
+reservations). The modification window can be opened multiple times, but not more than once
+for one movie.
+
+**Delete movie**
+
+Available after selecting a movie from the list and pressing the "Delete" button. Similar to
+If you cancel your reservation, confirmation of the deletion is also displayed here
+movie. Clicking delete again deletes the video and its associated videos
+reservations, including deleting ticket files. The confirmation window can be opened
+many times, however, not more than one per film.
+
+**Viewing the reservation list**
+
+Selecting "Show Reservation List" only allows the admin to view
+list of reservations made.
+
+**Statistics view**
+
+By clicking "Show Statistics" a statistics panel appears where the administrator can
+check the total income generated by the cinema, the percentage of implementation of the guideline
+earnings or go to view charts of the most popular movies or
+highest-grossing movies.
+
+**Charts**
+
+The charts of the most popular movies show the 10 movies with the most contributions
+reservation. Popularity is measured by the number of seats occupied in the room in which
+a given movie is displayed.
+The top-grossing movies chart shows the 10 movies they generated
+the highest earnings for cinema. Earnings are measured by the sum of ticket prices
+sold for a given movie.
+The charts are interactive, which allows the user to move and zoom them
+zoom out or click on a given bar to see the exact value
+to introduce.
+You can return to the statistics panel by pressing the blue button
+"Come back."
+
+**Notifications**
+
+Notifications generated by the app appear in the lower right corner of the screen.
+There are 3 types of notifications:
+- Error notification – red
+- Notification about the success of the performed operation – green
+- Information notification – blue
+Notifications disappear automatically 5 seconds after they appear.
+However, you can close the notification yourself by pressing it
+the X button on the notification.
 
 
