@@ -1,0 +1,1777 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\mainpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\mainpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\ticketcreatorpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\ticketcreatorpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iaddmovieview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iaddmovieview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iadminmoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iadminmoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iadminreservationsview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iadminreservationsview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iadminstatisticsview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iadminstatisticsview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iauthenticationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iauthenticationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\icancelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\icancelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\ideletemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\ideletemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\ieditmovieview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\ieditmovieview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\imainadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\imainadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\imainuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\imainuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\imoviereservationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\imoviereservationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\imovieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\imovieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\ipopluarmovies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\ipopluarmovies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iprofitablemovies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iprofitablemovies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\ireservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\ireservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iselectionview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iselectionview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\interfaces\\iticketcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\interfaces\\iticketcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\adminpresenters\\adminmoviepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\adminpresenters\\adminmoviepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\adminpresenters\\adminreservationpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\adminpresenters\\adminreservationpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\adminpresenters\\adminstatisticpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\adminpresenters\\adminstatisticpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\adminpresenters\\mainadminpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\adminpresenters\\mainadminpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\userpresenters\\mainuserpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\userpresenters\\mainuserpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\userpresenters\\moviereservationpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\userpresenters\\moviereservationpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\userpresenters\\usermoviepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\userpresenters\\usermoviepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\presenters\\userpresenters\\userreservationpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\presenters\\userpresenters\\userreservationpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminmovieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminmovieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminreservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminreservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminstatisticview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminstatisticview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\deletemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\deletemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\editmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\editmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\mostpopularmoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\mostpopularmoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\mostprofitablemoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\mostprofitablemoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\cancelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\cancelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\moviereservationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\moviereservationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\movieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\movieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\reservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\reservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminauthenticationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminauthenticationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\customalertbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\customalertbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\mainadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\mainadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\mainuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\mainuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\ticketcreatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\ticketcreatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\cancelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\cancelmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\movieslistview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\movieslistview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\reservationlistview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\reservationlistview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\loadingform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\loadingform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\ticketcreatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\ticketcreatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\movieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\movieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminstatisticview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminstatisticview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\moviereservationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\moviereservationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminreservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminreservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\reservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\reservationlistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\customalertbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\customalertbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\deletemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\deletemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\mostprofitablemoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\mostprofitablemoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\mostpopularmoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\mostpopularmoviesview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\editmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\editmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminmovieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminmovieslistview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\mainadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\mainadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\mainuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\mainuserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\mainuserform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\mainuserform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\mainadminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\mainadminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminauthenticationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminauthenticationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\assets\\ticket_template.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\assets\\ticket_template.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\interfaces\\irepositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\interfaces\\irepositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\views\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\views\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\controllers\\usercontrollers\\mainusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\controllers\\usercontrollers\\mainusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\controllers\\admincontrollers\\adminmoviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\controllers\\admincontrollers\\adminmoviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\extensions\\conversions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\extensions\\conversions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\controllers\\usercontrollers\\userreservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\controllers\\usercontrollers\\userreservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminauthenticationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminauthenticationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\modeselectionform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\modeselectionform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\customalertbox.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\customalertbox.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\views\\mainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\views\\mainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\views\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\views\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\exceptions\\exceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\exceptions\\exceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\controllers\\admincontrollers\\mainadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\controllers\\admincontrollers\\mainadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\controllers\\admincontrollers\\adminstatisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\controllers\\admincontrollers\\adminstatisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\enums\\guideline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\enums\\guideline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\enums\\rooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\enums\\rooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.2.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminstatisticview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminstatisticview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\editmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\editmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\addmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\addmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\adminviews\\adminmovieslistview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\adminviews\\adminmovieslistview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\views\\userviews\\moviereservationview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\moviereservationview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\controllers\\usercontrollers\\usermoviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\controllers\\usercontrollers\\usermoviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\gui\\gui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\gui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\gui\\views\\userviews\\movieslistview.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1E2F3340-657B-449F-95B3-D76418BC6BB1}|GUI\\GUI.csproj|solutionrelative:gui\\views\\userviews\\movieslistview.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\model\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\model\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\views\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\views\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\views\\mainmenuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\views\\mainmenuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\cinemaapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\cinemaapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|c:\\users\\mateusz\\desktop\\dreamvision\\dreamvisioncinema_project\\cinemaapp\\cinemaapp\\cinemaapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}",
+      "RelativeMoniker": "D:0:0:{1D6169A1-A6DE-49A1-A531-576C5631AC9E}|CinemaApp\\CinemaApp.csproj|solutionrelative:cinemaapp\\cinemaapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovieRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\MovieRepository.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\MovieRepository.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\MovieRepository.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\MovieRepository.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA6wBoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TicketCreatorPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\TicketCreatorPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\TicketCreatorPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\TicketCreatorPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\TicketCreatorPresenter.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEoAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\MainPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\MainPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\MainPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\MainPresenter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAdminStatisticsView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAdminStatisticsView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IAdminStatisticsView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAdminStatisticsView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IAdminStatisticsView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:23.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\ReservationRepository.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\ReservationRepository.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\ReservationRepository.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\ReservationRepository.cs",
+              "ViewState": "AQIAAMsBAAAAAAAAAAApwN8BAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IAuthenticationView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAuthenticationView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IAuthenticationView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAuthenticationView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IAuthenticationView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:23.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAdminReservationsView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAdminReservationsView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IAdminReservationsView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAdminReservationsView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IAdminReservationsView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:23.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IAddMovieView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAddMovieView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IAddMovieView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAddMovieView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IAddMovieView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:23.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAdminMoviesView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAdminMoviesView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IAdminMoviesView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IAdminMoviesView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IAdminMoviesView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:23.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ICancelMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\ICancelMessage.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\ICancelMessage.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\ICancelMessage.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\ICancelMessage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IDeleteMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IDeleteMessage.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IDeleteMessage.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IDeleteMessage.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IDeleteMessage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IEditMovieView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IEditMovieView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IEditMovieView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IEditMovieView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IEditMovieView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IMainAdminForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMainAdminForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IMainAdminForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMainAdminForm.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IMainAdminForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IMainUserForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMainUserForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IMainUserForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMainUserForm.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IMainUserForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IMovieReservationView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMovieReservationView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IMovieReservationView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMovieReservationView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IMovieReservationView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IMoviesListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMoviesListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IMoviesListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IMoviesListView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IMoviesListView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IPopluarMovies.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IPopluarMovies.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IPopluarMovies.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IPopluarMovies.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IPopluarMovies.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IProfitableMovies.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IProfitableMovies.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IProfitableMovies.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IProfitableMovies.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IProfitableMovies.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IReservationListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IReservationListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\IReservationListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\IReservationListView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\IReservationListView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ISelectionView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\ISelectionView.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\ISelectionView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\ISelectionView.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\ISelectionView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ITicketCreator.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\ITicketCreator.cs",
+              "RelativeDocumentMoniker": "GUI\\Interfaces\\ITicketCreator.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Interfaces\\ITicketCreator.cs",
+              "RelativeToolTip": "GUI\\Interfaces\\ITicketCreator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AdminMoviePresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\AdminMoviePresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\AdminPresenters\\AdminMoviePresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\AdminMoviePresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\AdminPresenters\\AdminMoviePresenter.cs",
+              "ViewState": "AQIAAHMCAAAAAAAAAAAYwHgCAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AdminReservationPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\AdminReservationPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\AdminPresenters\\AdminReservationPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\AdminReservationPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\AdminPresenters\\AdminReservationPresenter.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAgwDEAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AdminStatisticPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\AdminStatisticPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\AdminPresenters\\AdminStatisticPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\AdminStatisticPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\AdminPresenters\\AdminStatisticPresenter.cs",
+              "ViewState": "AQIAAJEAAAAAAAAAAAA/wKEAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MainAdminPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\MainAdminPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\AdminPresenters\\MainAdminPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\AdminPresenters\\MainAdminPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\AdminPresenters\\MainAdminPresenter.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAowIQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MainUserPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\MainUserPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\UserPresenters\\MainUserPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\MainUserPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\UserPresenters\\MainUserPresenter.cs",
+              "ViewState": "AQIAAMcAAAAAAAAAAADwvwcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MovieReservationPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\MovieReservationPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\UserPresenters\\MovieReservationPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\MovieReservationPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\UserPresenters\\MovieReservationPresenter.cs",
+              "ViewState": "AQIAAHsBAAAAAAAAAAAswHABAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "UserMoviePresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\UserMoviePresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\UserPresenters\\UserMoviePresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\UserMoviePresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\UserPresenters\\UserMoviePresenter.cs",
+              "ViewState": "AQIAAPAAAAAAAAAAAAAIwPAAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserReservationPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\UserReservationPresenter.cs",
+              "RelativeDocumentMoniker": "GUI\\Presenters\\UserPresenters\\UserReservationPresenter.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Presenters\\UserPresenters\\UserReservationPresenter.cs",
+              "RelativeToolTip": "GUI\\Presenters\\UserPresenters\\UserReservationPresenter.cs",
+              "ViewState": "AQIAALEAAAAAAAAAAAAIwKwAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AddMovieForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAkwA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AdminMoviesListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "ViewState": "AQIAALMAAAAAAAAAAAA9wLEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AdminReservationListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAYwGYAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "AdminStatisticView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAowFsAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "DeleteMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAkwCUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "EditMovieForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAgwDcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "MostPopularMoviesView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAgwJgAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "MostProfitableMoviesView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "ViewState": "AQIAAJIAAAAAAAAAAAAgwDcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "CancelMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\CancelMessage.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\CancelMessage.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\CancelMessage.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\CancelMessage.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAkwBsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "MovieReservationView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAgwAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "MoviesListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\MoviesListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\MoviesListView.cs",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAIwLEAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ReservationListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\ReservationListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\ReservationListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\ReservationListView.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\ReservationListView.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAgwHEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AdminAuthenticationForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminAuthenticationForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminAuthenticationForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminAuthenticationForm.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminAuthenticationForm.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA3wCQAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CustomAlertBox.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\CustomAlertBox.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\CustomAlertBox.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\CustomAlertBox.cs",
+              "RelativeToolTip": "GUI\\Views\\CustomAlertBox.cs",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAswJ4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "LoadingForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\LoadingForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\LoadingForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\LoadingForm.cs",
+              "RelativeToolTip": "GUI\\Views\\LoadingForm.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAgwDEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "MainAdminForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainAdminForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\MainAdminForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainAdminForm.cs",
+              "RelativeToolTip": "GUI\\Views\\MainAdminForm.cs",
+              "ViewState": "AQIAAAIBAAAAAAAAAAA+wBYBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "MainUserForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainUserForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\MainUserForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainUserForm.cs",
+              "RelativeToolTip": "GUI\\Views\\MainUserForm.cs",
+              "ViewState": "AQIAAPIAAAAAAAAAAAAAwAQBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ModeSelectionForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\ModeSelectionForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\ModeSelectionForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\ModeSelectionForm.cs",
+              "RelativeToolTip": "GUI\\Views\\ModeSelectionForm.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwDAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "TicketCreatorForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\TicketCreatorForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\TicketCreatorForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\TicketCreatorForm.cs",
+              "RelativeToolTip": "GUI\\Views\\TicketCreatorForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "CancelMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\CancelMessage.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\CancelMessage.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\CancelMessage.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\CancelMessage.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "MoviesListView.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\MoviesListView.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\MoviesListView.Designer.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAIwF4AAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "ReservationListView.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\ReservationListView.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\ReservationListView.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\ReservationListView.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\ReservationListView.Designer.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAIwE8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "LoadingForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\LoadingForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\LoadingForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\LoadingForm.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\LoadingForm.Designer.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAnwHsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "TicketCreatorForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\TicketCreatorForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\TicketCreatorForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\TicketCreatorForm.cs",
+              "RelativeToolTip": "GUI\\Views\\TicketCreatorForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "MoviesListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\MoviesListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\MoviesListView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "AdminStatisticView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminStatisticView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "MovieReservationView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\MovieReservationView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "AdminReservationListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminReservationListView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "CustomAlertBox.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\CustomAlertBox.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\CustomAlertBox.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\CustomAlertBox.cs",
+              "RelativeToolTip": "GUI\\Views\\CustomAlertBox.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ReservationListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\ReservationListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\ReservationListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\ReservationListView.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\ReservationListView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "DeleteMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\DeleteMessage.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "MostProfitableMoviesView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\MostProfitableMoviesView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "MostPopularMoviesView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\MostPopularMoviesView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "EditMovieForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\EditMovieForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "AddMovieForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AddMovieForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "AdminMoviesListView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminMoviesListView.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "MainAdminForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainAdminForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\MainAdminForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainAdminForm.cs",
+              "RelativeToolTip": "GUI\\Views\\MainAdminForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "MainUserForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainUserForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\MainUserForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainUserForm.cs",
+              "RelativeToolTip": "GUI\\Views\\MainUserForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "MainAdminForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainAdminForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\MainAdminForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainAdminForm.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\MainAdminForm.Designer.cs",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAwL4AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "MainUserForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainUserForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\MainUserForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\MainUserForm.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\MainUserForm.Designer.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAwDYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "AdminAuthenticationForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminAuthenticationForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminAuthenticationForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminAuthenticationForm.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminAuthenticationForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "LoadingForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\LoadingForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\LoadingForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\LoadingForm.cs",
+              "RelativeToolTip": "GUI\\Views\\LoadingForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "ModeSelectionForm.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\ModeSelectionForm.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\ModeSelectionForm.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\ModeSelectionForm.cs",
+              "RelativeToolTip": "GUI\\Views\\ModeSelectionForm.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Movie.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\Movie.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Movie.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\Movie.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ticket_template.jpg",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Assets\\ticket_template.jpg",
+              "RelativeDocumentMoniker": "GUI\\Assets\\ticket_template.jpg",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Assets\\ticket_template.jpg",
+              "RelativeToolTip": "GUI\\Assets\\ticket_template.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-04-03T11:26:24.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "IReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Interfaces\\IRepositories\\IReservationRepository.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Interfaces\\IRepositories\\IReservationRepository.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Interfaces\\IRepositories\\IReservationRepository.cs",
+              "RelativeToolTip": "CinemaApp\\Interfaces\\IRepositories\\IReservationRepository.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAmwBkAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Ticket.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\Ticket.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Ticket.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\Ticket.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAUwHEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "UserView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\UserView.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Views\\UserView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\UserView.cs",
+              "RelativeToolTip": "CinemaApp\\Views\\UserView.cs",
+              "ViewState": "AQIAAD8BAAAAAAAAAAAqwEsBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "MainUserController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\UserControllers\\MainUserController.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Controllers\\UserControllers\\MainUserController.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\UserControllers\\MainUserController.cs",
+              "RelativeToolTip": "CinemaApp\\Controllers\\UserControllers\\MainUserController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "MainController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\MainController.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Controllers\\MainController.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\MainController.cs",
+              "RelativeToolTip": "CinemaApp\\Controllers\\MainController.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "AdminMoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\AdminControllers\\AdminMoviesController.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Controllers\\AdminControllers\\AdminMoviesController.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\AdminControllers\\AdminMoviesController.cs",
+              "RelativeToolTip": "CinemaApp\\Controllers\\AdminControllers\\AdminMoviesController.cs",
+              "ViewState": "AQIAALQAAAAAAAAAAAAWwM8AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Room.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\Room.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Room.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\Room.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAnwEIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "Conversions.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Extensions\\Conversions.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Extensions\\Conversions.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Extensions\\Conversions.cs",
+              "RelativeToolTip": "CinemaApp\\Extensions\\Conversions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "UserReservationsController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\UserControllers\\UserReservationsController.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Controllers\\UserControllers\\UserReservationsController.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\UserControllers\\UserReservationsController.cs",
+              "RelativeToolTip": "CinemaApp\\Controllers\\UserControllers\\UserReservationsController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "AdminAuthenticationForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminAuthenticationForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminAuthenticationForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminAuthenticationForm.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminAuthenticationForm.Designer.cs",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAYwKUAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "ModeSelectionForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\ModeSelectionForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\ModeSelectionForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\ModeSelectionForm.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\ModeSelectionForm.Designer.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwDQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "CustomAlertBox.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\CustomAlertBox.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\CustomAlertBox.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\CustomAlertBox.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\CustomAlertBox.Designer.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAACEAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "AdminView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\AdminView.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Views\\AdminView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\AdminView.cs",
+              "RelativeToolTip": "CinemaApp\\Views\\AdminView.cs",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAjwNQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "Exceptions.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Exceptions\\Exceptions.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Exceptions\\Exceptions.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Exceptions\\Exceptions.cs",
+              "RelativeToolTip": "CinemaApp\\Exceptions\\Exceptions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "MainView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\MainView.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Views\\MainView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\MainView.cs",
+              "RelativeToolTip": "CinemaApp\\Views\\MainView.cs",
+              "ViewState": "AQIAABQBAAAAAAAAAAAnwCYBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "MainAdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\AdminControllers\\MainAdminController.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Controllers\\AdminControllers\\MainAdminController.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\AdminControllers\\MainAdminController.cs",
+              "RelativeToolTip": "CinemaApp\\Controllers\\AdminControllers\\MainAdminController.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAgwG4AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Login.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\Login.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Login.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\Login.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwCUAAAB0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "AdminStatisticsController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\AdminControllers\\AdminStatisticsController.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Controllers\\AdminControllers\\AdminStatisticsController.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\AdminControllers\\AdminStatisticsController.cs",
+              "RelativeToolTip": "CinemaApp\\Controllers\\AdminControllers\\AdminStatisticsController.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAewF4AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "Rooms.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Enums\\Rooms.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Enums\\Rooms.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Enums\\Rooms.cs",
+              "RelativeToolTip": "CinemaApp\\Enums\\Rooms.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "Guideline.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Enums\\Guideline.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Enums\\Guideline.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Enums\\Guideline.cs",
+              "RelativeToolTip": "CinemaApp\\Enums\\Guideline.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "readme.txt",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.2.0\\readme.txt",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\circularprogressbar\\2.2.0\\readme.txt",
+              "ToolTip": "C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.2.0\\readme.txt",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\circularprogressbar\\2.2.0\\readme.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2023-12-16T00:58:52.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "readme.txt",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\readme.txt",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\readme.txt",
+              "ToolTip": "C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\readme.txt",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\readme.txt",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2023-12-16T01:02:39.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "AdminStatisticView.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminStatisticView.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminStatisticView.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminStatisticView.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminStatisticView.Designer.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAewD4AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "EditMovieForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\EditMovieForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\EditMovieForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\EditMovieForm.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\EditMovieForm.Designer.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "AddMovieForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AddMovieForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AddMovieForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AddMovieForm.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AddMovieForm.Designer.cs",
+              "ViewState": "AQIAAJEAAAAAAAAAAAAYwKMAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "AdminMoviesListView.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminMoviesListView.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\AdminViews\\AdminMoviesListView.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\AdminViews\\AdminMoviesListView.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\AdminViews\\AdminMoviesListView.Designer.cs",
+              "ViewState": "AQIAAOgAAAAAAAAAAADwv+gAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "MovieReservationView.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MovieReservationView.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\MovieReservationView.Designer.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MovieReservationView.Designer.cs",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\MovieReservationView.Designer.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwMAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "Seat.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Seat.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\Seat.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Seat.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\Seat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "UserMoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\UserControllers\\UserMoviesController.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Controllers\\UserControllers\\UserMoviesController.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Controllers\\UserControllers\\UserMoviesController.cs",
+              "RelativeToolTip": "CinemaApp\\Controllers\\UserControllers\\UserMoviesController.cs",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAUwKQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 105,
+              "Title": "MoviesListView.resx",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.resx",
+              "RelativeDocumentMoniker": "GUI\\Views\\UserViews\\MoviesListView.resx",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\Views\\UserViews\\MoviesListView.resx",
+              "RelativeToolTip": "GUI\\Views\\UserViews\\MoviesListView.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-03T11:26:24.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "GUI.csproj",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\GUI.csproj",
+              "RelativeDocumentMoniker": "GUI\\GUI.csproj",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\GUI.csproj",
+              "RelativeToolTip": "GUI\\GUI.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-03T11:26:24.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 106,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Reservation.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Model\\Reservation.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Model\\Reservation.cs",
+              "RelativeToolTip": "CinemaApp\\Model\\Reservation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 107,
+              "Title": "LoginView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\LoginView.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Views\\LoginView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\LoginView.cs",
+              "RelativeToolTip": "CinemaApp\\Views\\LoginView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 108,
+              "Title": "MainMenuView.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\MainMenuView.cs",
+              "RelativeDocumentMoniker": "CinemaApp\\Views\\MainMenuView.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\Views\\MainMenuView.cs",
+              "RelativeToolTip": "CinemaApp\\Views\\MainMenuView.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T11:26:24.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 110,
+              "Title": "CinemaApp",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\CinemaApp.csproj",
+              "RelativeDocumentMoniker": "CinemaApp\\CinemaApp.csproj",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\CinemaApp.csproj",
+              "RelativeToolTip": "CinemaApp\\CinemaApp.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-03T11:26:24.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 109,
+              "Title": "CinemaApp.csproj",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\CinemaApp.csproj",
+              "RelativeDocumentMoniker": "CinemaApp\\CinemaApp.csproj",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\CinemaApp\\CinemaApp.csproj",
+              "RelativeToolTip": "CinemaApp\\CinemaApp.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-03T11:26:24.133Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
