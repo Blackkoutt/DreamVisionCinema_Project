@@ -16,6 +16,7 @@ static class Program
 
         ISelectionView selectionView = new ModeSelectionForm();       
         new MainPresenter(selectionView);
+
         Application.Run((Form)selectionView);
     }
 }

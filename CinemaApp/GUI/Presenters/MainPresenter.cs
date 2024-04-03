@@ -53,11 +53,13 @@ namespace GUI.Presenters
                 movieRepository.ReadMoviesFromFile(); 
                 reservationRepository = new ReservationRepository(movieRepository);
                 reservationRepository.ReadReservationsFromFile();
+                int a = 1;
             }
             catch (CannotReadFileException CRFE)
             {
                 // Uniemożliwia to dalsze korzstanie z aplikacji - w głównym oknie wyświetla się odpowiedni komunikat
                 _selectionView.StartFailure(CRFE.Message);
+                int b = 1;
             }
             catch (FileSyntaxException FSE)
             {

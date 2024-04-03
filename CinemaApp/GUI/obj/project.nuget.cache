@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PVXMMuPWHoIYcNvnblFrOVYQrwOsO5rkyDTNHWl091rfmUZiHV+7aLlyzka8es66gOJ0dqdk69mMfsi9oNetMg==",
+  "dgSpecHash": "M2uf8hPp4UuHpTePoBmB8muiHjzbhjDF3ILZ21iIuu02Oga6NQzB84WrYcy5a00wlf58dMu2P2/tiR8khSVK4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\Repositories\\KCK repo save\\KCK\\CinemaApp\\GUI\\GUI.csproj",
+  "projectFilePath": "C:\\Users\\Mateusz\\Desktop\\dreamvision\\DreamVisionCinema_Project\\CinemaApp\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mateusz\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\circularprogressbar.2.8.0.16.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
